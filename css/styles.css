@@ -1,0 +1,21 @@
+#obstruct {
+   float: left;
+   shape-outside: url(squiggle.svg);
+   top: 200px;
+   visibility: visible;
+}
+
+.main {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+.placement {
+	width: 50vw;
+}
+
+.text {
+	font-size: 2rem;
+}
+
