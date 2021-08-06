@@ -1,13 +1,35 @@
+html {
+	font-size: 62.5%;
+}
+
 body {
 	background-color: #D1D4D8;
 	margin: 0;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+@font-face {
+  font-family: "W95FA";
+  src: url("/assets/fonts/W95FA.woff");
 }
 
 p {
 	margin-top: 0;
 	padding: 0;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+	margin-bottom: 0.6rem;
+}
+
 .obstruct {
 	float: left;
 	shape-outside: inset();
@@ -15,7 +37,6 @@ p {
 	height: 20vh;
 	left: 100px;
 	visibility: visible;
-/*	border: blue 1px solid;*/
 }
 
 .container {
@@ -25,10 +46,12 @@ p {
 
 .top {
 	top: 0;
+    font-family: "W95FA", Times, serif;
 }
 
 .bottom {
 	bottom: 0;
+    font-family: "W95FA", Times, serif;
 }
 
 .nav-bar {
@@ -37,27 +60,80 @@ p {
 	justify-content: space-between;
 	align-items: center;
 	width: 100vw;
-	height: 10vh;
-	border: 1px black solid;
+	height: 5vh;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+}
+
+.top:hover .nav-menu {
+	visibility: visible;
+}
+
+.nav-menu:hover {
+	visibility: visible;
+}
+
+.nav-menu {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	position: absolute;
+	top: 5vh;
+	font-size: 1.8rem;
+	width: 100vw;
+	background-color: #D1D4D8;
+	border-bottom: 1px black solid;
+	visibility: hidden;
+}
+
+.scene-selector {
+	width: auto;
+	height: auto;
+	margin: 3vh;
+}
+
+.about {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	margin: 3vh;
+}
+
+.headshots {
+	margin-right: 3vh;
+	width: 15%;
+}
+
+.headshots > * {
+	width: 100%;
+}
+
+.about-text {
+	width: 30%;
+	height: auto;
+
 }
 
 .button {
-	margin: 2vh;
-	padding: 2vh;
-	border: 1px black solid;
-}
+	margin: 3vh;
+/*	border: 1px black solid;
+*/}
 
 .main {
 	display: flex;
 	flex-flow: column nowrap;
-	height: 80vh;
-	border: red 1px solid;
+	height: 90vh;
 }
 
-.main-image {
-	margin-right: 5vh;
-	height: auto;
-	width: 50%;
+.splash {
+	height: inherit;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+.splash > * {
+	height: inherit;
 }
 
 .essay-container {
@@ -65,7 +141,6 @@ p {
 	flex-flow: row nowrap;
 	align-items: center;
 	margin: 5vh 0 5vh 0;
-	border: red 1px solid;
 	height: 70vh;
 	overflow-x: auto;
 }
@@ -73,7 +148,6 @@ p {
 .essay-english {
 	column-count: 2;
 	column-width: 50vw;
-	border: green 1px solid;
 	height: 70vh;
 	width: inherit;
 }
@@ -81,7 +155,6 @@ p {
 .essay-english {
 	column-count: 2;
 	column-width: 50vw;
-	border: green 1px solid;
 	height: 70vh;
 	width: inherit;
 }
