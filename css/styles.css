@@ -1,21 +1,53 @@
 body {
 	background-color: #D1D4D8;
 	margin: 0;
-	font-size: 1.5rem;
+	padding: 0;
+	font-size: 1.4rem;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.essay-container *::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.essay-container * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 p {
 	margin-top: 0;
 	padding: 0;
 }
-.obstruct {
+
+img {
+	width: 50vh;
+	height: 50vh;
+	margin: 1vh;
+}
+
+.obstruct-left {
 	float: left;
 	shape-outside: inset();
-	width: 30vh;
-	height: 20vh;
+	width: 50vh;
+	height: 50vh;
 	left: 100px;
 	visibility: visible;
-/*	border: blue 1px solid;*/
+	margin-right: 2vh;
+	margin-bottom: 0.5vh;
+}
+
+.obstruct-right {
+	float: right;
+	shape-outside: inset();
+	width: 50vh;
+	height: 50vh;
+	left: 100px;
+	visibility: visible;
+	margin-left: 2vh;
+	margin-bottom: 0.5vh;
 }
 
 .container {
@@ -25,10 +57,12 @@ p {
 
 .top {
 	top: 0;
+/*	outline-bottom: 1px black solid;*/
 }
 
 .bottom {
 	bottom: 0;
+/*	border-top: 1px black solid;*/
 }
 
 .nav-bar {
@@ -38,20 +72,20 @@ p {
 	align-items: center;
 	width: 100vw;
 	height: 10vh;
-	border: 1px black solid;
 }
 
 .button {
-	margin: 2vh;
+	margin: 3vh;
 	padding: 2vh;
-	border: 1px black solid;
 }
 
 .main {
 	display: flex;
 	flex-flow: column nowrap;
+	justify-content: center;
+	text-align: justify;
+	text-justify: inter-word;
 	height: 80vh;
-	border: red 1px solid;
 }
 
 .main-image {
@@ -63,18 +97,29 @@ p {
 .essay-container {
 	display: flex;
 	flex-flow: row nowrap;
-	align-items: center;
-	margin: 5vh 0 5vh 0;
-	border: red 1px solid;
-	height: 70vh;
-	overflow-x: auto;
+	height: inherit;
+	overflow-x: scroll;
+}
+
+.essay-segment {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: start;
+	height: inherit;
+	width: 100vw;
 }
 
 .essay-english {
-	column-count: 2;
-	column-width: 50vw;
-	border: green 1px solid;
-	height: 70vh;
-	width: inherit;
+	padding: 3vh 5vh 3vh 5vh;
+	overflow-y: auto;
+	height: 74vh;
+	width: 50vw;
+}
+
+.essay-chinese {
+	padding: 3vh 5vh 3vh 5vh;
+	overflow: scroll;
+	height: 74vh;
+	width: 50vw;
 }
 
