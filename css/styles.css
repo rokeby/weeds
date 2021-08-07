@@ -42,6 +42,7 @@ li {
 	width: 5vh;
 	height: 40vh;
 	visibility: visible;
+	border: 1px black solid;
 }
 
 .obstruct-right {
@@ -50,6 +51,7 @@ li {
 	width: 5vh;
 	height: 40vh;
 	visibility: visible;
+	border: 1px black solid;
 }
 
 .container {
@@ -263,7 +265,7 @@ li {
 
 .essay-english {
 	column-count: 2;
-	width: inherit;
+	width: 50%;
 	/*border: 1px red solid;*/
 	margin-right: 2.5vw;
 	overflow: hidden;
@@ -271,7 +273,7 @@ li {
 
 .essay-chinese {
 	column-count: 2;
-	width: inherit;
+	width: 50%;
 	/*border: 1px red solid;*/
 	margin-left: 2.5vw;
 	overflow: hidden;
