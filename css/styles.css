@@ -55,16 +55,19 @@ li {
 .container {
 	display: flex;
 	flex-flow: column nowrap;
+	align-items: center;
 }
 
 .top {
 	top: 0;
     font-family: "W95FA", Times, serif;
+    width: 85vw;
 }
 
 .bottom {
 	bottom: 0;
     font-family: "W95FA", Times, serif;
+    width: 85vw;
 }
 
 .nav-bar {
@@ -72,7 +75,7 @@ li {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
-	width: 100vw;
+	width: inherit;
 	height: 6vh;
 	border-top: 1px black solid;
 	border-bottom: 1px black solid;
@@ -91,18 +94,23 @@ li {
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		position: absolute;
-		top: 6vh;
+		top: 5vh;
 		font-size: 1.8rem;
-		width: 100vw;
+		width: inherit;
 		background-color: #D1D4D8;
 		border-bottom: 1px black solid;
 		visibility: hidden;
+		z-index: 1;
 	}
 
 	.scene-selector {
 		width: auto;
 		height: auto;
 		margin: 3vh;
+	}
+
+	.scenes > * > *:hover {
+		color: #D8FD51;
 	}
 
 	.about {
@@ -147,10 +155,11 @@ li {
 		position: absolute;
 		bottom: 5vh;
 		font-size: 1.8rem;
-		width: 100vw;
+		width: inherit;
 		background-color: #D1D4D8;
 		border-top: 1px black solid;
 		visibility: hidden;
+		z-index: 1;
 	}
 
 	.video {
@@ -235,24 +244,36 @@ li {
 
 .essay-container {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
+	justify-content: center;
 	align-items: center;
 	margin: 5vh 0 5vh 0;
-	height: 70vh;
+	height: inherit;
 	overflow-x: auto;
+	/*border: 1px red solid;*/
+}
+
+.essay-segment {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	height: inherit;
+	margin: 0 10vw 0 10vw;
 }
 
 .essay-english {
 	column-count: 2;
-	column-width: 50vw;
-	height: 70vh;
 	width: inherit;
+	/*border: 1px red solid;*/
+	margin-right: 2.5vw;
+	overflow: hidden;
 }
 
-.essay-english {
+.essay-chinese {
 	column-count: 2;
-	column-width: 50vw;
-	height: 70vh;
 	width: inherit;
+	/*border: 1px red solid;*/
+	margin-left: 2.5vw;
+	overflow: hidden;
 }
 
