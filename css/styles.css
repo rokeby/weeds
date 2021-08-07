@@ -39,18 +39,22 @@ li {
 .obstruct-left {
 	float: left;
 	shape-outside: inset();
-	width: 5vh;
-	height: 40vh;
+	width: 15vh;
+	height: 20vh;
+	margin: 0.5vh;
 	visibility: visible;
-	border: 1px black solid;
 }
 
 .obstruct-right {
 	float: right;
 	shape-outside: inset();
-	width: 5vh;
-	height: 40vh;
+	width: 15vh;
+	height: 20vh;
+	margin: 0.5vh;
 	visibility: visible;
+}
+
+.obstruct-left:hover, .obstruct-right:hover {
 	border: 1px black solid;
 }
 
@@ -179,7 +183,7 @@ li {
 	flex-flow: column nowrap;
 	height: 88vh;
     font-family: "Roboto", Times, serif;
-
+	hyphens: auto;
 }
 
 .arrows {
@@ -189,6 +193,7 @@ li {
 	justify-content: space-between;
 	width: 100vw;
 	height: 88vh;
+	pointer-events: none;
 }
 
 .left-arrow {
