@@ -68,12 +68,14 @@ li {
 	top: 0;
     font-family: "W95FA", Times, serif;
     width: 85vw;
+	border-bottom: 1px black solid;
 }
 
 .bottom {
 	bottom: 0;
     font-family: "W95FA", Times, serif;
     width: 85vw;
+	border-top: 1px black solid;
 }
 
 .nav-bar {
@@ -83,8 +85,6 @@ li {
 	align-items: center;
 	width: inherit;
 	height: 6vh;
-	border-top: 1px black solid;
-	border-bottom: 1px black solid;
 }
 
 	.top:hover .nav-menu {
@@ -241,12 +241,9 @@ li {
 
 .intro-text {
 	text-overflow: ellipsis;
-	height: inherit;	
+	height: 82vh;	
 	overflow: hidden;
-}
-
-.intro-text * {
-	margin: 6vh 3vh 0vh 3vh;	
+	margin: 3vh 10vh 3vh 0;
 }
 
 .essay-container {
@@ -269,7 +266,7 @@ li {
 }
 
 .essay-english {
-	column-count: 2;
+	/*column-count: 2;*/
 	width: 50%;
 	/*border: 1px red solid;*/
 	margin-right: 2.5vw;
@@ -277,10 +274,12 @@ li {
 }
 
 .essay-chinese {
-	column-count: 2;
+	/*column-count: 2;*/
 	width: 50%;
 	/*border: 1px red solid;*/
 	margin-left: 2.5vw;
 	overflow: hidden;
 }
+
+
 
