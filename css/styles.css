@@ -180,10 +180,20 @@ li {
 
 .main {
 	display: flex;
-	flex-flow: column nowrap;
-	height: 88vh;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	height: calc(88vh - 2px);
+	width: 100vw;
+	overflow: scroll;
     font-family: "Roboto", Times, serif;
 	hyphens: auto;
+}
+
+.scroll-container {
+	height: inherit;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;	
 }
 
 .arrows {
@@ -221,14 +231,17 @@ li {
 
 .splash {
 	height: inherit;
+	width: 100vw;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	pointer-events: none;
 }
 
-.splash > * {
-	width: 70vw;
+.splash > img {
+	height: 80%;
+	max-width: 70vw;
 	z-index: -99;
 }
 
@@ -252,7 +265,7 @@ li {
 	justify-content: center;
 	align-items: center;
 	margin: 5vh 0 5vh 0;
-	height: inherit;
+	width: 100vw;
 	overflow-x: auto;
 	/*border: 1px red solid;*/
 }
@@ -261,14 +274,12 @@ li {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
-	height: inherit;
 	margin: 0 10vw 0 10vw;
 }
 
 .essay-english {
 	/*column-count: 2;*/
 	width: 50%;
-	/*border: 1px red solid;*/
 	margin-right: 2.5vw;
 	overflow: hidden;
 }
@@ -276,7 +287,6 @@ li {
 .essay-chinese {
 	/*column-count: 2;*/
 	width: 50%;
-	/*border: 1px red solid;*/
 	margin-left: 2.5vw;
 	overflow: hidden;
 }

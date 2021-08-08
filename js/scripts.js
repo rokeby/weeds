@@ -1,17 +1,13 @@
 $(document).ready(function(){
-        // $.getJSON("/js/essay-en.json", function(data){
-        //     console.log(data.en);
-        // }).fail(function(e){
-        // 	console.log(e);
-        //     console.log("An error has occurred.");
-        // });
-        var text = essayObj.en
 
-        // console.log(text)
+    var text = essayObj.en
+    console.log(text)
 
-        for(let i = 0; i < Object.keys(text).length; i++) {
-			$(".intro-text").prepend("<p>" + text[i] + "<p>")
-        }
-
-    });
+    for(let i = 1; i < Object.keys(text).length; i++) {
+    	for (let j = 1; j < text[i].length; j++) { 
+			$(".intro-text").prepend("<p>" + text[i][j] + "<p>")
+		}
+    }
+    
+});
 
