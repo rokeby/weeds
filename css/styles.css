@@ -1,5 +1,6 @@
 html {
 	font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -8,6 +9,8 @@ body {
 	font-size: 1.8rem;
 	/*text-align: justify;*/
 	/*text-justify: inter-word;*/
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 @font-face {
@@ -34,6 +37,11 @@ ul {
 
 li {
 	margin-bottom: 0.6rem;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 .obstruct-left {
@@ -187,6 +195,12 @@ li {
 	overflow: scroll;
     font-family: "Roboto", Times, serif;
 	hyphens: auto;
+    overflow-x: hidden;
+}
+
+.main * {
+    scroll-behavior: smooth;
+
 }
 
 .scroll-container {
@@ -267,6 +281,10 @@ li {
 	margin: 5vh 0 5vh 0;
 	width: 100vw;
 	overflow-x: auto;
+	height: 78vh;
+}
+
+.essay-container, .essay-container * {
 	/*border: 1px red solid;*/
 }
 
@@ -275,13 +293,15 @@ li {
 	flex-flow: row nowrap;
 	justify-content: center;
 	margin: 0 10vw 0 10vw;
+	height: inherit;
+	width: 80vw;
 }
 
 .essay-english {
-	/*column-count: 2;*/
 	width: 50%;
 	margin-right: 2.5vw;
 	overflow: hidden;
+	/*border: 1px red solid;*/
 }
 
 .essay-chinese {
@@ -289,6 +309,7 @@ li {
 	width: 50%;
 	margin-left: 2.5vw;
 	overflow: hidden;
+/*	border: 1px green solid;*/
 }
 
 
