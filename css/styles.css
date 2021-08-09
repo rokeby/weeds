@@ -114,6 +114,7 @@ a {
 		background-color: #D1D4D8;
 		border-bottom: 1px black solid;
 		visibility: hidden;
+		transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 		z-index: 1;
 	}
 
@@ -144,7 +145,7 @@ a {
 	}
 
 	.about-text {
-		width: 30%;
+		width: 50%;
 		height: auto;
 
 	}
@@ -195,10 +196,10 @@ a {
 	overflow: scroll;
     font-family: "Roboto", Times, serif;
 	hyphens: auto;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 
-.main * {
+html * {
     scroll-behavior: smooth;
 
 }
@@ -208,6 +209,7 @@ a {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;	
+    scroll-behavior: smooth;
 }
 
 .arrows {
@@ -227,6 +229,7 @@ a {
 	align-items: center;
 	height: inherit;
 	width: 5vw;
+	pointer-events: auto;
 }
 
 .right-arrow {
@@ -236,6 +239,7 @@ a {
 	align-items: center;
 	height: inherit;
 	width: 5vw;
+	pointer-events: auto;
 }
 
 .arrows img {
@@ -268,9 +272,9 @@ a {
 
 .intro-text {
 	text-overflow: ellipsis;
-	height: 82vh;	
+	height: 78vh;	
 	overflow: hidden;
-	margin: 3vh 10vh 3vh 0;
+	margin: 5vh 10vh 5vh 0;
 }
 
 .essay-container {
@@ -278,10 +282,10 @@ a {
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
-	margin: 5vh 0 5vh 0;
+	margin: 0vh 0 0vh 0;
 	width: 100vw;
-	overflow-x: auto;
-	height: 78vh;
+	overflow-x: hidden;
+	height: inherit;
 }
 
 .essay-container, .essay-container * {
@@ -299,15 +303,17 @@ a {
 
 .essay-english {
 	width: 50%;
-	margin-right: 2.5vw;
 	overflow: hidden;
+	height: inherit;
+	margin: 5vh 2.5vw 5vh 0;
 	/*border: 1px red solid;*/
 }
 
 .essay-chinese {
 	/*column-count: 2;*/
+	height: inherit;
 	width: 50%;
-	margin-left: 2.5vw;
+	margin: 5vh 0 5vh 2.5vw;
 	overflow: hidden;
 /*	border: 1px green solid;*/
 }
