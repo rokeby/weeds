@@ -1,9 +1,8 @@
 $(document).ready(function(){
 
-    var textEN = essayObjEN.en
-    var textCN = essayObjCN.cn
-    var $splash = $(".splash")   
-    var $essayMod = $(["<div class='essay-container'>",
+    var essay = essayObj
+    var $splash = $(".splash")
+    var $essayModule = $(["<div class='essay-container'>",
     						"<div class='essay-segment'>",
     							"<div class='essay-english' lang='en'>",
 								"</div>",
@@ -13,55 +12,46 @@ $(document).ready(function(){
     					"</div>"].join("\n")
 					)
 
-console.log(textEN[1].length)
+    var section = 0
 
-	$(".scenes, .right-arrow").click( function() {
-		$(".scroll-container").html($essayMod)
+	$(".right-arrow").click( function() {
 
-		for(let i = 0; i < textEN[1].length; i++) {
-			$(".essay-english").append("<p>" + textEN[1][i] + "</p>").fadeIn()
-			$(".essay-chinese").append("<p>" + textCN[1][i] + "</p>").fadeIn()
+		$(".scroll-container").html($essayModule)
+		section += 1
+		if(section >= (Object.keys(essay).length - 1)) {
+			section = 0
 		}
+		sectionUpdate()
+		console.log(section)
 	})
 
 	$(".left-arrow").click( function() {
-		$(".scroll-container").html($splash)
+
+		$(".scroll-container").html($essayModule)
+		section -= 1
+		if (section < 0) {
+			section = 8
+		}
+		sectionUpdate()
+		console.log(section)
 	})
 
-    // console.log(essayMod)
+	function sectionUpdate () {
 
+		var $sectionEN = $("<p>").append("<p>" + essay[section].en.title + "</p>") 
+		var $sectionCN = $("<p>").append("<p>" + essay[section].cn.title + "</p>")
 
-    // $( essayMod ).appendTo(".scroll-container")
+		for(let i = 0; i < essay[section].en.text.length; i++) {
 
+			$sectionEN.append("<p>" + essay[section].en.text[i] + "</p>")
+			$sectionCN.append("<p>" + essay[section].cn.text[i] + "</p>")
+		
+		}
 
-//     for(let i = 0; i < Object.keys(textEN).length; i++) {
+		$(".essay-english").html($sectionEN)
+		$(".essay-chinese").html($sectionCN)
 
-//     	$( essayMod ).clone().appendTo(".scroll-container").attr("id", i+1)
-
-//     	for (let j = 0; j < $(".essay-english").length; j++) {
-
-// 	    	for (let k = 0; k < textEN[i+1].length; k++) { 
-
-// 	    		var essayPara = textEN[i+1][k]
-// 				$("#" + (i+1) + " .essay-english" ).append("<p>" + essayPara + "</p>")
-// 			}
-//     	}
-//     }
-
-//     for(let i = 0; i < Object.keys(textCN).length; i++) {
-
-//     	// $( essayMod ).clone().appendTo(".scroll-container")
-
-//     	for (let j = 0; j < $(".essay-chinese").length; j++) {
-
-// 	    	for (let k = 0; k < textCN[i+1].length; k++) { 
-
-// 	    		var essayPara = textCN[i+1][k]
-// 				$("#" + (i+1) + " .essay-chinese" ).append("<p>" + essayPara + "</p>")
-// 			}
-//     	}
-//     }
-
+	}
 
 });
 
