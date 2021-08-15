@@ -112,18 +112,57 @@ $(document).ready(function(){
 	}
 
 	function addImageListeners() {
+
 		$(".obstruct-left").click( function() {
 			$(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image")
 			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[0] + "'/>")
 			$(".obstruct-right").removeClass("obstruct-large")
+			var object = $(this)
+			var src = $(this).children("img").attr("src")
+			lightboxListener(object, src)
+
 		})
 
 		$(".obstruct-right").click( function() {
 			$(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image")
 			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[1] + "'/>")
 			$(".obstruct-left").removeClass("obstruct-large")
+			var object = $(this)
+			var src = $(this).children("img").attr("src")
+			lightboxListener(object, src)
+
 		})
+
 	}
+
+	function lightboxListener( element, path ) {
+
+		// console.log(path, element)
+		var clicks = element.data('clicks')
+
+		if (clicks) {
+			$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
+		} else if (clicks == false) {
+			$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
+		} else {
+		}
+
+		element.data("clicks", !clicks)
+
+		$(".lightbox").click( function() {
+			$(this).remove()
+	})
+
+// addLightBox()
+}
+
+	// function addLightBox() {
+	// 	$(".obstruct-right").click( function() {
+	// 		console.log("hello")
+	// 		console.log($(this).children("img").attr("src"))
+	// 		$(".scroll-container").append("<img class='lightbox' src='" + $(this).children("img").attr("src") + "'>" )
+	// 	})
+	// }
 
 	// function scrollListener() {
 	//   $('.essay-english, .essay-chinese').off('mousewheel').mousewheel(function(e, delta) {
