@@ -22,15 +22,21 @@ const essayObj = {
 		"en" : {
 
 			"title" : "A Performance of High-tech Architecture",
-			"text" : ["Globally, each day billions of people rely upon the services of the internet and its supporting infrastructures for services ranging from communication to commerce. Alongside website content, ephemeral products such as “cloud” storage systems allow us to store and backup our digital lives whilst remain invisible to users. Yet, is our digital existence really immaterial, as intangible as these names suggest?", "In fact, this vast digital network manifests in a very physical format. A quick online search of “data centres'' provides us with a mirage of technologically marvellous imagery, monstrous buildings in desolate landscapes, consolidated, isolated, optimised. In these buildings exist endless TikTok stories, dusted snapshots of forgotten pasts, and the latest tweets of our political stars.", "The performance of high-tech architecture has already started. Sometimes it puts on visible costume: the mechanical nature, vast scale and cold colour palette of these volumes communicate an architecture that proudly expresses its artificial nature. Huge banks of axial fans, uninsulated finishes and the residual phantom lighting emitted from each server box provide such spaces with an unrecognisable, eerie quality. The set of a sci-fi movie is not a fiction anymore. The theatricality comes to riveting climax through an ultra-HD reality of monumental grey boxes, electrifying coloured interior lighting and a crescendo of humming fans.", "Such architectural amalgamations exist to serve human needs, but remain free from the requirements of bodily occupation. These are spaces of automated activity that need not meet the human requirements of access, lighting and ventilation, rather possessing a post-human pragmatism to suit technological demand. Facebook's Lulea server farm in northern Sweden exemplifies the dismissal of human necessity, instead residing in a locale defined by cool climate and privacy through isolation. In such contexts, a data centre finds comfort, security and can exist almost in entire autonomy.", "Located in desolate landscapes, scattered along borderlines and increasingly located in the sea, the innate transience of data allows its architectural manifestations to conquer territory which people simple cannot. This inhuman advantage often caters to the fundamental needs of our data: space, climate and security. Perhaps the only remaining humanism of such vernacular spaces is that of aestheticism, visual characteristics that can be distilled into digital imagery and humorously relayed to the audience; an actuality manifested in Switch's Las Vegas data centre, freed from the need to provide easing white lighting, this building instead utilises conspicuous red and blue coloured lights to spectacular effect, though purely for marketing purposes.", "Although seeming distant, many of these infrastructures are actually moving closer to us. Thanks to edge computing, a distributional strategy of the internet of things, data processing is increasingly situated closer to the site of its production and consumption - your phone, watch, laptop, car and more. This decentralised paradigm of optimising bandwidth, latency, resiliency, and allows data processing to once again be “offshored” - this time from isolated mega data centres to our urban centres.", "The work-in-progress Qianhai Data Centre is set to inhabit a far more human context in the heart of Shenzhen's Qianhai free development zone. While its presence is desired to act as a “digital lighthouse” for this swelling international tech-hub, the familiar scale of the building’s shell is set to be coated with green terraces and a comforting digital display of traditional Chinese iconography, while in fact hoarding an untold bounty of server racks. Today, not every representation of our coded selves exists in isolated comfort. Yet in certain geographies, such relocations can even evolve into paradoxes."],
+			"text" : ["Globally, each day billions of people rely upon the services of the internet and its supporting infrastructures for services ranging from communication to commerce. Alongside website content, ephemeral products such as “cloud” storage systems allow us to store and backup our digital lives whilst remain invisible to users. Yet, is our digital existence really immaterial, as intangible as these names suggest?", 
+			"In fact, this vast digital network manifests in a very physical format. A quick online search of “data centres'' provides us with a mirage of technologically marvellous imagery, monstrous buildings in desolate landscapes, consolidated, isolated, optimised. In these buildings exist endless TikTok stories, dusted snapshots of forgotten pasts, and the latest tweets of our political stars.", 
+			"The performance of high-tech architecture has already started. Sometimes it puts on visible costume: the mechanical nature, vast scale and cold colour palette of these volumes communicate an architecture that proudly expresses its artificial nature. Huge banks of axial fans, uninsulated finishes and the residual phantom lighting emitted from each server box provide such spaces with an unrecognisable, eerie quality. The set of a sci-fi movie is not a fiction anymore. The theatricality comes to riveting climax through an ultra-HD reality of monumental grey boxes, electrifying coloured interior lighting and a crescendo of humming fans.", "Such architectural amalgamations exist to serve human needs, but remain free from the requirements of bodily occupation. These are spaces of automated activity that need not meet the human requirements of access, lighting and ventilation, rather possessing a post-human pragmatism to suit technological demand. Facebook's Lulea server farm in northern Sweden exemplifies the dismissal of human necessity, instead residing in a locale defined by cool climate and privacy through isolation. In such contexts, a data centre finds comfort, security and can exist almost in entire autonomy.", "Located in desolate landscapes, scattered along borderlines and increasingly located in the sea, the innate transience of data allows its architectural manifestations to conquer territory which people simple cannot. This inhuman advantage often caters to the fundamental needs of our data: space, climate and security. Perhaps the only remaining humanism of such vernacular spaces is that of aestheticism, visual characteristics that can be distilled into digital imagery and humorously relayed to the audience; an actuality manifested in Switch's Las Vegas data centre, freed from the need to provide easing white lighting, this building instead utilises conspicuous red and blue coloured lights to spectacular effect, though purely for marketing purposes.", "Although seeming distant, many of these infrastructures are actually moving closer to us. Thanks to edge computing, a distributional strategy of the internet of things, data processing is increasingly situated closer to the site of its production and consumption - your phone, watch, laptop, car and more. This decentralised paradigm of optimising bandwidth, latency, resiliency, and allows data processing to once again be “offshored” - this time from isolated mega data centres to our urban centres.", "The work-in-progress Qianhai Data Centre is set to inhabit a far more human context in the heart of Shenzhen's Qianhai free development zone. While its presence is desired to act as a “digital lighthouse” for this swelling international tech-hub, the familiar scale of the building’s shell is set to be coated with green terraces and a comforting digital display of traditional Chinese iconography, while in fact hoarding an untold bounty of server racks. Today, not every representation of our coded selves exists in isolated comfort. Yet in certain geographies, such relocations can even evolve into paradoxes."],
 		},
 
 		"cn" : {
 
 			"title" : "一場高科技建築的演出",
-			"text" : ["全球每天有上億人士依靠互聯網和其支援配套作日常聯繫和工作用途。除了網絡內容外，抽象的延伸產物如「雲端」儲存系統均活躍於人們視線以外。但是我們在虛擬世界的足印真的是名副其實的海市蜃樓，無形也不可觸碰嗎？", "實上，龐大的電子網路在現實世界中都有著相應的實體存在。 只要在網上搜尋「數據中心」，科幻影像浩瀚而至，當中不少呈現著宏大的建築物深藏於杳無人煙的荒山野嶺，被隔離、重置、優化。這些建築中儲存著無數的TikTok的動態故事，被遺忘過去的積塵舊照，以及我們政治明星的最新發文。", "一場高科技建築的表演已經開始。有些數據中心甚至極具視覺效果——金屬型設計、連山排海的規模、冷酷的用色等，均毫無懼色地展現著其人工風格。 加上巨型軸流式風扇、非絕緣的完工、伺服器盒間的縫隙滲透出非人性的燈光⋯⋯這些裝置不約而同地散發著一種陌生而怪異的氛圍，使科幻小說的佈景再也不是虛構。當宏偉的灰色盒子、東奔西走的營光色機器人和詭異曖昧的室內照明變成比4K更高清的真實畫面，表演亦漸進高潮。", "這些建築新型的出現是為了滿足我們現代化的需要，但其設計卻不受人類的物理條件所限。為全自動系統而設的內部空間毋須考慮到人類的進出、燈光和通風設定，因此其建築風格都純以實用為標準，以配合技術要求為本。 Facebook在瑞典北部呂勒奧（Lulea）的數據中心便是完全脫離人性需求的建築範本。 該中心位處在與世隔絕、天氣嚴寒的機密地域，在與人類幾乎隔絕的環境下，達到機器對環境合適度和安全性的苛刻要求，以實現全自動運作。", "數據晝夜不停的特性促使它們的建築立於人類難以生存的地域，如荒蕪地段、散落於邊境線，甚至近年不少選擇於海洋中飄浮，以符合數據對空間、氣候和隱私度的基本需求。也許這些建築最具人文意識的設計，就只剩下它們的美學視覺元素，以幽默地提供人們可為之共鳴的電子影像。如美國拉斯維加斯的Switch數據中心縱然撇除了符合人性的白光設計，採取了耐人尋味的紅藍燈光系統，實也不過是為了商業推銷的用途。", "然看似遙不可及，這些基礎建設不少正在移近我們。透過邊緣運算(Edge Computing)的物聯網分佈模式，數據處理程序正逐漸靠近其產生和消費的原點，如你的手提電話、手錶、手提電腦、汽車等。這去中心化的運作能改良網路寬頻、延遲度、恢復力，促使數據處理程序「離岸化」- 由偏僻的大型數據中心搬至城市中心。 ", "正在興建中的深圳前海數據中心將位處於前海自由貿易區的市中心。 它被寄望為深圳的「數據燈塔」，標誌著該城穩步發展的國際科技中心地位。 數據中心採納和傳統高樓相符的體積大小，外牆的部分被綠化，還配上電子螢幕親切地放映著中國傳統文化圖像，和內部囤積的冷酷伺服器機架產生了鮮明對比。 時至今天，我們數據化的存在不再是只存在於遠離人間煙火的恬靜中。只是在某些地區，這搬遷現象甚至可能演變成矛盾。"],
+			"text" : ["全球每天有上億人士依靠互聯網和其支援配套作日常聯繫和工作用途。除了網絡內容外，抽象的延伸產物如「雲端」儲存系統均活躍於人們視線以外。但是我們在虛擬世界的足印真的是名副其實的海市蜃樓，無形也不可觸碰嗎？", 
+			"實上，龐大的電子網路在現實世界中都有著相應的實體存在。 只要在網上搜尋「數據中心」，科幻影像浩瀚而至，當中不少呈現著宏大的建築物深藏於杳無人煙的荒山野嶺，被隔離、重置、優化。這些建築中儲存著無數的TikTok的動態故事，被遺忘過去的積塵舊照，以及我們政治明星的最新發文。", 
+			"一場高科技建築的表演已經開始。有些數據中心甚至極具視覺效果——金屬型設計、連山排海的規模、冷酷的用色等，均毫無懼色地展現著其人工風格。 加上巨型軸流式風扇、非絕緣的完工、伺服器盒間的縫隙滲透出非人性的燈光⋯⋯這些裝置不約而同地散發著一種陌生而怪異的氛圍，使科幻小說的佈景再也不是虛構。當宏偉的灰色盒子、東奔西走的營光色機器人和詭異曖昧的室內照明變成比4K更高清的真實畫面，表演亦漸進高潮。", "這些建築新型的出現是為了滿足我們現代化的需要，但其設計卻不受人類的物理條件所限。為全自動系統而設的內部空間毋須考慮到人類的進出、燈光和通風設定，因此其建築風格都純以實用為標準，以配合技術要求為本。 Facebook在瑞典北部呂勒奧（Lulea）的數據中心便是完全脫離人性需求的建築範本。 該中心位處在與世隔絕、天氣嚴寒的機密地域，在與人類幾乎隔絕的環境下，達到機器對環境合適度和安全性的苛刻要求，以實現全自動運作。", "數據晝夜不停的特性促使它們的建築立於人類難以生存的地域，如荒蕪地段、散落於邊境線，甚至近年不少選擇於海洋中飄浮，以符合數據對空間、氣候和隱私度的基本需求。也許這些建築最具人文意識的設計，就只剩下它們的美學視覺元素，以幽默地提供人們可為之共鳴的電子影像。如美國拉斯維加斯的Switch數據中心縱然撇除了符合人性的白光設計，採取了耐人尋味的紅藍燈光系統，實也不過是為了商業推銷的用途。", "然看似遙不可及，這些基礎建設不少正在移近我們。透過邊緣運算(Edge Computing)的物聯網分佈模式，數據處理程序正逐漸靠近其產生和消費的原點，如你的手提電話、手錶、手提電腦、汽車等。這去中心化的運作能改良網路寬頻、延遲度、恢復力，促使數據處理程序「離岸化」- 由偏僻的大型數據中心搬至城市中心。 ", "正在興建中的深圳前海數據中心將位處於前海自由貿易區的市中心。 它被寄望為深圳的「數據燈塔」，標誌著該城穩步發展的國際科技中心地位。 數據中心採納和傳統高樓相符的體積大小，外牆的部分被綠化，還配上電子螢幕親切地放映著中國傳統文化圖像，和內部囤積的冷酷伺服器機架產生了鮮明對比。 時至今天，我們數據化的存在不再是只存在於遠離人間煙火的恬靜中。只是在某些地區，這搬遷現象甚至可能演變成矛盾。"],
 
 		},
+
+		"img" : ["assets/img/1/Facebook.jpg", "assets/img/1/OC11.jpg"],
 
 	},
 
@@ -49,6 +55,8 @@ const essayObj = {
 
 		},
 
+		"img" : ["assets/img/2/Equinix.jpg", "assets/img/2/HongKongDataCentreMap.jpg"],
+
 	},
 
 	"3" : {
@@ -65,6 +73,9 @@ const essayObj = {
 			"text" : ["隨著數據處理工作日漸逼近人類社群，高密度城市環境繼續限制著人類和非人類空間相長的現象。過去十年間，我們慢慢觀察到數據中心由荒原、邊境、郊外轉移至城市中心。今天，我們逐漸發現家的旁邊豎立著怪異、不知名的結構；我們開始辨識到24小時發出機械嗡嗡聲的建築類型。", "當更多的城市空間被分配給電子基建、21世紀的「他物」，我們自然會疑問：熟悉的家園不知不覺被轉換成人類/後人類都市時，這到底意味著甚麼？我們該如何衡量這些新一代建築物騙過城中人的掩眼法，以設法遮蓋城市從人類化過渡至數據化的景觀轉換？", "龐大卻無形的電子網路 ── 其實體基建必須依賴著特定的空間規劃模式。 由個別的高樓設計發展至整套無形的網路策劃， 當代基建專案通通需要建築師具敏銳的政治意識，以明白空間設計如何引導我們的生活和思考模式。 當我們在說城市設計和科研進程時，已不能不考慮到空間背後的多方角力。", " 另一邊廂，要考慮的還有生態議題。香港在亞洲的主要競爭對手新加坡擁有著相當數量的數據中心。只是無間斷網路連接的代價是24/7全天候為數據中心供電，所帶來的巨大環境影響在熱帶氣候的地段尤其顯著。就此，新加坡持份者須另闢蹊徑以減低數據的碳足跡，包括把數據中心定位於南中國海，並加強利用可再生能源，不管此意味著透過4,500公里的輸電網路向澳洲借用大陽能資源。在數據的熱潮中，環保責任被添上未來主義的影子，而邊境亦變得模糊不清。易容的工廠大廈，飄流的數據中心⋯⋯基礎設施建築正重新定義物理邊界和主權限制。", "2009年，全球數據中心的能源耗量高達200kWh，相等於頭25個國家能源需求的總和。把這些建築定位於荒涼地帶或是深海實是有一定的原因。對比之下，城市環境為人類生活而設，根本未能符合數據的建築需求。就如香港透過低效措拖，改造本已效率遜色的建築物，縱然巨型網絡的風扇、冷源水管、高架地板和遮蔽的窗户容許耗電量極高的數據中心能繼續執行邊緣運算，然而提到環保責任實是言之過早。", "資源分配從來是歷史難題。世紀以來，土地權益與規劃的不公與種族、性別和階級的不平等交疊惡化，今天更延伸至人類和非人類間。這些難題不只在我們研究所集中的亞洲繁華經濟體中出現──2019年，荷蘭的兩座城市阿姆斯特丹和哈勒默梅爾市均宣佈都市範圍內不再允許興建新的數據中心，原因是以年均增長10-15%而言，這行業對能量和空間需求已「不受控制」。在這一年的停頓中，當地政府推出有關土地規劃、能源上限和年度工程限制的新法案。然而，這些城市在同時間需面對日漸增加的市場壓力，以釋放被抑壓的經濟潛力。爭議尚未有定案，但是在電子欲望、金錢利益和環保關注中所存在的矛盾是毋庸置疑的。"],
 
 		},
+
+		"img" : ["assets/img/3/LeganCentreKowloonBay2019.jpg", "assets/img/3/LeganCentreHongKong.jpg"],
+
 	},
 
 	"4" : {
@@ -81,6 +92,8 @@ const essayObj = {
 			"text" : ["作為物聯網的重要基石，邊緣運算(edge computing) 散發著空間顛覆的意味。從技術上而言，它被理解為一種分配策略，作用是把數據處理程序儘量移近用者，亦則所謂的「邊緣」。邊緣運算一直被刻意定位為空間決策，而非單單的一種科技。其去中心化的模式允許數據處理程序遠離的孤立的大型數據中心，暗示著一種跨烏托邦的價值觀。它把自發性(spontaneity)回歸給用者，重新校準虛擬事件和現實世界的時間，從而重拾生活的真實性。", "思考即將到臨的數據時代不只是一種當代賽博龐克(cyperpunk)的幻想，思辨未來主義(speculative futurism)的投射或是對世界末日的反譏排斥(abjection)。當虛擬空間邊緣幾可級地延伸，新世界亦將變成一個超越平面規則的無限多邊空間。我們身為互聯網用家，無一不在促成人類在物理空間佔據上的流失，亦在挑戰著真實和虛擬世界的直綫關係。藝術家Hito Steyerl曾提出有關自由落體(free fall) 的嶄新理論，認為在這個強調多元性(multiplicity)和突破既定觀點的時代，革新也許就是在一般垂直和水平視角中靈活地重新定位。", "這讓我們想起哲學家Jacques Derrida的解構主義(deconstructivism)：自由雙向的思想能衝破傳統架構，釋放一個多向的範本，以取代如零和遊戲(zero-sum game)般非黑則白的意識形態；在曖昧不明中成就互補、以個體的姿態亦能左右宏觀局面。遊戲(play)的意義正正在於鼓動著先鋒預演另類的社會意識形態。", "數據中心的湧現注定改寫城市規劃的歷史、還有我們與幾何學的關係。當我們逐步開始思索這一切可導致的後果時，同時亦需注意避免墜入倒向式的譴責思維，一面倒把科技發展妖魔化。", "在八十年代，政治理論家Benedict Anderson 把國家的概念從地理邊界的必然關係中釋放出來，宣告所謂的國籍意識是在印刷資本主義 (print-capitalism)中誕生的文化產物。根據他的理論，地區語言的統一有助主權性的聯想。若是如此，也許今天是時候去思考新的電腦語言在衍生怎麼樣的想像的共同體(imagined communities)。這或有助在英籍藝術家和作家James Bridle形容當下的「黑暗」時代下迎來曙光，因他筆下的「黑暗」並非如字面上的意思，也非指知識上的漏洞，卻是指向蒙蔽我們反思當前局勢和作出相對回應的不透明性。", "世界正變得更緊密，位原和原子(bits and atoms)的傳播速度比以往任何時候都快。即使在後疫情時代，無可避免的是我們將依賴電子營幕、繼續把我們的生活上載至虛擬領域。諷刺的是在真實世界中，數據卻在蠶食我們的物理空間。當談到城市規劃，我們需要考慮重新定義優先次序，分辨是個體還是數據、人類或非人類的需求。", "訂立新設計和規劃參考指引的需要顯而易見，並須考慮到數位行為在現實空間上的呈現，以更合適地回應增長中的後人類活動。在資本角力下，我們實不需要在稱之為家的地方再樹立競爭對手，也也不會認為數據比我們值得更多的空間。問題是，真的需要在每一區都要建立數據中心嗎？我們想像的後疫情社區中，又是否需要把數據處理加進15分鐘內必須能被滿足的基本需要？到底我們的城市空間在為何人、何物服務？"],
 
 		},
+
+		"img" : ["assets/img/4/ChinaMobile.jpg", "assets/img/4/InfinitePolygon.jpg"],
 
 	},
 
@@ -99,6 +112,8 @@ const essayObj = {
 
 		},
 
+		"img" : ["assets/img/5/LeganCentreTransformation.jpg", "assets/img/5/ObsoleteSpaceTsuenWan2019.jpg"],
+
 	},
 
 	"6" : {
@@ -115,6 +130,8 @@ const essayObj = {
 			"text" : ["「若然今天雨果要給一場Ted演講，」── 美國耶魯大學建築系教授Keller Easterling在著作 《行為便是形式》(The Action is the Form)中說到 ── 「他會把屬於他二十世紀的哥特式復古主義宏大堂皇的建築模型帶到臺上，以闡釋空間在當代政治的角色。 雨果本人，像無數Ted演講的主持人般，將會帶上隨身的麥克風，穿上一雙樂福鞋，親自說服你── 『空間便是最高權力的秘密武器。』」", "Easterling對數據中心的戲法該毫不陌生。當二十一世紀的社會形態穿越實體經濟而延伸至電子資訊和人工智慧的虛擬國度，她指出建築學亦從單一實體建築設計延伸至基建科技的發展。 當代生活依賴的各種網絡，包括手機微波、國際海運和互聯網等，均需強大的基建支援。", "從數據中心不斷的演變中可看出，基礎建築正蓬勃轉型。強調標準化以達至最低成本的資本主義模式促使全新建築原型的湧現，透過相輔相成、相加相減等手法，把住宅、休憩、文化、商業、政府等用地重新譜寫。這些前所未有的空間產物為我們建構新的城市景觀。 對於Easterling而言，正正是此等不拘一格的城市奇觀，釋放出建築的表演性（performativity）。", "實虛相交的社交模式、百花齊放的意識形態，都在呼應著當代社會精神的多樣性（multiplicity），卻與真實性（authenticity）有著本質上的衝突，引發出後真相現象（post-truth）。 眼花繚亂的媒體資訊、虛實失度的泛濫影像，讓我們對於「信任」的定義一再改寫。 變幻不定的環境讓當代生活變得更富戲劇性，然而怎樣才能成就一場出色的表演呢？ ", "戲劇對於柏拉圖而言是藝術萬惡之首，因他認為 「演出」此行為本來就是有違真性情。而美國哈佛大學劇劇、舞蹈及媒體系教授和藝術家David Levine在2013年的專訪中則提到，要在表演中引伸出社會意義，必須要讓觀眾感到 「有些事情可能真的在發生」，則表演亦不再被其娛樂性所局限。 Levine認為即興演出有助達至以上境界，當中演員即使脫離了劇本的故事線，也能繼續融入角色中。 故此，不少行為藝術家均把他們的演出滲進於日常生活裡，以拆下華麗的舞臺，練習「即興」。只是說到對日常生活的直接影響，又有什麼媒介比得起建築？", "若然我們把Easterling和Levine的理論相提並論，是否暗示著建築是最強大的表演形式，一種能真正介入現實的媒介？若然屬實，考慮到難以定斷的真相本質，在城市建築的生存彷如在真相的邊緣遊走，人們又該如何自處？", "公元前五世紀，柏拉圖在其著作《理想國》（Republic） 中提出這世界存在不變的真相，亦即是我們所認知的「理念」（ideas）。 理念是無形的，而由理念所延伸出來，在世界中我們能觸碰的物質存在 （materials），便是對真相的第一層模仿。 由於藝術品都是取自物質的靈感，所以是進一步的遠離真相，則複製品的複製品 （copy of the copy）。", "二零二零年及以後，我們目睹大數據與電子演算（algorithm） 進一步支配當代人的生活方式。我們的真實生活甚至可取決於虛擬世界的經歷，人與人之間不同的關係──無論是專業上、情感上、階層間──在不同程度下都受到網上互動的影響。 網路一再實體化、真實經歷卻又越趨虛幻⋯⋯ 柏拉圖對「真相」，「形式」和 「仿製」的概念分析受到空前挑戰。 ", "那麼我們大膽設想：要是柏拉圖擁有一個Instagram賬戶？ 他也許會在即時動態發布最新理論：圖像篡奪真相。 有趣的是，柏拉圖並沒有對本世紀盛行的電子影像有著任何反感，其非物質性甚至喚起了一種甜蜜的懷舊氣息，讓他回憶起二千年前他所珍視的「真相」的虛無感。 他會在上載的照片放上一個#零修圖的標籤（當然柏拉圖鄙視濾鏡）。 在他的首頁，那3x3的頁面設定就如一種基礎建設，隨著全球不同型號的手機液晶屏幕尺寸而變得千形萬狀，形成一場場極具流動性的表演，而他的發文估計都是壯觀的建築特寫。 咦？ 怎麼忽然冒出了一張平平無奇的城市野草照⋯⋯"],
 
 		},
+
+		"img" : ["assets/img/6/Emptyserverracks.jpg", "assets/img/6/The3x3Grid.jpg"],
 
 	},
 
@@ -133,6 +150,8 @@ const essayObj = {
 
 		},
 
+		"img" : ["assets/img/7/HumanPerseverance.jpg", "assets/img/7/MEGAPlus.jpg"],
+
 	},
 
 	"8" : {
@@ -149,6 +168,8 @@ const essayObj = {
 			"text" : ["未來——當城市的形態進一步發展至真正的後人類設計，人類不拘一格的表演性也許能成為保留人性化城市的理由，為人文留下實體見證。對照野草的游擊成功，單純地將人類行為編碼成二進位（binary）和方便程式編寫的運算公式實無法反映人性。在前文所提及位處深圳的前海數據中心，那數位基礎設施的隱秘露臺上設有的綠化裝飾中，那些植物雖則串謀演出一幅人工風景，卻也不是在傲然盛開嗎？", "基建科技的進程，讓空間的物態演化成活躍的動態，注定威脅人類的實體生活環境。考慮到現今數據中心的篷勃發展將引領著未來城市設計路向， 我們需逼切透過科技發展、空間規劃和藝術的角度，深刻反思人類世的多重影響。", "哲學家許煜的「行星思維」(planetary thinking) 提倡「以新的方法和其他生命體共生」。即使在科技力量前，結合自然的反樸歸真可是富有前瞻性的突破，而不只是單一的倒退。面臨著海量的電子消耗，我們須把日常活得更像表演，並以無法程式化的詩意，喚醒集體想像。當我們的實體和社交環境漸漸被電子基建瓜分時，是時候重拾人性複雜的奧妙，重新考慮共生的意義，融合設計於虛實相間、真假難分的現實。", " 一日千里的城市學進程中，我們將被遺棄，還是邁向自由解放？也許一天，城市不再炊煙，只餘蔓草。"],
 
 		},
+
+		"img" : ["assets/img/8/DataCentreSection.jpg", "assets/img/8/NTT.jpg"],
 
 	},
 

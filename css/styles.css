@@ -44,28 +44,6 @@ a {
 	color: inherit;
 }
 
-.obstruct-left {
-	float: left;
-	shape-outside: inset();
-	width: 15vh;
-	height: 20vh;
-	margin: 0.5vh;
-	visibility: visible;
-}
-
-.obstruct-right {
-	float: right;
-	shape-outside: inset();
-	width: 15vh;
-	height: 20vh;
-	margin: 0.5vh;
-	visibility: visible;
-}
-
-.obstruct-left:hover, .obstruct-right:hover {
-	border: 1px black solid;
-}
-
 .container {
 	display: flex;
 	flex-flow: column nowrap;
@@ -284,7 +262,7 @@ html * {
 	align-items: center;
 	margin: 0vh 0 0vh 0;
 	width: 100vw;
-	overflow-x: hidden;
+	overflow: hidden;
 	height: inherit;
 }
 
@@ -302,21 +280,62 @@ html * {
 }
 
 .essay-english {
+	/*column-count: 2;*/
 	width: 50%;
-	overflow: hidden;
-	height: inherit;
+	overflow-y: auto;
+	height: auto;
 	margin: 5vh 2.5vw 5vh 0;
 	/*border: 1px red solid;*/
 }
 
 .essay-chinese {
-	/*column-count: 2;*/
-	height: inherit;
+/*	column-count: 2;*/
+	height: auto;
 	width: 50%;
 	margin: 5vh 0 5vh 2.5vw;
-	overflow: hidden;
+	overflow-y: auto;
 /*	border: 1px green solid;*/
 }
 
+.obstruct-left {
+	float: left;
+	shape-outside: inset();
+	width: 30%;
+	height: 20vh;
+	margin: 0.5vh;
+	visibility: visible;
+	border: 1px grey solid;
+	transition: 2s;	
+}
+
+.obstruct-right {
+	float: right;
+	shape-outside: inset();
+	width: 30%;
+	height: 20vh;
+	margin: 0.5vh;
+	visibility: visible;
+	border: 1px grey solid;
+	transition: 2s;	
+}
+
+/*.obstruct-left, .obstruct-right:hover {
+	border: 1px black solid;
+	width: 60%;
+	height: 40vh;
+	transition: 1s;
+}*/
+
+.obstruct-large {
+	border: 1px black solid;
+	width: 60%;
+	height: 40vh;
+	transition: 2s;	
+}
+
+.image img {
+	height: inherit;
+	width: 100%;
+}
 
 
