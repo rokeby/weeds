@@ -60,13 +60,17 @@ $(document).ready(function(){
 
 		// turn text into array in order to randomly insert image spans.
 
-		var $obstruct = "<span class='obstruct-left'></span>"
+		var $obstruct = ["<span class='obstruct-left'></span>", "<span class='obstruct-right'></span>"]
 		var $target = [$(".essay-english p"), $(".essay-chinese p")]
 
 		for (let i = 0; i < $target.length; i++) {
 
 			const myArr = $target[i][0].outerHTML.split(" ")
-			myArr.splice((Math.floor(Math.random() * myArr.length/2)), 0, $obstruct)
+			myArr.splice((Math.floor(Math.random() * myArr.length/2)), 0, $obstruct[1])
+			myArr.splice((Math.floor(Math.random() * myArr.length/2)), 0, $obstruct[0])
+			myArr.splice((Math.floor(Math.random() * myArr.length/2)), 0, $obstruct[1])
+			myArr.splice((Math.floor(Math.random() * myArr.length/2)), 0, $obstruct[0])
+
 			newText = myArr.join(" ")
 			$target[i].html(newText)
 			// console.log($target[i][0])
@@ -83,7 +87,7 @@ $(document).ready(function(){
 		})
 
 		$(".obstruct-right").click( function() {
-			$(this).addClass("obstruct-large image").append("<img src='" + essay[section].img[0] + "'/>")
+			$(this).addClass("obstruct-large image").append("<img src='" + essay[section].img[1] + "'/>")
 			$(".obstruct-left").removeClass("obstruct-large")
 		})
 	}
