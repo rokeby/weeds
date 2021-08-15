@@ -304,7 +304,7 @@ html * {
 	height: 20vh;
 	margin: 0.5vh;
 	visibility: visible;
-	border: 1px grey solid;
+	/*border: 1px grey solid;*/
 	transition: 2s;	
 }
 
@@ -315,7 +315,7 @@ html * {
 	height: 20vh;
 	margin: 0.5vh;
 	visibility: visible;
-	border: 1px grey solid;
+	/*border: 1px grey solid;*/
 	transition: 2s;	
 }
 
@@ -327,7 +327,7 @@ html * {
 }*/
 
 .obstruct-large {
-	border: 1px black solid;
+	/*border: 1px black solid;*/
 	width: 60%;
 	height: 40vh;
 	transition: 2s;	
