@@ -173,7 +173,6 @@ a {
 	width: 100vw;
 	overflow: scroll;
     font-family: "Roboto", Times, serif;
-	hyphens: auto;
     /*overflow-x: hidden;*/
 }
 
@@ -250,7 +249,7 @@ html * {
 
 .intro-text {
 	text-overflow: ellipsis;
-	height: 78vh;	
+	/*height: 78vh;	*/
 	overflow: hidden;
 	margin: 5vh 10vh 5vh 0;
 }
@@ -284,27 +283,40 @@ html * {
 	width: 50%;
 	overflow-y: auto;
 	height: auto;
-	margin: 5vh 2.5vw 5vh 0;
+	margin: 0vh 2.5vw 0vh 0;
+	padding: 5vh 0 5vh 0;
 	/*border: 1px red solid;*/
+}
+
+.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar {
+  display: none;
+}
+
+.essay-chinese, .essay-english {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .essay-chinese {
 /*	column-count: 2;*/
 	height: auto;
 	width: 50%;
-	margin: 5vh 0 5vh 2.5vw;
+	margin: 0vh 0 0vh 2.5vw;
+	padding: 5vh 0 5vh 0;
 	overflow-y: auto;
 /*	border: 1px green solid;*/
 }
+
+
 
 .obstruct-left {
 	float: left;
 	shape-outside: inset();
 	width: 30%;
 	height: 20vh;
-	margin: 0.5vh;
+	margin: 2vh;
 	visibility: visible;
-	/*border: 1px grey solid;*/
+	border: 1px grey solid;
 	transition: 2s;	
 }
 
@@ -313,10 +325,10 @@ html * {
 	shape-outside: inset();
 	width: 30%;
 	height: 20vh;
-	margin: 0.5vh;
+	margin: 2vh;
 	visibility: visible;
-	/*border: 1px grey solid;*/
-	transition: 2s;	
+	border: 1px grey solid;
+	transition: 2s;
 }
 
 /*.obstruct-left, .obstruct-right:hover {
@@ -328,8 +340,8 @@ html * {
 
 .obstruct-large {
 	/*border: 1px black solid;*/
-	width: 60%;
-	height: 40vh;
+	width: 70%;
+	height: auto;
 	transition: 2s;	
 }
 
