@@ -35,17 +35,18 @@ $(document).ready(function(){
 	$(".right-arrow").click( function() {
 		section += 1
 		if(section >= (essayLength - 1)) { section = 0 }
+		console.log(section)
 	})
 
 	$(".left-arrow").click( function() {
 		section -= 1
-		if (section < 0) { section = essayLength }	
+		if (section < 0) { section = essayLength - 2}
+		console.log(section)
 	})
 
 	$(".arrow").click( function() {
 	
 		sectionUpdate()
-		addImages()
 
 	})
 
@@ -84,6 +85,9 @@ $(document).ready(function(){
 
 			$(".essay-english").html($sectionEN)
 			$(".essay-chinese").html($sectionCN)
+
+			addImages()
+
 		}
 	}
 
@@ -151,27 +155,8 @@ $(document).ready(function(){
 
 		$(".lightbox").click( function() {
 			$(this).remove()
-	})
+		})
 
-// addLightBox()
-}
-
-	// function addLightBox() {
-	// 	$(".obstruct-right").click( function() {
-	// 		console.log("hello")
-	// 		console.log($(this).children("img").attr("src"))
-	// 		$(".scroll-container").append("<img class='lightbox' src='" + $(this).children("img").attr("src") + "'>" )
-	// 	})
-	// }
-
-	// function scrollListener() {
-	//   $('.essay-english, .essay-chinese').off('mousewheel').mousewheel(function(e, delta) {
-	//     this.scrollTop -= (delta * 1);
-	//     e.preventDefault(); 
-	//     console.log(scrollTop)
-	//     // var sum = document.getElementsByClassName('essay-english')[0].scrollHeight - document.getElementsByClassName('essay-english')[0].scrollTop
-	//   });
-	// }
-
+	}
 
 });
