@@ -246,6 +246,7 @@ html * {
 }
 
 	.intro-title {
+	    font-family: "NotoSans", "W95FA";
 		text-align: right;
 		height: auto;
 		width: 20vw;
@@ -348,21 +349,38 @@ html * {
 	/*border: 1px red solid;*/
 }
 
+
 .essay-segment {
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
-	margin: 0 10vw 0 10vw;
+	justify-content: flex-end;
+	margin: 0 0vw 0 0vw;
 	height: inherit;
-	width: 80vw;
+	width: 90vw;
 }
+
+.essay-title {
+    font-family: "NotoSans", "W95FA";
+	width: 20%;
+	height: auto;
+	text-align: right;
+	height: auto;
+	width: 20vw;
+	font-size: 2.5em;
+	padding-top:  
+}
+
+	.essay-title > div {
+	margin-bottom: 0.5em;
+}
+
 
 .essay-english {
 	/*column-count: 2;*/
 	width: 50%;
 	overflow-y: auto;
 	height: auto;
-	margin: 0vh 2.5vw 0vh 0;
+	margin: 0vh 0vw 0vh 0;
 	padding: 5vh 0 5vh 0;
 	/*border: 1px red solid;*/
 }
@@ -380,13 +398,12 @@ html * {
 /*	column-count: 2;*/
     font-family: "NotoSans", Roboto;
 	height: auto;
-	width: 50%;
-	margin: 0vh 0 0vh 2.5vw;
+	width: 30%;
+	margin: 0vh 0 0vh 0vw;
 	padding: 5vh 0 5vh 0;
 	overflow-y: auto;
 /*	border: 1px green solid;*/
 }
-
 
 
 .obstruct-left {

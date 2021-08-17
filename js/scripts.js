@@ -30,6 +30,8 @@ $(document).ready(function(){
 
     const essayElements = $(["<div class='essay-container'>",
     						"<div class='essay-segment'>",
+    							"<div class='essay-title'>",
+    							"</div>",
     							"<div class='essay-english' lang='en'>",
 								"</div>",
 								"<div class='essay-chinese' lang='cn'>",
@@ -155,8 +157,8 @@ $(document).ready(function(){
 		// populate essay pages
     	} else if (section > 0) {
 
-    		let sectionEN = $("<p>").append(essay[section].en.title + "<br>")
-			let sectionCN = $("<p>").append(essay[section].cn.title + "<br>")
+    		let sectionEN = $("<p>")
+			let sectionCN = $("<p>")
 
 			$(".scroll-container").html(essayElements)
 
@@ -168,6 +170,7 @@ $(document).ready(function(){
 
 			$(".essay-english").html(sectionEN)
 			$(".essay-chinese").html(sectionCN)
+			$(".essay-title").html("<span class='intro-void-large'/></span>" + essay[section].en.title + "<br><br>" + essay[section].cn.title)
 
 			addImages()
 
@@ -186,8 +189,8 @@ $(document).ready(function(){
 
 			const objArr = target[i][0].outerHTML.split(" ")
 			for (let j=0; j<numObjects; j++) {
-				objArr.splice(objArr.length/6 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[1])
-				objArr.splice(objArr.length/6 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[0])
+				objArr.splice(objArr.length/10 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[1])
+				objArr.splice(objArr.length/10 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[0])
 			}
 
 			newText = objArr.join(" ")
