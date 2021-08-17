@@ -23,6 +23,11 @@ body {
   src: url("../assets/fonts/Roboto-Regular.woff");
 }
 
+@font-face {
+	font-family: "NotoSans";
+    src: url("../assets/fonts/NotoSansSC-Regular.woff");
+}
+
 
 p {
 	margin-top: 0;
@@ -133,16 +138,16 @@ a {
 	/*	border: 1px black solid;
 	*/}
 
-	.bottom:hover .video-space {
+/*	.bottom:hover .video-space {
 		visibility: visible;
 	}
 
 	.video-space:hover {
 		visibility: visible;
 	}
-
+*/
 	.video-space {
-		display: flex;
+		display: none;
 		flex-flow: row nowrap;
 		justify-content: center;
 		position: absolute;
@@ -151,7 +156,7 @@ a {
 		width: inherit;
 		background-color: #D1D4D8;
 		border-top: 1px black solid;
-		visibility: hidden;
+		/*visibility: hidden;*/
 		z-index: 1;
 	}
 
@@ -193,7 +198,7 @@ html * {
 	position: fixed;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-between;
+	justify-content: flex-end;
 	width: 100vw;
 	height: 88vh;
 	pointer-events: none;
@@ -231,7 +236,8 @@ html * {
 	/*margin: 0 10vw 0 10vw;*/
 	height: inherit;
 	width: 90vw;	
-    font-family: "W95FA", Times, serif;
+    font-family: "NotoSans", "W95FA";
+    /*font-family: "W95FA", Times, serif;*/
 }
 
 .intro-segment * {
@@ -256,11 +262,11 @@ html * {
 			float: right;
 			shape-outside: inset();
 			width: 100%;
-			height: 5vh;
+			height: 0vh;
 			/*margin: 2vh;*/
 			visibility: visible;
 			/*border: 1px grey solid;*/
-			transition: 2s;	
+			transition: 1s;	
 		}
 
 		.intro-void-large {
@@ -271,7 +277,7 @@ html * {
 			/*margin: 2vh;*/
 			visibility: visible;
 			/*border: 1px grey solid;*/
-			transition: 2s;	
+			transition: 1s;	
 		}
 
 	.intro-title-sm {
@@ -293,6 +299,7 @@ html * {
 	}
 
 	.intro-chapter-chinese {
+	    font-family: "NotoSans", Roboto;
 		font-size: 1.8vw;
 		line-height: 1em;
 		height: auto;
@@ -306,6 +313,7 @@ html * {
 		}
 
 	.intro-blurb {
+	    /*font-family: "NotoSans", "W95FA";*/
 		height: auto;
 		width: 20vw;
 		/*border: 1px red solid;*/
@@ -370,6 +378,7 @@ html * {
 
 .essay-chinese {
 /*	column-count: 2;*/
+    font-family: "NotoSans", Roboto;
 	height: auto;
 	width: 50%;
 	margin: 0vh 0 0vh 2.5vw;
@@ -388,7 +397,7 @@ html * {
 	margin: 2vh;
 	visibility: visible;
 	/*border: 1px grey solid;*/
-	transition: 2s;	
+	transition: 1s;	
 }
 
 .obstruct-right {
@@ -399,7 +408,7 @@ html * {
 	margin: 2vh;
 	visibility: visible;
 	/*border: 1px grey solid;*/
-	transition: 2s;
+	transition: 1s;
 }
 
 /*.obstruct-left, .obstruct-right:hover {

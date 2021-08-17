@@ -45,19 +45,33 @@ $(document).ready(function(){
 
     // right and left arrows move between sections.
 	$(".right-arrow").click( function() {
-		section += 1
-		if(section >= (essayLength - 1)) { section = 0 }
+		section = 0
+		// if(section >= (essayLength - 1)) { section = 0 }
 	})
 
-	$(".left-arrow").click( function() {
-		section -= 1
-		if (section < 0) { section = essayLength - 2}
+	$("#root-button").click( function() {
+		section = 0
 	})
 
-	$(".arrow").click( function() {
+	$(".arrow, #root-button").click( function() {
 		sectionUpdate()
     	console.log(section)
 	})
+
+	$("#video-button").click( function() {
+		console.log("video!")
+		$(".video-space").toggle()
+	})
+
+	$("#credits-button").click( function() {
+		$(".scroll-container").html("Credits here")
+	})
+
+	$( window ).mousemove(function( event ) {
+		xPos = event.pageX
+		yPos = event.pageY
+	});
+
 
 	// sectionUpdate() repopulates the view according to var section.
 	function sectionUpdate () {
@@ -71,8 +85,6 @@ $(document).ready(function(){
 			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
 
 			for(let i = 1; i < essayLength - 1; i++) {
-
-				// introTitlesEN.append($("span").attr("data-attr", i).attr("class", "chapter-link").append(essay[i].en.title))
 				introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
 				introTitlesCN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].cn.title + "</span><br><br>")
 			}
@@ -82,22 +94,17 @@ $(document).ready(function(){
 
 			let introTitlesENArr = $(".intro-chapter-english > .intro-text").children().toArray()
 			let introTitlesCNArr = $(".intro-chapter-chinese > .intro-text").children().toArray()
-			let introVoid = $("<span class='intro-void-small'></span")
+			let introVoidEN = $("<span class='intro-void-small'></span")
+			let introVoidCN = $("<span class='intro-void-large'></span")
 
-			introTitlesENArr.splice(introTitlesENArr.length/6 + (Math.floor(Math.random() * introTitlesENArr.length/1.5)), 0, introVoid[0])
-			introTitlesCNArr.splice(introTitlesCNArr.length/6 + (Math.floor(Math.random() * introTitlesCNArr.length/1.5)), 0, introVoid[0])
-
-			// console.log(introTitlesENArr)
-			// console.log(introTitlesCNArr)
+			introTitlesENArr.splice(introTitlesENArr.length/6 + (Math.floor(Math.random() * introTitlesENArr.length/1.5)), 0, introVoidEN[0])
+			introTitlesCNArr.splice(introTitlesCNArr.length/6 + (Math.floor(Math.random() * introTitlesCNArr.length/1.5)), 0, introVoidCN[0])
 
 			let insertIntroVoidEN = $("<div />");
 			let insertIntroVoidCN = $("<div />");
 
-			$.each(introTitlesENArr, function(key, item) { insertIntroVoidEN.append(item); console.log(item)});
-			$.each(introTitlesCNArr, function(key, item) { insertIntroVoidCN.append(item); });
-
-			console.log(insertIntroVoidEN)
-			// console.log(insertIntroVoidCN)
+			$.each(introTitlesENArr, function(key, item) { insertIntroVoidEN.append(item);});
+			$.each(introTitlesCNArr, function(key, item) { insertIntroVoidCN.append(item);});
 
 			insertIntroVoidEN = insertIntroVoidEN.html()
 			insertIntroVoidCN = insertIntroVoidCN.html()
@@ -107,7 +114,6 @@ $(document).ready(function(){
 
 		    // chapter links to pages
 		    $(".chapter-link").click( function() {
-		    	console.log("hello!!")
 		    	section = $(this).data("attr")
 		    	console.log(section)
 				sectionUpdate()
@@ -123,7 +129,6 @@ $(document).ready(function(){
     				.append($("<span />").html(essay[0].cn.text))
 
 		    $(".intro-blurb").html(blurb)
-		    console.log(blurb)
 
 		    // change intro void sizes
 		    $(".intro-segment > *").hover(function() {
@@ -204,8 +209,19 @@ $(document).ready(function(){
 			var object = $(this)
 			var src = $(this).children("img").attr("src")
 			lightboxListener(object, src)
-
 		})
+		// .hover( function() {
+		// 	// $(this).css({"border" : "1px red solid"})
+		// 	$(".tooltip").css({"display" : "block", 
+		// 						"position" : "absolute",
+		// 						"left" : xPos,
+		// 						"top" : yPos,
+		// 						"width" : "40px",
+		// 						"height" : "20px",
+		// 						"border" : "1px black solid",
+		// 					})
+		// 	console.log('hovering!')
+		// })
 
 		$(".obstruct-right").click( function() {
 			$(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image")
