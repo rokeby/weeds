@@ -169,7 +169,7 @@ a {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
-	height: calc(88vh - 2px);
+	height: calc(94vh - 1px);
 	width: 100vw;
 	overflow: scroll;
     font-family: "Roboto", Times, serif;
@@ -224,35 +224,100 @@ html * {
 	height: auto;
 }
 
-.splash {
-	height: inherit;
-	width: 100vw;
+.intro-segment {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
-	align-items: center;
-	pointer-events: none;
-}
-
-.splash > img {
-	height: 80%;
-	max-width: 70vw;
-	z-index: -99;
-}
-
-.intro {
-	width: 30vw;
+	margin: 0 10vw 0 10vw;
 	height: inherit;
-/*	border: red 1px solid;*/
-	white-space: wrap;
+	width: 80vw;	
+    font-family: "W95FA", Times, serif;
 }
 
-.intro-text {
-	text-overflow: ellipsis;
-	/*height: 78vh;	*/
-	overflow: hidden;
-	margin: 5vh 10vh 5vh 0;
-}
+	.intro-title {
+		text-align: right;
+		height: auto;
+		width: 20vw;
+		/*border: 1px red solid;*/
+		font-size: 2.5em;
+		/*padding-top: 0.5em;*/
+	}
+
+		.intro-title > div {
+			margin-bottom: 0.5em;
+		}
+
+		.intro-void-small {
+			float: right;
+			shape-outside: inset();
+			width: 100%;
+			height: 5vh;
+			/*margin: 2vh;*/
+			visibility: visible;
+			/*border: 1px grey solid;*/
+			transition: 2s;	
+		}
+
+		.intro-void-large {
+			float: right;
+			shape-outside: inset();
+			width: 100%;
+			height: 15vh;
+			/*margin: 2vh;*/
+			visibility: visible;
+			/*border: 1px grey solid;*/
+			transition: 2s;	
+		}
+
+	.intro-title-sm {
+		text-align: right;
+		height: auto;
+		width: 10vw;
+		/*border: 1px red solid;*/
+		font-size: 5vw;
+		/*padding-top: 0.5em;*/
+	}
+
+	.intro-chapter-english {
+		height: auto;
+		line-height: 1.5em;
+		width: 15vw;
+		/*border: 1px red solid;*/
+		overflow-y: auto;
+	}
+
+	.intro-chapter-chinese {
+		font-size: 1.8vw;
+		line-height: 1em;
+		height: auto;
+		width: 25vw;
+		/*border: 1px red solid;*/
+		overflow-y: auto;
+	}
+
+		.chapter-link {
+
+		}
+
+	.intro-blurb {
+		height: auto;
+		width: 20vw;
+		/*border: 1px red solid;*/
+		padding-top: 10vh;
+	}
+
+		.intro-blurb > * {
+			margin-bottom: 0.5em;
+		}
+
+	.intro-text {
+		padding: 5vh 0 5vh 0;
+	}
+
+	.colour-header {
+		color: #6F68F6;
+		margin-bottom: 1em;
+	}
 
 .essay-container {
 	display: flex;
@@ -342,7 +407,7 @@ html * {
 	/*border: 1px black solid;*/
 	width: 70%;
 	height: auto;
-	transition: 2s;	
+	transition: 2s;
 }
 
 .image img {

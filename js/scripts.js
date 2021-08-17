@@ -1,17 +1,34 @@
 $(document).ready(function(){
 
     const essay = essayObj
-    const $splash = $(".splash")
-    const $introElements = $(["<div class='splash'>",
-							"<img src='./assets/main-image.png'/>",
-							"<div class='intro'>",
-								"<div class='intro-text'>",
+    const splash = $(".splash")
+    const introElements = $(["<div class='intro-segment'>",
+								"<div class='intro-title'>",
+    								"<span class='intro-void-small'>",
+    								"</span>",
+									"<div>",
+										"NO HUMANS IN THE CITY, BUT WEEDS",
+    								"</div>",
+    								"<span class='intro-void-large'>",
+    								"</span>",
+    								"<div>",
+										"當城市不再炊煙，只餘蔓草",
+									"</div>",
 								"</div>",
-							"</div>",
-    					"</div>"].join("\n")
+								"<div class='intro-chapter-english'>",
+								"</div>",
+								"<div class='intro-chapter-chinese'>",
+								"</div>",
+								"<div class='intro-title-sm'>",
+									"當城市不再炊煙，只餘蔓草",
+								"</div>",
+								"<div class='intro-blurb'>",
+								"</div>",
+							"</div>"
+								].join("\n")
 					)
 
-    const $essayElements = $(["<div class='essay-container'>",
+    const essayElements = $(["<div class='essay-container'>",
     						"<div class='essay-segment'>",
     							"<div class='essay-english' lang='en'>",
 								"</div>",
@@ -26,65 +43,119 @@ $(document).ready(function(){
 
     sectionUpdate()
 
-    $(".scenes li").click( function() {
-    	section = $(this).data("attr")
-		sectionUpdate()
-		addImages()
-    })
-
+    // right and left arrows move between sections.
 	$(".right-arrow").click( function() {
 		section += 1
 		if(section >= (essayLength - 1)) { section = 0 }
-		console.log(section)
 	})
 
 	$(".left-arrow").click( function() {
 		section -= 1
 		if (section < 0) { section = essayLength - 2}
-		console.log(section)
 	})
 
 	$(".arrow").click( function() {
-	
 		sectionUpdate()
-
+    	console.log(section)
 	})
 
-	// find out how many images there are (2). reveal the corresponding images and no more.
-
-
+	// sectionUpdate() repopulates the view according to var section.
 	function sectionUpdate () {
 
-		// populate text with essay.js 
-
-		let $sectionEN = $("<p>").append("" + essay[section].en.title + "<br>") 
-		let $sectionCN = $("<p>").append("" + essay[section].cn.title + "<br>")
-		let $introEN = $("<p>")
-		let $introCN = $("<p>")
-
+		// populate intro
 		if(section == 0) {
 
-			$(".scroll-container").html($introElements)
+			$(".scroll-container").html(introElements)
 
-			for(let i = 0; i < essay[section].en.text.length; i++) {
-				$introEN.append(essay[section].en.text[i] + "<br>")
-				$introCN.append(essay[section].cn.text[i] + "<br>")		
+			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
+			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
+
+			for(let i = 1; i < essayLength - 1; i++) {
+
+				// introTitlesEN.append($("span").attr("data-attr", i).attr("class", "chapter-link").append(essay[i].en.title))
+				introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
+				introTitlesCN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].cn.title + "</span><br><br>")
 			}
 
-			$(".intro-text").html($introEN).append($introCN)
+			$(".intro-chapter-english").html(introTitlesEN)
+			$(".intro-chapter-chinese").html(introTitlesCN)
 
+			let introTitlesENArr = $(".intro-chapter-english > .intro-text").children().toArray()
+			let introTitlesCNArr = $(".intro-chapter-chinese > .intro-text").children().toArray()
+			let introVoid = $("<span class='intro-void-small'></span")
+
+			introTitlesENArr.splice(introTitlesENArr.length/6 + (Math.floor(Math.random() * introTitlesENArr.length/1.5)), 0, introVoid[0])
+			introTitlesCNArr.splice(introTitlesCNArr.length/6 + (Math.floor(Math.random() * introTitlesCNArr.length/1.5)), 0, introVoid[0])
+
+			// console.log(introTitlesENArr)
+			// console.log(introTitlesCNArr)
+
+			let insertIntroVoidEN = $("<div />");
+			let insertIntroVoidCN = $("<div />");
+
+			$.each(introTitlesENArr, function(key, item) { insertIntroVoidEN.append(item); console.log(item)});
+			$.each(introTitlesCNArr, function(key, item) { insertIntroVoidCN.append(item); });
+
+			console.log(insertIntroVoidEN)
+			// console.log(insertIntroVoidCN)
+
+			insertIntroVoidEN = insertIntroVoidEN.html()
+			insertIntroVoidCN = insertIntroVoidCN.html()
+
+			$(".intro-chapter-english > .intro-text").html(insertIntroVoidEN)
+			$(".intro-chapter-chinese > .intro-text").html(insertIntroVoidCN)
+
+		    // chapter links to pages
+		    $(".chapter-link").click( function() {
+		    	console.log("hello!!")
+		    	section = $(this).data("attr")
+		    	console.log(section)
+				sectionUpdate()
+				addImages()
+		    })
+
+		    // intro blurb bit
+
+		    $(".intro-blurb").append($("<span />").html(essay[0].en.text)).append("<br><span class='intro-void-small'/>").append($("<span />").html(essay[0].cn.text))
+
+		    // change intro void sizes
+		    $(".intro-segment > *").hover(function() {
+		    	$(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small");
+		    	$(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    	// $(this).removeClass("intro-void-small").addClass("intro-void-large")
+		    }, function() {
+		    	// $(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    	$(this).find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    	$(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    })
+
+		    // $(".intro-segment > *").hover(function() {
+		    // 	// $(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small");
+		    // 	// $(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    // 	$(this).find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large");
+		    // }, function() {
+		    // 	$(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    // 	// $(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    // })
+
+
+
+		// populate essay pages
     	} else if (section > 0) {
 
-			$(".scroll-container").html($essayElements)
+    		let sectionEN = $("<p>").append(essay[section].en.title + "<br>")
+			let sectionCN = $("<p>").append(essay[section].cn.title + "<br>")
+
+			$(".scroll-container").html(essayElements)
 
 
 			for(let i = 0; i < essay[section].en.text.length; i++) {
-				$sectionEN.append("<br>" + essay[section].en.text[i] + "<br>")
-				$sectionCN.append("<br>" + essay[section].cn.text[i] + "<br>")		
+				sectionEN.append("<br>" + essay[section].en.text[i] + "<br>")
+				sectionCN.append("<br>" + essay[section].cn.text[i] + "<br>")		
 			}
 
-			$(".essay-english").html($sectionEN)
-			$(".essay-chinese").html($sectionCN)
+			$(".essay-english").html(sectionEN)
+			$(".essay-chinese").html(sectionCN)
 
 			addImages()
 
@@ -93,28 +164,30 @@ $(document).ready(function(){
 
 	function addImages() {
 
-		// turn text into array in order to randomly insert image spans.
+		// total number of obstruct-left and obstruct-right objects.
 		const numObjects = 3;
 
-		const $obstruct = ["<span class='obstruct-left'></span>", "<span class='obstruct-right'></span>"]
-		const $target = [$(".essay-english p"), $(".essay-chinese p")]
+		const obstruct = ["<span class='obstruct-left'></span>", "<span class='obstruct-right'></span>"]
+		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
-		for (let i = 0; i < $target.length; i++) {
+		for (let i = 0; i < target.length; i++) {
 
-			const objArr = $target[i][0].outerHTML.split(" ")
+			const objArr = target[i][0].outerHTML.split(" ")
 			for (let j=0; j<numObjects; j++) {
-				objArr.splice(objArr.length/6 + (Math.floor(Math.random() * objArr.length/2)), 0, $obstruct[1])
-				objArr.splice(objArr.length/6 + (Math.floor(Math.random() * objArr.length/2)), 0, $obstruct[0])
+				objArr.splice(objArr.length/6 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[1])
+				objArr.splice(objArr.length/6 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[0])
 			}
 
 			newText = objArr.join(" ")
-			$target[i].html(newText)
+			target[i].html(newText)
 
 		}
 
 		addImageListeners()
 	}
 
+	// When obstructs are clicked they resize the image
+	// when clicked again the lightbox shows 
 	function addImageListeners() {
 
 		$(".obstruct-left").click( function() {
@@ -134,11 +207,10 @@ $(document).ready(function(){
 			var object = $(this)
 			var src = $(this).children("img").attr("src")
 			lightboxListener(object, src)
-
 		})
-
 	}
 
+	// lightbox takes the clicked image and displays wide.
 	function lightboxListener( element, path ) {
 
 		// console.log(path, element)
@@ -156,7 +228,5 @@ $(document).ready(function(){
 		$(".lightbox").click( function() {
 			$(this).remove()
 		})
-
 	}
-
 });
