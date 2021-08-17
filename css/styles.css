@@ -53,14 +53,14 @@ a {
 .top {
 	top: 0;
     font-family: "W95FA", Times, serif;
-    width: 85vw;
+    width: 90vw;
 	border-bottom: 1px black solid;
 }
 
 .bottom {
 	bottom: 0;
     font-family: "W95FA", Times, serif;
-    width: 85vw;
+    width: 90vw;
 	border-top: 1px black solid;
 }
 
@@ -168,12 +168,12 @@ a {
 .main {
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: flex-start;
+	justify-content: center;
 	height: calc(94vh - 1px);
 	width: 100vw;
 	overflow: scroll;
     font-family: "Roboto", Times, serif;
-    /*overflow-x: hidden;*/
+    overflow-y: hidden;
 }
 
 html * {
@@ -185,7 +185,7 @@ html * {
 	height: inherit;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: flex-start;	
+	justify-content: center;	
     scroll-behavior: smooth;
 }
 
@@ -228,10 +228,15 @@ html * {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
-	margin: 0 10vw 0 10vw;
+	/*margin: 0 10vw 0 10vw;*/
 	height: inherit;
-	width: 80vw;	
+	width: 90vw;	
     font-family: "W95FA", Times, serif;
+}
+
+.intro-segment * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 	.intro-title {
@@ -270,7 +275,7 @@ html * {
 		}
 
 	.intro-title-sm {
-		text-align: right;
+		text-align: left;
 		height: auto;
 		width: 10vw;
 		/*border: 1px red solid;*/
@@ -281,7 +286,8 @@ html * {
 	.intro-chapter-english {
 		height: auto;
 		line-height: 1.5em;
-		width: 15vw;
+		width: 20vw;
+		font-size: 1.2em;
 		/*border: 1px red solid;*/
 		overflow-y: auto;
 	}
@@ -290,7 +296,7 @@ html * {
 		font-size: 1.8vw;
 		line-height: 1em;
 		height: auto;
-		width: 25vw;
+		width: 20vw;
 		/*border: 1px red solid;*/
 		overflow-y: auto;
 	}

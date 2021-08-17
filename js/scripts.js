@@ -116,7 +116,14 @@ $(document).ready(function(){
 
 		    // intro blurb bit
 
-		    $(".intro-blurb").append($("<span />").html(essay[0].en.text)).append("<br><span class='intro-void-small'/>").append($("<span />").html(essay[0].cn.text))
+		    blurb = $("<div/>").append("<span class='intro-void-small'/>")
+    				.append($("<span />").html(essay[0].en.text))
+    				.append('<br>')
+    				.append("<span class='intro-void-large'/>")
+    				.append($("<span />").html(essay[0].cn.text))
+
+		    $(".intro-blurb").html(blurb)
+		    console.log(blurb)
 
 		    // change intro void sizes
 		    $(".intro-segment > *").hover(function() {
