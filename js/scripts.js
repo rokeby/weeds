@@ -20,6 +20,8 @@ $(document).ready(function(){
 								"<div class='intro-chapter-chinese'>",
 								"</div>",
 								"<div class='intro-title-sm'>",
+								"<span class='intro-void-large'>",
+    								"</span>",
 									"當城市不再炊煙，只餘蔓草",
 								"</div>",
 								"<div class='intro-blurb'>",
@@ -57,7 +59,6 @@ $(document).ready(function(){
 
 	$(".arrow, #root-button").click( function() {
 		sectionUpdate()
-    	console.log(section)
 	})
 
 	$("#video-button").click( function() {
@@ -69,10 +70,10 @@ $(document).ready(function(){
 		$(".scroll-container").html("Credits here")
 	})
 
-	$( window ).mousemove(function( event ) {
-		xPos = event.pageX
-		yPos = event.pageY
-	});
+	// $( window ).mousemove(function( event ) {
+	// 	xPos = event.pageX
+	// 	yPos = event.pageY
+	// });
 
 
 	// sectionUpdate() repopulates the view according to var section.
@@ -117,7 +118,6 @@ $(document).ready(function(){
 		    // chapter links to pages
 		    $(".chapter-link").click( function() {
 		    	section = $(this).data("attr")
-		    	console.log(section)
 				sectionUpdate()
 				addImages()
 		    })
@@ -133,26 +133,19 @@ $(document).ready(function(){
 		    $(".intro-blurb").html(blurb)
 
 		    // change intro void sizes
-		    $(".intro-segment > *").hover(function() {
-		    	$(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small");
-		    	$(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		    	// $(this).removeClass("intro-void-small").addClass("intro-void-large")
+		    $(".intro-title").hover(function() {
+		    	$(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
 		    }, function() {
-		    	// $(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
 		    	$(this).find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		    	$(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
 		    })
 
-		    // $(".intro-segment > *").hover(function() {
-		    // 	// $(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small");
-		    // 	// $(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		    // 	$(this).find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large");
-		    // }, function() {
-		    // 	$(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		    // 	// $(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		    // })
-
-
+		    $(".intro-segment > *").hover(function() {
+		    	$(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    	.next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    }, function() {
+		    	$(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    	.next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    })
 
 		// populate essay pages
     	} else if (section > 0) {
@@ -192,17 +185,13 @@ $(document).ready(function(){
 				objArr.splice(objArr.length/10 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[1])
 				objArr.splice(objArr.length/10 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[0])
 			}
-
 			newText = objArr.join(" ")
 			target[i].html(newText)
-
 		}
 
 		addImageListeners()
 	}
 
-	// When obstructs are clicked they resize the image
-	// when clicked again the lightbox shows 
 	function addImageListeners() {
 
 		$(".obstruct-left").click( function() {

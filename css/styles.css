@@ -135,8 +135,12 @@ a {
 
 	.button {
 		margin: 3vh;
-	/*	border: 1px black solid;
-	*/}
+	}
+
+	.button:hover {
+		color: #6F68F6;
+		cursor: alias;
+	}
 
 /*	.bottom:hover .video-space {
 		visibility: visible;
@@ -266,7 +270,7 @@ html * {
 			height: 0vh;
 			/*margin: 2vh;*/
 			visibility: visible;
-			/*border: 1px grey solid;*/
+			border: 1px #D1D4D8 solid;
 			transition: 1s;	
 		}
 
@@ -277,7 +281,7 @@ html * {
 			height: 15vh;
 			/*margin: 2vh;*/
 			visibility: visible;
-			/*border: 1px grey solid;*/
+			border: 1px #D1D4D8 solid;
 			transition: 1s;	
 		}
 
@@ -287,36 +291,41 @@ html * {
 		width: 10vw;
 		/*border: 1px red solid;*/
 		font-size: 5vw;
+		padding-right: 0.5em;
 		/*padding-top: 0.5em;*/
 	}
 
 	.intro-chapter-english {
 		height: auto;
-		line-height: 1.5em;
+		line-height: 1.2em;
 		width: 20vw;
 		font-size: 1.2em;
-		/*border: 1px red solid;*/
 		overflow-y: auto;
+		padding-left: 0.5em;
 	}
 
 	.intro-chapter-chinese {
 	    font-family: "NotoSans", Roboto;
-		font-size: 1.8vw;
-		line-height: 1em;
+		font-size: 1.2em;
+		line-height: 1.2em;
 		height: auto;
 		width: 20vw;
-		/*border: 1px red solid;*/
 		overflow-y: auto;
+		padding-right: 0.5em;
+
 	}
 
-		.chapter-link {
-
+		.chapter-link:hover {
+			color: #6F68F6;
+			cursor: alias;
 		}
 
 	.intro-blurb {
 	    /*font-family: "NotoSans", "W95FA";*/
 		height: auto;
 		width: 20vw;
+		font-size: 1.2em;
+		line-height: 1.2em;
 		/*border: 1px red solid;*/
 		padding-top: 10vh;
 	}
@@ -367,7 +376,7 @@ html * {
 	height: auto;
 	width: 20vw;
 	font-size: 2.5em;
-	padding-top:  
+	padding-right: 0.5em; 
 }
 
 	.essay-title > div {
@@ -376,13 +385,12 @@ html * {
 
 
 .essay-english {
-	/*column-count: 2;*/
 	width: 50%;
 	overflow-y: auto;
 	height: auto;
 	margin: 0vh 0vw 0vh 0;
 	padding: 5vh 0 5vh 0;
-	/*border: 1px red solid;*/
+	font-size: 1.2em;
 }
 
 .essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar {
@@ -395,14 +403,13 @@ html * {
 }
 
 .essay-chinese {
-/*	column-count: 2;*/
     font-family: "NotoSans", Roboto;
+	font-size: 1.2em;
 	height: auto;
 	width: 30%;
 	margin: 0vh 0 0vh 0vw;
 	padding: 5vh 0 5vh 0;
 	overflow-y: auto;
-/*	border: 1px green solid;*/
 }
 
 
