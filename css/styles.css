@@ -360,7 +360,6 @@ html * {
 	shape-outside: inset();
 	width: 30%;
 	height: 20vh;
-	margin: 2vh;
 	visibility: visible;
 	transition: 1s;	
 }
@@ -370,14 +369,13 @@ html * {
 	shape-outside: inset();
 	width: 30%;
 	height: 20vh;
-	margin: 2vh;
 	visibility: visible;
 	transition: 1s;
 }
 
-.obstruct-left:hover #tooltip-span, .obstruct-right:hover #tooltip-span {
-	cursor: zoom-in;
+.obstruct-left:hover, .obstruct-right:hover, .obstruct-left:hover #tooltip-span, .obstruct-right:hover #tooltip-span {
     display:block;
+	cursor: zoom-in;
 }
 
 .obstruct-large {
@@ -385,6 +383,9 @@ html * {
 	width: 70%;
 	height: auto;
 	transition: 2s;
+	margin: 2vh;
+	cursor: zoom-in;
+
 }
 	span#tooltip-span {
     	font-family: "GnuFont", "W95FA";
@@ -415,6 +416,10 @@ html * {
 .lightbox img {
 	max-width: 80%;
 	max-height: 80%;
+}
+
+.lightbox:hover {
+	cursor: zoom-out;
 }
 
 .about, .bibliography {
