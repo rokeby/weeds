@@ -68,18 +68,23 @@ $(document).ready(function(){
     let section = 0
     const essayLength = Object.keys(essay).length
 
-
-
     sectionUpdate()
 
+	// Videos Panel
+
 	$("#video-button").click( function() {
-		$(".video-space").toggle()
+		$(".video-space").addClass("flex")
+		$("#home").click(function() {
+			$(".video-space").removeClass("flex")		
+			})
 	})
 
-	// $( window ).mousemove(function( event ) {
-	// 	xPos = event.pageX
-	// 	yPos = event.pageY
-	// });
+
+
+	$("#video-1, #video-2").click( function() {
+		let videoNum = $(this).attr("video-attr")
+		$(".video").html(essay.videos[videoNum].iframe)
+	})
 
 
 	// sectionUpdate() repopulates the view according to var section.
@@ -123,6 +128,10 @@ $(document).ready(function(){
 
 		    // chapter links to pages
 		    $(".chapter-link, .button").click( function() {
+
+		    	// $(this).css({ "color" : "#6F68F6" })
+		    	// $(".button").not(this).css({ "color" : "black" })
+
 		    	section = $(this).data("attr")
 				sectionUpdate()
 				// console.log(section)
@@ -155,6 +164,7 @@ $(document).ready(function(){
 
 		// populate essay pages
     	} else if (section > 0) {
+    		console.log(section)
 
     		let sectionEN = $("<p>")
 			let sectionCN = $("<p>")
@@ -194,8 +204,8 @@ $(document).ready(function(){
 
 		const obstruct = ["<span class='obstruct-left tooltip'></span>", "<span class='obstruct-right tooltip'></span>"]
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
-		console.log(target[0])
-		console.log(target[1])
+		// console.log(target[0])
+		// console.log(target[1])
 
 
 		const objArrEN = target[0][0].outerHTML.split(" ")
