@@ -68,6 +68,8 @@ $(document).ready(function(){
     let section = 0
     const essayLength = Object.keys(essay).length
 
+
+
     sectionUpdate()
 
 	$("#video-button").click( function() {
@@ -190,7 +192,7 @@ $(document).ready(function(){
 		// total number of obstruct-left and obstruct-right objects.
 		const numObjects = 8;
 
-		const obstruct = ["<span class='obstruct-left'></span>", "<span class='obstruct-right'></span>"]
+		const obstruct = ["<span class='obstruct-left tooltip'></span>", "<span class='obstruct-right tooltip'></span>"]
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 		console.log(target[0])
 		console.log(target[1])
@@ -216,6 +218,30 @@ $(document).ready(function(){
 	}
 
 	function addImageListeners() {
+
+		$(".obstruct-left, .obstruct-right").append("<span id='tooltip-span'>hello</span>")
+
+		window.onmousemove = function (e) {
+		    var x = e.clientX,
+		        y = e.clientY;
+
+	        // console.log(x, y)
+
+	        // let re = essay[section].img[0]
+	        // re.lastIndexOf("/")
+	        // console.log(re.lastIndexOf("/"))
+
+	        $(".obstruct-left").find("#tooltip-span").css({
+	        		"top" : (y + 10) + "px",
+	        		"left" : (x + 10) + "px",
+	        	}).html(essay[section].img[0].split("/").pop())
+
+	        $(".obstruct-right").find("#tooltip-span").css({
+	        		"top" : (y + 10) + "px",
+	        		"left" : (x + 10) + "px",
+	        	}).html(essay[section].img[1].split("/").pop())
+		};
+
 
 		$(".obstruct-left").click( function() {
 			$(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image")

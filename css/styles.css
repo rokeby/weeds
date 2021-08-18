@@ -375,8 +375,9 @@ html * {
 	transition: 1s;
 }
 
-.obstruct-left:hover, .obstruct-right:hover {
+.obstruct-left:hover #tooltip-span, .obstruct-right:hover #tooltip-span {
 	cursor: zoom-in;
+    display:block;
 }
 
 .obstruct-large {
@@ -385,6 +386,14 @@ html * {
 	height: auto;
 	transition: 2s;
 }
+	span#tooltip-span {
+    	font-family: "GnuFont", "W95FA";
+    	color: #6F68F6;
+    	font-size: 0.8em;
+    	background-color: #D1D4D8;
+	    display:none;
+	    position: absolute;
+	}
 
 .image img {
 	height: inherit;
