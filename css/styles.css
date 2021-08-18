@@ -28,6 +28,10 @@ body {
     src: url("../assets/fonts/NotoSansSC-Regular.woff");
 }
 
+@font-face {
+	font-family: "GnuFont";
+    src: url("../assets/fonts/GnuUnifontFull-Pm9P.woff");
+}
 
 p {
 	margin-top: 0;
@@ -55,12 +59,12 @@ a {
 	align-items: center;
 }
 
-.top {
+/*.top {
 	top: 0;
     font-family: "W95FA", Times, serif;
     width: 90vw;
 	border-bottom: 1px black solid;
-}
+}*/
 
 .bottom {
 	bottom: 0;
@@ -78,14 +82,6 @@ a {
 	height: 6vh;
 }
 
-	.top:hover .nav-menu {
-		visibility: visible;
-	}
-
-	.nav-menu:hover {
-		visibility: visible;
-	}
-
 	.nav-menu {
 		display: flex;
 		flex-flow: row nowrap;
@@ -97,44 +93,8 @@ a {
 		background-color: #D1D4D8;
 		border-bottom: 1px black solid;
 		visibility: hidden;
-		transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+		transition: 0.5s; 
 		z-index: 1;
-	}
-
-	.scene-selector {
-		width: auto;
-		height: auto;
-		margin: 3vh;
-	}
-
-	.scenes > * > *:hover {
-		color: #D8FD51;
-	}
-
-	.about {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: flex-end;
-		margin: 3vh;
-	}
-
-	.headshots {
-		margin-right: 3vh;
-		width: 15%;
-	}
-
-	.headshots > * {
-		width: 100%;
-	}
-
-	.about-text {
-		width: 50%;
-		height: auto;
-
-	}
-
-	.button {
-		margin: 3vh;
 	}
 
 	.button:hover {
@@ -142,14 +102,6 @@ a {
 		cursor: alias;
 	}
 
-/*	.bottom:hover .video-space {
-		visibility: visible;
-	}
-
-	.video-space:hover {
-		visibility: visible;
-	}
-*/
 	.video-space {
 		display: none;
 		flex-flow: row nowrap;
@@ -205,17 +157,10 @@ html * {
 	justify-content: flex-end;
 	width: 100vw;
 	height: 88vh;
+	font-size: 3em;
 	pointer-events: none;
-}
+    font-family: "GnuFont", "W95FA";
 
-.left-arrow {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	height: inherit;
-	width: 5vw;
-	pointer-events: auto;
 }
 
 .right-arrow {
@@ -225,6 +170,7 @@ html * {
 	align-items: center;
 	height: inherit;
 	width: 5vw;
+	color: #6F68F6;
 	pointer-events: auto;
 }
 
@@ -237,20 +183,18 @@ html * {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
-	/*margin: 0 10vw 0 10vw;*/
 	height: inherit;
 	width: 90vw;	
-    font-family: "NotoSans", "W95FA";
-    /*font-family: "W95FA", Times, serif;*/
+    font-family: "GnuFont", "W95FA";
 }
 
-.intro-segment * {
+.intro-segment *, .credits-container * {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
 	.intro-title {
-	    font-family: "NotoSans", "W95FA";
+	    font-family: "GnuFont", "W95FA";
 		text-align: right;
 		height: auto;
 		width: 20vw;
@@ -290,9 +234,9 @@ html * {
 		height: auto;
 		width: 10vw;
 		/*border: 1px red solid;*/
-		font-size: 5vw;
+		font-size: 4em;
 		padding-right: 0.5em;
-		/*padding-top: 0.5em;*/
+		padding-top: 5vh;
 	}
 
 	.intro-chapter-english {
@@ -305,7 +249,7 @@ html * {
 	}
 
 	.intro-chapter-chinese {
-	    font-family: "NotoSans", Roboto;
+	    font-family: "GnuFont", Roboto;
 		font-size: 1.2em;
 		line-height: 1.2em;
 		height: auto;
@@ -321,13 +265,12 @@ html * {
 		}
 
 	.intro-blurb {
-	    /*font-family: "NotoSans", "W95FA";*/
 		height: auto;
 		width: 20vw;
 		font-size: 1.2em;
 		line-height: 1.2em;
 		/*border: 1px red solid;*/
-		padding-top: 10vh;
+		padding-top: 30vh;
 	}
 
 		.intro-blurb > * {
@@ -355,11 +298,10 @@ html * {
 }
 
 .essay-container, .essay-container * {
-	/*border: 1px red solid;*/
 }
 
 
-.essay-segment {
+.essay-segment, .credits-container {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
@@ -369,7 +311,7 @@ html * {
 }
 
 .essay-title {
-    font-family: "NotoSans", "W95FA";
+    font-family: "GnuFont", "W95FA";
 	width: 20%;
 	height: auto;
 	text-align: right;
@@ -393,7 +335,7 @@ html * {
 	font-size: 1.2em;
 }
 
-.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar {
+.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar, .credits-body::-webkit-scrollbar {
   display: none;
 }
 
@@ -420,7 +362,6 @@ html * {
 	height: 20vh;
 	margin: 2vh;
 	visibility: visible;
-	/*border: 1px grey solid;*/
 	transition: 1s;	
 }
 
@@ -431,16 +372,12 @@ html * {
 	height: 20vh;
 	margin: 2vh;
 	visibility: visible;
-	/*border: 1px grey solid;*/
 	transition: 1s;
 }
 
-/*.obstruct-left, .obstruct-right:hover {
-	border: 1px black solid;
-	width: 60%;
-	height: 40vh;
-	transition: 1s;
-}*/
+.obstruct-left:hover, .obstruct-right:hover {
+	cursor: zoom-in;
+}
 
 .obstruct-large {
 	/*border: 1px black solid;*/
@@ -471,4 +408,21 @@ html * {
 	max-height: 80%;
 }
 
+.about, .bibliography {
+	height: inherit;
+	width: 50%;
+	overflow-y: auto;
+	/*border: 1px red solid;*/
+}
+
+.credits-heading {
+    font-family: "GnuFont", "W95FA";
+
+}
+
+.credits-body {
+	word-wrap: break-word;
+	/*hyphens: auto; */
+
+}
 

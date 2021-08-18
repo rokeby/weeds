@@ -9,11 +9,6 @@ $(document).ready(function(){
 									"<div>",
 										"NO HUMANS IN THE CITY, BUT WEEDS",
     								"</div>",
-    								"<span class='intro-void-large'>",
-    								"</span>",
-    								"<div>",
-										"當城市不再炊煙，只餘蔓草",
-									"</div>",
 								"</div>",
 								"<div class='intro-chapter-english'>",
 								"</div>",
@@ -42,32 +37,41 @@ $(document).ready(function(){
     					"</div>"].join("\n")
 					)
 
+    const creditsElements = $(["<div class='credits-container'>",
+	    							"<div class='about'>",
+		    							"<div class='credits-heading colour-header'>",
+		    							"About",
+		    							"</div>",
+		    							"<div id='about' class='credits-body'>",
+		    							"</div>",
+		    							"<div class='credits-heading colour-header'>",
+		    							"Acknowledgements",
+		    							"</div>",
+		    							"<div id='acknowledgements' class='credits-body'>",
+		    							"</div>",
+		    							"<div class='credits-heading colour-header'>",
+		    							"Bios",
+		    							"</div>",
+		    							"<div id='bios' class='credits-body'>",
+		    							"</div>",
+	    							"</div>",
+	    							"<div class='bibliography'>",
+		    							"<div  class='credits-heading colour-header'>",
+		    							"Bibliography",
+		    							"</div>",
+		    							"<div id='bibliography' class='credits-body'>",
+		    							"</div>",
+	    							"</div>",
+								"</div>"].join("\n")
+								)
+
     let section = 0
     const essayLength = Object.keys(essay).length
 
     sectionUpdate()
 
-    // right and left arrows move between sections.
-	$(".right-arrow").click( function() {
-		section = 0
-		// if(section >= (essayLength - 1)) { section = 0 }
-	})
-
-	$("#root-button").click( function() {
-		section = 0
-	})
-
-	$(".arrow, #root-button").click( function() {
-		sectionUpdate()
-	})
-
 	$("#video-button").click( function() {
-		console.log("video!")
 		$(".video-space").toggle()
-	})
-
-	$("#credits-button").click( function() {
-		$(".scroll-container").html("Credits here")
 	})
 
 	// $( window ).mousemove(function( event ) {
@@ -87,7 +91,7 @@ $(document).ready(function(){
 			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
 			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
 
-			for(let i = 1; i < essayLength - 1; i++) {
+			for(let i = 1; i < essayLength - 2; i++) {
 				introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
 				introTitlesCN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].cn.title + "</span><br><br>")
 			}
@@ -116,10 +120,10 @@ $(document).ready(function(){
 			$(".intro-chapter-chinese > .intro-text").html(insertIntroVoidCN)
 
 		    // chapter links to pages
-		    $(".chapter-link").click( function() {
+		    $(".chapter-link, .button").click( function() {
 		    	section = $(this).data("attr")
 				sectionUpdate()
-				addImages()
+				// console.log(section)
 		    })
 
 		    // intro blurb bit
@@ -155,39 +159,58 @@ $(document).ready(function(){
 
 			$(".scroll-container").html(essayElements)
 
-
 			for(let i = 0; i < essay[section].en.text.length; i++) {
-				sectionEN.append("<br>" + essay[section].en.text[i] + "<br>")
-				sectionCN.append("<br>" + essay[section].cn.text[i] + "<br>")		
+				sectionEN.append(essay[section].en.text[i] + "<br><br>")
+				sectionCN.append(essay[section].cn.text[i] + "<br><br>")		
 			}
 
 			$(".essay-english").html(sectionEN)
 			$(".essay-chinese").html(sectionCN)
-			$(".essay-title").html("<span class='intro-void-large'/></span>" + essay[section].en.title + "<br><br>" + essay[section].cn.title)
-
+			$(".essay-title").html("<span class='intro-void-large'/></span>" + essay[section].en.title.toUpperCase() + "<br><br>" + essay[section].cn.title)
 			addImages()
 
+		} else if (section == "credits") {
+			$(".scroll-container").html(creditsElements)
+
+			for ( let i=0; i<Object.keys(essay.bib).length; i++) {
+
+				bibObj = Object.keys(essay.bib)[i]
+				bibText = $("<p>")
+				$.each(essay.bib[bibObj], function(key, item) {
+					bibText.append("<p>" + item + "</p>");
+				});
+
+				$("#" + bibObj).html(bibText)
+			}
 		}
 	}
 
 	function addImages() {
 
 		// total number of obstruct-left and obstruct-right objects.
-		const numObjects = 3;
+		const numObjects = 8;
 
 		const obstruct = ["<span class='obstruct-left'></span>", "<span class='obstruct-right'></span>"]
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
+		console.log(target[0])
+		console.log(target[1])
 
-		for (let i = 0; i < target.length; i++) {
 
-			const objArr = target[i][0].outerHTML.split(" ")
-			for (let j=0; j<numObjects; j++) {
-				objArr.splice(objArr.length/10 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[1])
-				objArr.splice(objArr.length/10 + (Math.floor(Math.random() * objArr.length/2)), 0, obstruct[0])
-			}
-			newText = objArr.join(" ")
-			target[i].html(newText)
+		const objArrEN = target[0][0].outerHTML.split(" ")
+		const objArrCN = target[1][0].outerHTML.split("•")
+		// console.log(objArrCN)
+
+		for (let j=0; j<numObjects; j++) {
+			objArrEN.splice((Math.floor(Math.random() * objArrEN.length/1.5)), 0, obstruct[1])
+			objArrEN.splice((Math.floor(Math.random() * objArrEN.length/1.5)), 0, obstruct[0])
+			objArrCN.splice((Math.floor(Math.random() * objArrCN.length/1.5)), 0, obstruct[1])
+			objArrCN.splice((Math.floor(Math.random() * objArrCN.length/1.5)), 0, obstruct[0])
 		}
+		newTextEN = objArrEN.join(" ")
+		newTextCN = objArrCN.join("")
+
+		target[0].html(newTextEN)
+		target[1].html(newTextCN)
 
 		addImageListeners()
 	}
