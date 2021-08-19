@@ -96,7 +96,7 @@ $(document).ready(function(){
 		if(section == 0) {
 
 			$(".scroll-container").html(introElements)
-			// $(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
+			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
 			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
 			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
@@ -247,6 +247,8 @@ $(document).ready(function(){
 		    var x = e.clientX,
 		        y = e.clientY;
 
+	        if ( section < 0 ) { 
+
 	        $(".obstruct-left").find("#tooltip-span").css({
 	        		"top" : (y + 10) + "px",
 	        		"left" : (x + 10) + "px",
@@ -256,6 +258,7 @@ $(document).ready(function(){
 	        		"top" : (y + 10) + "px",
 	        		"left" : (x + 10) + "px",
 	        	}).html(essay[section].img[1].split("/").pop())
+	    }
 		};
 
 
