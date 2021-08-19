@@ -60,7 +60,6 @@ a {
 }
 
 .home {
-	z-index: 100;
 }
 
 /*.top {
@@ -153,6 +152,11 @@ a {
 		padding: 2vh;
 	}
 
+	#close-video {
+		align-self: flex-end;
+		padding: 2vh;
+	}
+
 
 .main {
 	display: flex;
@@ -188,6 +192,7 @@ html * {
 	font-size: 3em;
 	pointer-events: none;
     font-family: "GnuFont", "W95FA";
+    z-index: 10;
 
 }
 
@@ -471,7 +476,8 @@ html * {
 /* MOBILE */
 
 @media only screen and (min-width: 800px) {
-	#lang {
+	#lang,
+	.mobile-title {
 		display: none;
 	}
 }
@@ -481,11 +487,12 @@ html * {
   .intro-title, 
   .intro-blurb, 
   .intro-title-sm, 
-  .obstruct-left, 
-  .obstruct-right, 
+  /*.obstruct-left, */
+  /*.obstruct-right, */
   .intro-void-small, 
   .intro-void-large,
-  #root-button
+  #root-button,
+  .essay-title
   {
     display: none;
   }
@@ -494,7 +501,33 @@ html * {
   	width: 45vw;
   }
 
+  .essay-segment {
+  	flex-flow: row;
+  }
 
+  .essay-english, .essay-chinese {
+  	width: inherit;
+  	font-size: 1em;
+  }
+
+  #cn {
+  	display: none;
+  }
+
+  .mobile-title {
+	top: 0;
+    font-family: "W95FA", "GnuFont", serif;
+    width: 90vw;
+	border-bottom: 1px black solid;
+  }
+
+  .mobile-title .nav-bar {
+  	height: 10vh;
+  }
+
+  .main {
+  	height: 84vh;
+  }
 
 }
 

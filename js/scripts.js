@@ -67,18 +67,20 @@ $(document).ready(function(){
 
     let section = 0
     const essayLength = Object.keys(essay).length
+    let viewportHeight = $(window).height();
+	let viewportWidth = $(window).width();
 
-    sectionUpdate()
 
 	// Videos Panel
 
 	$("#video-button").click( function() {
 		$(".video-space").addClass("flex")
-		$("#home").click(function() {
+		$("#home, #close-video").click(function() {
 			$(".video-space").removeClass("flex")		
 			})
 	})
 
+    sectionUpdate()
 
 
 	$("#video-1, #video-2").click( function() {
@@ -94,6 +96,7 @@ $(document).ready(function(){
 		if(section == 0) {
 
 			$(".scroll-container").html(introElements)
+			// $(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
 			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
 			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
@@ -133,6 +136,7 @@ $(document).ready(function(){
 		    	// $(".button").not(this).css({ "color" : "black" })
 
 		    	section = $(this).data("attr")
+
 				sectionUpdate()
 				// console.log(section)
 		    })
@@ -164,12 +168,18 @@ $(document).ready(function(){
 
 		// populate essay pages
     	} else if (section > 0) {
-    		console.log(section)
+    		// console.log(section)
+
+			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
     		let sectionEN = $("<p>")
 			let sectionCN = $("<p>")
 
 			$(".scroll-container").html(essayElements)
+
+			// Mobile settings
+
+			// $(".nav-bar").html(essay[section].en.title)
 
 			for(let i = 0; i < essay[section].en.text.length; i++) {
 				sectionEN.append(essay[section].en.text[i] + "<br><br>")
@@ -178,11 +188,13 @@ $(document).ready(function(){
 
 			$(".essay-english").html(sectionEN)
 			$(".essay-chinese").html(sectionCN)
-			$(".essay-title").html("<span class='intro-void-large'/></span>" + essay[section].en.title.toUpperCase() + "<br><br>" + essay[section].cn.title)
+			$(".essay-title").html("<span class='intro-void-large'/></span>" + "<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
 			addImages()
 
 		} else if (section == "credits") {
 			$(".scroll-container").html(creditsElements)
+
+			$(".mobile-title .nav-bar").html("CREDITS")
 
 			for ( let i=0; i<Object.keys(essay.bib).length; i++) {
 
@@ -229,17 +241,11 @@ $(document).ready(function(){
 
 	function addImageListeners() {
 
-		$(".obstruct-left, .obstruct-right").append("<span id='tooltip-span'>hello</span>")
+		$(".obstruct-left, .obstruct-right").append("<span id='tooltip-span'></span>")
 
 		window.onmousemove = function (e) {
 		    var x = e.clientX,
 		        y = e.clientY;
-
-	        // console.log(x, y)
-
-	        // let re = essay[section].img[0]
-	        // re.lastIndexOf("/")
-	        // console.log(re.lastIndexOf("/"))
 
 	        $(".obstruct-left").find("#tooltip-span").css({
 	        		"top" : (y + 10) + "px",
@@ -257,50 +263,44 @@ $(document).ready(function(){
 			$(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image")
 			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[0] + "'/>")
 			$(".obstruct-right").removeClass("obstruct-large")
-			var object = $(this)
-			var src = $(this).children("img").attr("src")
-			lightboxListener(object, src)
+
+			// var object = $(this)
+			// var src = $(this).children("img").attr("src")
+			// lightboxListener(object, src)
 		})
-		// .hover( function() {
-		// 	// $(this).css({"border" : "1px red solid"})
-		// 	$(".tooltip").css({"display" : "block", 
-		// 						"position" : "absolute",
-		// 						"left" : xPos,
-		// 						"top" : yPos,
-		// 						"width" : "40px",
-		// 						"height" : "20px",
-		// 						"border" : "1px black solid",
-		// 					})
-		// 	console.log('hovering!')
-		// })
 
 		$(".obstruct-right").click( function() {
 			$(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image")
 			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[1] + "'/>")
 			$(".obstruct-left").removeClass("obstruct-large")
-			var object = $(this)
-			var src = $(this).children("img").attr("src")
-			lightboxListener(object, src)
+			// $(this).bind("click", lightboxListener)
+
+			// var object = $(this)
+			// var src = $(this).children("img").attr("src")
+
+			// $("obstruct-large").click( function() {
+			// 	lightboxListener(object, src)				
+			// })
+
 		})
 	}
 
 	// lightbox takes the clicked image and displays wide.
 	function lightboxListener( element, path ) {
 
+		// const path = $(this).children("img").attr("src")
+
 		// console.log(path, element)
-		var clicks = element.data('clicks')
+		// var clicks = element.data('clicks')
 
-		if (clicks) {
-			$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
-		} else if (clicks == false) {
-			$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
-		} else {
-		}
+		
+		$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
+		
 
-		element.data("clicks", !clicks)
+		// element.data("clicks", !clicks)
 
 		$(".lightbox").click( function() {
-			$(this).remove()
+			$(this).removeClass("lightbox").remove()
 		})
 	}
 });
