@@ -374,7 +374,8 @@ html * {
 	font-size: 1.2em;
 }
 
-.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar, .credits-body::-webkit-scrollbar {
+.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar, .credits-body::-webkit-scrollbar,
+ .intro-chapter-english::-webkit-scrollbar, .intro-chapter-chinese::-webkit-scrollbar {
   display: none;
 }
 
@@ -514,6 +515,8 @@ html * {
   .essay-english, .essay-chinese {
   	width: inherit;
   	font-size: 1em;
+	word-wrap: break-word;
+  	hyphens: auto;
   }
 
   #lang {
@@ -541,7 +544,7 @@ html * {
   	padding: 2vh 2vh 2vh 4vh;
   }
 
-  .arrows {		
+  .arrows {	
 	font-size: 2em;
 	justify-content: flex-start;
   }
