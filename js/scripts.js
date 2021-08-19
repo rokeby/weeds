@@ -263,47 +263,33 @@ $(document).ready(function(){
 
 
 		$(".obstruct-left").click( function() {
-			$(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image")
+			$(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
 			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[0] + "'/>")
 			$(".obstruct-right").removeClass("obstruct-large")
+			$(this).bind("click", lightboxListener)
 
-			// var object = $(this)
-			// var src = $(this).children("img").attr("src")
-			// lightboxListener(object, src)
 		})
 
 		$(".obstruct-right").click( function() {
-			$(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image")
+			$(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
 			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[1] + "'/>")
 			$(".obstruct-left").removeClass("obstruct-large")
-			// $(this).bind("click", lightboxListener)
-
-			// var object = $(this)
-			// var src = $(this).children("img").attr("src")
-
-			// $("obstruct-large").click( function() {
-			// 	lightboxListener(object, src)				
-			// })
+			$(this).bind("click", lightboxListener)
 
 		})
 	}
 
 	// lightbox takes the clicked image and displays wide.
-	function lightboxListener( element, path ) {
+	function lightboxListener() {
+		const path = $(this).children("img").attr("src")
 
-		// const path = $(this).children("img").attr("src")
-
-		// console.log(path, element)
-		// var clicks = element.data('clicks')
-
-		
+		const obj = $(this)
 		$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
-		
-
-		// element.data("clicks", !clicks)
+		$(this).unbind("click", lightboxListener)
 
 		$(".lightbox").click( function() {
-			$(this).removeClass("lightbox").remove()
-		})
+			$(this).removeClass("lightbox")
+			$(obj).bind("click", lightboxListener)
+		}).bind(obj)
 	}
 });
