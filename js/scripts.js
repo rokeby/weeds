@@ -75,8 +75,10 @@ $(document).ready(function(){
 
 	$("#video-button").click( function() {
 		$(".video-space").addClass("flex")
-		$("#home, #close-video").click(function() {
-			$(".video-space").removeClass("flex")		
+		$("#close-video").css({"display" : "block"})
+		$("#home, #close-video, .main").click(function() {
+			$(".video-space").removeClass("flex")
+			$("#close-video").css({"display" : "none"})
 			})
 	})
 
