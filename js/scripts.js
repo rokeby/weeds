@@ -3,22 +3,22 @@ $(document).ready(function(){
     const essay = essayObj
     const splash = $(".splash")
     const introElements = $(["<div class='intro-segment'>",
-								"<div class='intro-title'>",
-    								"<span class='intro-void-small'>",
-    								"</span>",
-									"<div>",
-										"NO HUMANS IN THE CITY, BUT WEEDS",
-    								"</div>",
-								"</div>",
+								// "<div class='intro-title'>",
+    				// 				"<span class='intro-void-small'>",
+    				// 				"</span>",
+								// 	"<div>",
+								// 		"NO HUMANS IN THE CITY, BUT WEEDS",
+    				// 				"</div>",
+								// "</div>",
 								"<div class='intro-chapter-english'>",
 								"</div>",
 								"<div class='intro-chapter-chinese'>",
 								"</div>",
-								"<div class='intro-title-sm'>",
-								"<span class='intro-void-large'>",
-    								"</span>",
-									"當城市不再炊煙，只餘蔓草",
-								"</div>",
+								// "<div class='intro-title-sm'>",
+								// "<span class='intro-void-large'>",
+    				// 				"</span>",
+								// 	"當城市不再炊煙，只餘蔓草",
+								// "</div>",
 								"<div class='intro-blurb'>",
 								"</div>",
 							"</div>"
@@ -71,7 +71,7 @@ $(document).ready(function(){
 	let viewportWidth = $(window).width();
 
 
-	// Videos Panel
+// VIDEOS PANEL INTERACTION
 
 	$("#video-button").click( function() {
 		$(".video-space").addClass("flex")
@@ -91,7 +91,8 @@ $(document).ready(function(){
 	})
 
 
-	// sectionUpdate() repopulates the view according to var section.
+// sectionUpdate() repopulates the view according to current section.
+
 	function sectionUpdate () {
 
 		// populate intro
@@ -249,7 +250,9 @@ $(document).ready(function(){
 		    var x = e.clientX,
 		        y = e.clientY;
 
-	        if ( section < 0 ) { 
+		        // console.log( section, x, y)
+
+	        if ( section > 0 ) { 
 
 	        $(".obstruct-left").find("#tooltip-span").css({
 	        		"top" : (y + 10) + "px",
