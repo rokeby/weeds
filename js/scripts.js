@@ -55,15 +55,19 @@ $(document).ready(function(){
 		    							"<div id='bios' class='credits-body'>",
 		    							"</div>",
 	    							"</div>",
-	    							"<div class='bibliography'>",
-		    							"<div  class='credits-heading colour-header'>",
-		    							"Bibliography",
-		    							"</div>",
-		    							"<div id='bibliography' class='credits-body'>",
-		    							"</div>",
-	    							"</div>",
 								"</div>"].join("\n")
 								)
+
+    const bibliographyElements = $(["<div class='bibliography-container'>",
+		    							"<div class='bibliography'>",
+			    							"<div  class='credits-heading colour-header'>",
+			    							"Bibliography",
+			    							"</div>",
+			    							"<div id='bibliography' class='credits-body'>",
+			    							"</div>",
+		    							"</div>",
+									"</div>"].join("\n")
+									)
 
     let section = 0
     const essayLength = Object.keys(essay).length
@@ -95,6 +99,9 @@ $(document).ready(function(){
 
 	function sectionUpdate () {
 
+		console.log(section)
+
+
 		// populate intro
 		if(section == 0) {
 
@@ -104,7 +111,7 @@ $(document).ready(function(){
 			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
 			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
 
-			for(let i = 1; i < essayLength - 2; i++) {
+			for(let i = 1; i < essayLength - 3; i++) {
 				introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
 				introTitlesCN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].cn.title + "</span><br><br>")
 			}
@@ -134,18 +141,12 @@ $(document).ready(function(){
 
 		    // chapter links to pages
 		    $(".chapter-link, .button").click( function() {
-
-		    	// $(this).css({ "color" : "#6F68F6" })
-		    	// $(".button").not(this).css({ "color" : "black" })
-
 		    	section = $(this).data("attr")
-
 				sectionUpdate()
 				// console.log(section)
 		    })
 
 		    // intro blurb bit
-
 		    blurb = $("<div/>").append("<span class='intro-void-small'/>")
     				.append($("<span />").html(essay[0].en.text))
     				.append('<br>')
@@ -199,10 +200,35 @@ $(document).ready(function(){
 
 			$(".mobile-title .nav-bar").html("CREDITS")
 
+			for ( let i=0; i<Object.keys(essay.credits.en).length; i++) {
+
+				creditsObj = Object.keys(essay.credits.en)[i]
+				creditsText = $("<p>")
+
+				// console.log(creditsObj, essay.credits.en[creditsObj[0]])
+
+				console.log(creditsObj)
+
+				$.each(essay.credits.en[creditsObj], function(key, item) {
+					console.log(item)
+					creditsText.append("<p>" + item + "</p>");
+				});
+
+				// console.log(creditsObj, creditsText)
+
+				$("#" + creditsObj).html(creditsText)
+			}
+
+		} else if (section == "bib") {
+			$(".scroll-container").html(bibliographyElements)
+
+			$(".mobile-title .nav-bar").html("BIBLIOGRAPHY")
+
 			for ( let i=0; i<Object.keys(essay.bib).length; i++) {
 
 				bibObj = Object.keys(essay.bib)[i]
 				bibText = $("<p>")
+				
 				$.each(essay.bib[bibObj], function(key, item) {
 					bibText.append("<p>" + item + "</p>");
 				});
