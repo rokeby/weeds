@@ -38,7 +38,7 @@ $(document).ready(function(){
 					)
 
     const creditsElements = $(["<div class='credits-container'>",
-	    							"<div class='about'>",
+    								"<div class='credits-english'>",
 		    							"<div class='credits-heading colour-header'>",
 		    							"About",
 		    							"</div>",
@@ -53,6 +53,23 @@ $(document).ready(function(){
 		    							"Bios",
 		    							"</div>",
 		    							"<div id='bios' class='credits-body'>",
+		    							"</div>",
+	    							"</div>",
+	    							"<div class='credits-chinese'>",
+		    							"<div class='credits-heading colour-header'>",
+		    							"項目簡介",
+		    							"</div>",
+		    							"<div id='項目簡介' class='credits-body'>",
+		    							"</div>",
+		    							"<div class='credits-heading colour-header'>",
+		    							"鳴謝",
+		    							"</div>",
+		    							"<div id='鳴謝' class='credits-body'>",
+		    							"</div>",
+		    							"<div class='credits-heading colour-header'>",
+		    							"簡歷",
+		    							"</div>",
+		    							"<div id='簡歷' class='credits-body'>",
 		    							"</div>",
 	    							"</div>",
 								"</div>"].join("\n")
@@ -200,23 +217,30 @@ $(document).ready(function(){
 
 			$(".mobile-title .nav-bar").html("CREDITS")
 
-			for ( let i=0; i<Object.keys(essay.credits.en).length; i++) {
+			for (let i=0; i<Object.keys(essay.credits).length; i++) {
 
-				creditsObj = Object.keys(essay.credits.en)[i]
-				creditsText = $("<p>")
+				lang = Object.keys(essay.credits)[i]
+				headings = essay.credits[lang]
 
-				// console.log(creditsObj, essay.credits.en[creditsObj[0]])
+				// console.log(headings)
+				// console.log(lang)
 
-				console.log(creditsObj)
+				for ( let i=0; i<Object.keys(headings).length; i++) {
 
-				$.each(essay.credits.en[creditsObj], function(key, item) {
-					console.log(item)
-					creditsText.append("<p>" + item + "</p>");
-				});
+					creditsObj = Object.keys(headings)[i]
+					creditsText = $("<p>")
 
-				// console.log(creditsObj, creditsText)
+					// console.log(creditsObj)
+					// console.log(lang)
+					// console.log(headings[creditsObj])
+					
+					$.each(headings[creditsObj], function(key, item) {
+						// console.log(item)
+						creditsText.append("<p>" + item + "</p>");
+					});
 
-				$("#" + creditsObj).html(creditsText)
+					$(".credits-" + lang + " > #" + creditsObj).html(creditsText)
+				}
 			}
 
 		} else if (section == "bib") {

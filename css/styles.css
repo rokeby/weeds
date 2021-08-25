@@ -471,7 +471,7 @@ html * {
 	cursor: zoom-out;
 }
 
-.about, .bibliography {
+.credits-english, .credits-chinese, .bibliography {
 	height: inherit;
 	width: 50%;
 	overflow-y: auto;
@@ -486,7 +486,6 @@ html * {
 .credits-body {
 	word-wrap: break-word;
 	/*hyphens: auto; */
-
 }
 
 /* MOBILE */

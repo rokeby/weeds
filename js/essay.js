@@ -251,27 +251,27 @@ const essayObj = {
 
 	"credits" : {
 
-		"en" : {
-			"about" : ['《當城市不再炊煙，只餘蔓草》是由建築師Joel Austin和藝術創作者Kwan Q Li於2019-2021年進行的藝術研究項目。團隊以香港為本，考察數據於城市實體化的過程，並思索未來人類與後人類城市環境的共存性。', '此項目包含一系列的文章，插圖和相片。除此以外，有關短片於2021威尼斯建築雙年展香港館展出；研究亦於EPFL’s 2021-21 LATSIS 2020-21 LATSIS Symposium Open-forum Deep City: Climate Crisis, Democracy and the Digital發布，同時一篇文章將收錄於學術期刊AI & Society: Knowledge, Culture and Communication。'],
-			"acknowledgements" : ["項目資助: Hong Kong Design Trust; Councils for the Arts at MIT",
+		"english" : {
+			"about" : ['“No Humans in the City, but Weeds” is an artistic research project undertaken between 2019-2021 by architect Joel Austin and artist Kwan Q Li. Taking Hong Kong as a case in point, the duo observes how data is materialised within urban density, and ponders a future convolution of human and post-human urban environments.', 'The project manifests as a series of essays, illustrations and photographs, accompanied by a short film which is on exhibit in the Hong Kong Pavilion at the 2021 Venice Biennale of Architecture. The research has been presented in EPFL’s 2020-21 LATSIS Symposium Open-forum Deep City: Climate Crisis, Democracy and the Digital, while a related speculative essay is set to be published by the Journal AI & Society: Knowledge, Culture and Communication.]'],
+			"acknowledgements" : ["Project funders: Hong Kong Design Trust; Councils for the Arts at MIT",
+							"Exhibition: Hong Kong Curatorial Team of the 17th Venice Biennale International Architecture",
+							"Website design: Foreign Objects",
+							"Journal publishing & review: Santinder Gill; Vere van Gool ",
+							"Field visit: MIT Information Systems & Technology", "Special thanks to Marisa Yiu, Andrea Volpe, Lydia Brosnahan, Claudia Rugeles-Vaccaro, Manaswi Mishra and Aarón Montoya-Moraga, for your support in facilitating the project’s realisation."],
+
+			"bios" : ["Joel Austin Cunningham is an architect and researcher from the UK. His independent projects explore experimental modes of practice that prioritise socio-technological agendas and have been selected for exhibition at Manifesta Biennale 2018 and the 2021 Venice Biennale of Architecture. He is a SMArchS research candidate at MIT and holds a professional Architecture degree from the Royal College of Art. Joel has spent several years practicing architecture in Europe and Asia, perhaps most notably with internationally renowned office OMA.", "Kwan Q Li is an artist from Hong Kong whose practice coalesces lens-based media, performance and writing. Her research interests span post-colonial intricacies, vegetative politics and digital/generative (im)possibilities. Her projects have been featured/supported by the BOOKED: Tai Kwun Contemporary (HK), IdeasCity by the NTU CCA (Singapore) & the New Museum (USA), Art Machines 2 (HK) and more. Graduated with a BFA degree (Oxon.), Queenie resides in the Art, Culture, and Technology program at MIT on a teaching fellowship between 2020-2022."],
+		},
+
+		"chinese" : {
+			"項目簡介" : ['《當城市不再炊煙，只餘蔓草》是由建築師Joel Austin和藝術創作者Kwan Q Li於2019-2021年進行的藝術研究項目。團隊以香港為本，考察數據於城市實體化的過程，並思索未來人類與後人類城市環境的共存性。', '此項目包含一系列的文章，插圖和相片。除此以外，有關短片於2021威尼斯建築雙年展香港館展出；研究亦於EPFL’s 2021-21 LATSIS 2020-21 LATSIS Symposium Open-forum Deep City: Climate Crisis, Democracy and the Digital發布，同時一篇文章將收錄於學術期刊AI & Society: Knowledge, Culture and Communication。'],
+			"鳴謝" : ["項目資助: Hong Kong Design Trust; Councils for the Arts at MIT",
 							"展覽: Hong Kong Curatorial Team of the 17th Venice Biennale International Architecture",
 							"網頁設計: Foreign Objects",
 							"期刊發布及評審: Santinder Gill; Vere van Gool ",
 							"中文校對：Priscilla Chung",
 							"實地考察：MIT Information Systems & Technology", " 以及Marisa Yiu, Andrea Volpe, Lydia Brosnahan, Claudia Rugeles-Vaccaro, Manaswi Mishra與Aarón Montoya-Moraga對實行此計劃的支持。"],
 
-			"bios" : ["Joel Austin Cunningham 是來自英國的建築師和研究員。其獨立項目探討以社會和科技有關	的實驗性實踐模式，並於國際展出，包括Manifesta Biennale 2018。他獲英國皇家藝術學院獲授建築專業學位，為麻省理工大學SMArchS研究生。Joel於歐洲和亞洲執業數年，當中包括著名的大都會建築事務所。", "Kwan Q Li 是一名香港藝術創作者，創作媒體以影像、表演和寫作為主。她的研究興趣包括後殖民複雜性、自然和政治，以及數位和衍生的（不）可能性。作品曾展出於BOOKED: Tai Kwun Contemporary (HK), IdeasCity by the NTU CCA (Singapore) & the New Museum (USA), Art Machines 2 (HK)等。畢業於牛津大學純藝術學士，Queenie於2020-2022年間獲教學獎學金，駐居於麻省理工大學的藝術、文化和科技系。"]
-		},
-
-		"cn" : {
-			"項目簡介" : ['“No Humans in the City, but Weeds” is an artistic research project undertaken between 2019-2021 by architect Joel Austin and artist Kwan Q Li. Taking Hong Kong as a case in point, the duo observes how data is materialised within urban density, and ponders a future convolution of human and post-human urban environments.', 'The project manifests as a series of essays, illustrations and photographs, accompanied by a short film which is on exhibit in the Hong Kong Pavilion at the 2021 Venice Biennale of Architecture. The research has been presented in EPFL’s 2020-21 LATSIS Symposium Open-forum Deep City: Climate Crisis, Democracy and the Digital, while a related speculative essay is set to be published by the Journal AI & Society: Knowledge, Culture and Communication.]'],
-			"鳴謝" : ["Project funders: Hong Kong Design Trust; Councils for the Arts at MIT",
-							"Exhibition: Hong Kong Curatorial Team of the 17th Venice Biennale International Architecture",
-							"Website design: Foreign Objects",
-							"Journal publishing & review: Santinder Gill; Vere van Gool ",
-							"Field visit: MIT Information Systems & Technology", "Special thanks to Marisa Yiu, Andrea Volpe, Lydia Brosnahan, Claudia Rugeles-Vaccaro, Manaswi Mishra and Aarón Montoya-Moraga, for your support in facilitating the project’s realisation."],
-
-			"簡歷" : ["Joel Austin Cunningham is an architect and researcher from the UK. His independent projects explore experimental modes of practice that prioritise socio-technological agendas and have been selected for exhibition at Manifesta Biennale 2018 and the 2021 Venice Biennale of Architecture. He is a SMArchS research candidate at MIT and holds a professional Architecture degree from the Royal College of Art. Joel has spent several years practicing architecture in Europe and Asia, perhaps most notably with internationally renowned office OMA.", "Kwan Q Li is an artist from Hong Kong whose practice coalesces lens-based media, performance and writing. Her research interests span post-colonial intricacies, vegetative politics and digital/generative (im)possibilities. Her projects have been featured/supported by the BOOKED: Tai Kwun Contemporary (HK), IdeasCity by the NTU CCA (Singapore) & the New Museum (USA), Art Machines 2 (HK) and more. Graduated with a BFA degree (Oxon.), Queenie resides in the Art, Culture, and Technology program at MIT on a teaching fellowship between 2020-2022."],
+			"簡歷" : ["Joel Austin Cunningham 是來自英國的建築師和研究員。其獨立項目探討以社會和科技有關	的實驗性實踐模式，並於國際展出，包括Manifesta Biennale 2018。他獲英國皇家藝術學院獲授建築專業學位，為麻省理工大學SMArchS研究生。Joel於歐洲和亞洲執業數年，當中包括著名的大都會建築事務所。", "Kwan Q Li 是一名香港藝術創作者，創作媒體以影像、表演和寫作為主。她的研究興趣包括後殖民複雜性、自然和政治，以及數位和衍生的（不）可能性。作品曾展出於BOOKED: Tai Kwun Contemporary (HK), IdeasCity by the NTU CCA (Singapore) & the New Museum (USA), Art Machines 2 (HK)等。畢業於牛津大學純藝術學士，Queenie於2020-2022年間獲教學獎學金，駐居於麻省理工大學的藝術、文化和科技系。"]
 		},
 
 	},
