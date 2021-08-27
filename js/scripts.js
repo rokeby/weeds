@@ -210,11 +210,12 @@ $(document).ready(function(){
 			$(".essay-english").html(sectionEN)
 			$(".essay-chinese").html(sectionCN)
 			$(".essay-title").html("<span class='intro-void-large'/></span>" + "<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
+
 			addImages()
+			addFootnotes()
 
 		} else if (section == "credits") {
 			$(".scroll-container").html(creditsElements)
-
 			$(".mobile-title .nav-bar").html("CREDITS")
 
 			for (let i=0; i<Object.keys(essay.credits).length; i++) {
@@ -245,7 +246,6 @@ $(document).ready(function(){
 
 		} else if (section == "bib") {
 			$(".scroll-container").html(bibliographyElements)
-
 			$(".mobile-title .nav-bar").html("BIBLIOGRAPHY")
 
 			for ( let i=0; i<Object.keys(essay.bib).length; i++) {
@@ -265,72 +265,104 @@ $(document).ready(function(){
 	function addImages() {
 
 		// total number of obstruct-left and obstruct-right objects.
-		const numObjects = 8;
+		const numObjects = 4;
 
-		const obstruct = ["<span class='obstruct-left tooltip'></span>", "<span class='obstruct-right tooltip'></span>"]
+		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 		// console.log(target[0])
 		// console.log(target[1])
-
 
 		const objArrEN = target[0][0].outerHTML.split(" ")
 		const objArrCN = target[1][0].outerHTML.split("•")
 		// console.log(objArrCN)
 
-		for (let j=0; j<numObjects; j++) {
-			objArrEN.splice((Math.floor(Math.random() * objArrEN.length/1.5)), 0, obstruct[1])
-			objArrEN.splice((Math.floor(Math.random() * objArrEN.length/1.5)), 0, obstruct[0])
-			objArrCN.splice((Math.floor(Math.random() * objArrCN.length/1.5)), 0, obstruct[1])
-			objArrCN.splice((Math.floor(Math.random() * objArrCN.length/1.5)), 0, obstruct[0])
+
+		for (let i=1; i<numObjects + 1; i++) {
+			obstruct.push("<span class='obstruct-left tooltip' data-attr='" + i + "'></span>")
+			obstruct.push("<span class='obstruct-right tooltip' data-attr='" + i + "'></span>")
 		}
+
+		var intervalEN = objArrEN.length/numObjects
+		var intervalCN = objArrCN.length/numObjects
+
+		console.log(obstruct)
+
+		for ( let j=0; j<obstruct.length; j++) {
+			objArrEN.splice((Math.floor((intervalEN * (j)) + (Math.random() * intervalEN))), 0, obstruct[j])
+			objArrCN.splice((Math.floor((intervalCN * (j)) + (Math.random() * intervalCN))), 0, obstruct[j])
+		}
+
 		newTextEN = objArrEN.join(" ")
 		newTextCN = objArrCN.join("")
 
 		target[0].html(newTextEN)
 		target[1].html(newTextCN)
 
+		$(".essay-english .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-large").append("<img src='" + essay[section].img[0] + "'/>")
+		$(".essay-chinese .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-large").append("<img src='" + essay[section].img[1] + "'/>")
+
+
+		// $(".obstruct-left:first-of-type").addClass("image").addClass("obstruct-large").append("<img src='" + essay[section].img[0] + "'/>")
+		// $(".obstruct-right:first-of-type").addClass("image").addClass("obstruct-large").append("<img src='" + essay[section].img[1] + "'/>")
+
 		addImageListeners()
+	}
+
+	function addFootnotes() {
+
+		footnotes = $(".footnote")
+
+			$.each(footnotes, function(key, item) {
+				num = $(this).data("footnote")
+				sup = $("<sup>").append(num)
+				item.append(sup[0])
+			})
 	}
 
 	function addImageListeners() {
 
-		$(".obstruct-left, .obstruct-right").append("<span id='tooltip-span'></span>")
+		// $(".obstruct-left, .obstruct-right").append("<span id='tooltip-span'></span>")
 
-		window.onmousemove = function (e) {
-		    var x = e.clientX,
-		        y = e.clientY;
+		// window.onmousemove = function (e) {
+		//     var x = e.clientX,
+		//         y = e.clientY;
 
-		        // console.log( section, x, y)
+		//         // console.log( section, x, y)
 
-	        if ( section > 0 ) { 
+	 //        if ( section > 0 ) { 
 
-	        $(".obstruct-left").find("#tooltip-span").css({
-	        		"top" : (y + 10) + "px",
-	        		"left" : (x + 10) + "px",
-	        	}).html(essay[section].img[0].split("/").pop())
+	 //        $(".obstruct-left").find("#tooltip-span").css({
+	 //        		"top" : (y + 10) + "px",
+	 //        		"left" : (x + 10) + "px",
+	 //        	}).html(essay[section].img[0].split("/").pop())
 
-	        $(".obstruct-right").find("#tooltip-span").css({
-	        		"top" : (y + 10) + "px",
-	        		"left" : (x + 10) + "px",
-	        	}).html(essay[section].img[1].split("/").pop())
-	    }
-		};
+	 //        $(".obstruct-right").find("#tooltip-span").css({
+	 //        		"top" : (y + 10) + "px",
+	 //        		"left" : (x + 10) + "px",
+	 //        	}).html(essay[section].img[1].split("/").pop())
+	 //    }
+		// };
+
+		// imageObstructs = [$(".obstruct-left")[0], $(".obstruct-right")[0]]
+
+		// $.each(imageObstructs, function(key, item) {
+		// 	console.log(item)
+		// 	item.html("<img src='" + essay[section].img[0] + "'/>")
+		// })
 
 
-		$(".obstruct-left").click( function() {
-			$(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
-			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[0] + "'/>")
-			$(".obstruct-right").removeClass("obstruct-large")
-			$(this).bind("click", lightboxListener)
-
+		$(".essay-english .obstruct-left[data-attr='1']").click( function() {
+			// $(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
+			// $(this).addClass("obstruct-large").addClass("image")
+			// $(".obstruct-right img").remove()
+			lightboxListener()
 		})
 
-		$(".obstruct-right").click( function() {
-			$(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
-			$(this).addClass("obstruct-large").addClass("image").append("<img src='" + essay[section].img[1] + "'/>")
-			$(".obstruct-left").removeClass("obstruct-large")
-			$(this).bind("click", lightboxListener)
-
+		$(".essay-chinese .obstruct-right[data-attr='1']").click( function() {
+			// $(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
+			// $(this).addClass("obstruct-large").addClass("image")
+			// $(".obstruct-left img").remove()
+			lightboxListener()
 		})
 	}
 
@@ -343,7 +375,7 @@ $(document).ready(function(){
 		$(this).unbind("click", lightboxListener)
 
 		$(".lightbox").click( function() {
-			$(this).removeClass("lightbox")
+			$(this).remove()
 			$(obj).bind("click", lightboxListener)
 		}).bind(obj)
 	}

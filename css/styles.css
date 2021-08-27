@@ -25,12 +25,22 @@ body {
 
 @font-face {
 	font-family: "NotoSans";
-    src: url("../assets/fonts/NotoSansSC-Regular.woff");
+    src: url("../assets/fonts/NotoSansSC-Light.otf");
 }
 
 @font-face {
 	font-family: "GnuFont";
     src: url("../assets/fonts/GnuUnifontFull-Pm9P.woff");
+}
+
+@font-face {
+	font-family: "NeueMachinaLight";
+	src: url('../assets/fonts/NeueMachina-Regular.woff2');
+}
+
+@font-face {
+	font-family: "NeueMachinaRegular";
+	src: url('../assets/fonts/NeueMachina-Regular.woff2');
 }
 
 p {
@@ -71,7 +81,7 @@ a {
 
 .bottom {
 	bottom: 0;
-    font-family: "W95FA", Times, serif;
+    font-family: "NeueMachinaRegular", Times, serif;
     width: 90vw;
 	border-top: 1px black solid;
 }
@@ -101,7 +111,7 @@ a {
 	}
 
 	.button {
-		font-family: "W95FA", "GnuFont";
+		font-family: "NeueMachinaRegular", "GnuFont";
 	}
 
 	.button:hover {
@@ -180,7 +190,8 @@ a {
 	height: calc(94vh - 1px);
 	width: 100vw;
 	overflow: scroll;
-    font-family: "Roboto", Times, serif;
+	-webkit-overflow-scrolling: touch;
+    font-family: "NotoSans", sans-serif;
     overflow-y: hidden;
 }
 
@@ -206,7 +217,8 @@ html * {
 	height: 88vh;
 	font-size: 3em;
 	pointer-events: none;
-    font-family: "GnuFont", "W95FA";
+    font-family: "GnuFont", "NeueMachinaLight"; 
+    /* Make icon into SVG? */
     z-index: 10;
 
 }
@@ -233,16 +245,16 @@ html * {
 	justify-content: center;
 	height: inherit;
 	width: 90vw;	
-    font-family: "GnuFont", "W95FA";
+    font-family: "NeueMachinaLight", "GnuFont";
 }
 
-.intro-segment *, .credits-container * {
+.intro-segment *, .credits-container *, .bibliography-container * {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
 	.intro-title {
-	    font-family: "GnuFont", "W95FA";
+	    font-family: "GnuFont", "NeueMachinaLight";
 		text-align: right;
 		height: auto;
 		width: 20vw;
@@ -349,7 +361,7 @@ html * {
 }
 
 
-.essay-segment, .credits-container {
+.essay-segment, .credits-container, .bibliography-container {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
@@ -359,13 +371,13 @@ html * {
 }
 
 .essay-title {
-    font-family: "GnuFont", "W95FA";
+    font-family: "NeueMachinaLight", "GnuFont";
 	width: 20%;
 	height: auto;
 	text-align: right;
 	height: auto;
 	width: 20vw;
-	font-size: 2.5em;
+	font-size: 2em;
 	padding-right: 0.5em; 
 }
 
@@ -390,6 +402,7 @@ html * {
 
 .essay-chinese, .essay-english {
   -ms-overflow-style: none;  /* IE and Edge */
+  -webkit-overflow-scrolling: touch
   scrollbar-width: none;  /* Firefox */
 }
 
@@ -401,6 +414,7 @@ html * {
 	margin: 0vh 0 0vh 0vw;
 	padding: 5vh 0 5vh 0;
 	overflow-y: auto;
+	-webkit-overflow-scrolling: touch
 }
 
 
@@ -411,6 +425,7 @@ html * {
 	height: 20vh;
 	visibility: visible;
 	transition: 1s;	
+	/*border: 1px black solid;*/
 }
 
 .obstruct-right {
@@ -420,6 +435,7 @@ html * {
 	height: 20vh;
 	visibility: visible;
 	transition: 1s;
+	/*border: 1px black solid;*/
 }
 
 .obstruct-left:hover, .obstruct-right:hover, .obstruct-left:hover #tooltip-span, .obstruct-right:hover #tooltip-span {
@@ -475,11 +491,12 @@ html * {
 	height: inherit;
 	width: 50%;
 	overflow-y: auto;
+	-webkit-overflow-scrolling: touch
 	/*border: 1px red solid;*/
 }
 
 .credits-heading {
-    font-family: "GnuFont", "W95FA";
+    font-family: "GnuFont", "NeueMachinaLight";
 
 }
 
@@ -524,6 +541,7 @@ html * {
   	width: inherit;
   	font-size: 1em;
 	word-wrap: break-word;
+	-webkit-overflow-scrolling: touch
   	hyphens: auto;
   }
 
@@ -533,9 +551,10 @@ html * {
 
   .mobile-title {
 	top: 0;
-    font-family: "W95FA", "GnuFont", serif;
+    font-family: "NeueMachinaLight", "GnuFont", serif;
     width: 90vw;
 	border-bottom: 1px black solid;
+	-webkit-overflow-scrolling: touch
   }
 
   .mobile-title .nav-bar {
