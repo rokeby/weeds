@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 	function sectionUpdate () {
 
-		console.log(section)
+		console.log("section = " + section)
 
 
 		// populate intro
@@ -106,9 +106,12 @@ $(document).ready(function(){
 			$(".scroll-container").empty()
 			$(".scroll-container").html(introElements)
 
-			numCells = 28
+			numCells = 24
+			numRows = 4
+			numCols = 6
 			cellArr = []
 			titleArr = []
+			rowArr = []
 
 			// en and cn titles in an array titleArr (16)
 			for (j=1; j < essayLength - 3; j++) {
@@ -118,20 +121,61 @@ $(document).ready(function(){
 			for (i=0; i<numCells; i++) {
 
 				let cell = $("<span>").append("").addClass("landingCell").attr("cell-data", i)
-				$(".intro-container").append(cell)
+				// $(".intro-container").append(cell)
 				cellArr.push(cell)
 
 				// .css({"width" : 20 + Math.floor(Math.random() * 10) + "%" })
 			}
 
+			console.log(cellArr)
+
+
+			for (i=0; i<numRows; i++) {
+				let row = $("<div>").append("").addClass("landingRow").attr("row-data", i)
+				rowArr.push(row)
+			}
+
+			for (i=0; i<numRows; i++) {
+				for (k=0; k<numCols; k++) {
+					rowArr[i].append(cellArr[(i * numCols) + k])
+					// console.log(cellArr[(i * numCols) + k])
+				}
+
+				// console.log(cellArr)
+				$(".intro-container").append(rowArr[i])
+	
+			}
 
 			$.each(titleArr, function( key, item ) {
 				randCell = Math.floor(Math.random() * (cellArr.length))
-				cellArr[randCell].append(item)
+				cellArr[randCell].append(item).addClass("chapter-link")
+				console.log(cellArr[randCell], item)
+
 				cellArr.splice(randCell, 1)
-				console.log(cellArr)
+			})
+			
+
+			$.each(cellArr, function (key, item) {
+				randCell = Math.floor(Math.random() * (cellArr.length))
+				cellArr[randCell].addClass("intro-void-small")
+				cellArr.splice(randCell, 1)
 			})
 
+			$(".landingCell").hover( function() {
+				$(this).css({ "border" : "none", 
+								"width" : 20 + Math.floor(Math.random() * 20) + "%",
+								// "height" : Math.floor(Math.random() * 10) + "%"
+							})
+			})
+		    
+
+		    // $(".intro-container").hover(function() {
+		    // 	$(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    // 	.next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
+		    // }, function() {
+		    // 	$(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    // 	.next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
+		    // })
 
 
 			//populate an array of the titles you want
