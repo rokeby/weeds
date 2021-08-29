@@ -7,6 +7,8 @@ $(document).ready(function(){
     							"</div>",
     							"<div class='intro-chapter-chinese'>",
     							"</div>",
+    							"<div class='intro-grid'>",
+    							"</div>",
 							"</div>"
 								].join("\n")
 					)
@@ -20,7 +22,7 @@ $(document).ready(function(){
 								"<div class='essay-chinese' lang='cn'>",
     							"</div>",
 							"</div>",
-    					"</div>"].join("\n")
+						"</div>"].join("\n")
 					)
 
     const creditsElements = $(["<div class='credits-container'>",
@@ -77,32 +79,12 @@ $(document).ready(function(){
     let viewportHeight = $(window).height();
 	let viewportWidth = $(window).width();
 
-
-// VIDEOS PANEL INTERACTION
-
-	$("#video-button").click( function() {
-		$(".video-space").addClass("flex")
-		$("#close-video").css({"display" : "block"})
-		$("#home, #close-video, .main").click(function() {
-			$(".video-space").removeClass("flex")
-			$("#close-video").css({"display" : "none"})
-			})
-	})
-
     sectionUpdate()
 
-
-	$("#video-1, #video-2").click( function() {
-		let videoNum = $(this).attr("video-attr")
-		$(".video").html(essay.videos[videoNum].iframe)
-	})
-
 // sectionUpdate() repopulates the view according to current section.
-
 	function sectionUpdate () {
 
 		console.log("section = " + section)
-
 
 		// populate intro
 		if(section == 0) {
@@ -110,9 +92,9 @@ $(document).ready(function(){
 			$(".scroll-container").empty()
 			$(".scroll-container").html(introElements)
 
-			numCells = 24
-			numRows = 4
-			numCols = 6
+			numCells = 25
+			numRows = 5
+			numCols = 5
 			cellArr = []
 			titleArr = []
 			sectionArr = []
@@ -120,62 +102,48 @@ $(document).ready(function(){
 
 			// en and cn titles in an array titleArr (16)
 			for (j=1; j < essayLength - 3; j++) {
-				titleArr.push([essay[j].en.title.toUpperCase(), j], [essay[j].cn.title, j])
-				
+				titleArr.push([essay[j].en.title.toUpperCase(), j], [essay[j].cn.title, j])				
 				}
-
-				console.log(titleArr)
 
 			for (i=0; i<numCells; i++) {
 
 				let cell = $("<span>").append("").addClass("landingCell").attr("cell-data", i)
 				cellArr.push(cell)
-
 			}
-
-			console.log(cellArr)
-
 
 			for (i=0; i<numRows; i++) {
 				let row = $("<div>").append("").addClass("landingRow").attr("row-data", i)
 				rowArr.push(row)
 			}
 
+			let rows = $("<div>")
+
 			for (i=0; i<numRows; i++) {
 				for (k=0; k<numCols; k++) {
 					rowArr[i].append(cellArr[(i * numCols) + k])
 				}
-				$(".intro-container").append(rowArr[i])
-	
+				rows.append(rowArr[i])	
 			}
+
+			$(".intro-grid").html(rows)
 
 			$.each(titleArr, function( key, item ) {
 				randCell = Math.floor(Math.random() * (cellArr.length))
-				cellArr[randCell].append(titleArr[key][0]).addClass("chapter-link").attr("data-attr", titleArr[key][1])
+				// console.log(cellArr[randCell])
+				cellArr[randCell].html(titleArr[key][0]).addClass("chapter-link").attr("data-attr", titleArr[key][1])
 				cellArr.splice(randCell, 1)
 			})
 			
 			$(".landingCell").hover( function() {
 				$(this).css({ "border" : "none", 
-								"width" : Math.floor(Math.random() * 60) + "%",
+								"width" : 20 + Math.floor(Math.random() * 20) + "%",
 							})
 
 				setTimeout(function() {
-					$(".landingCell").css({"width" : "20%", "transition" : "3s"
+					$(".landingCell").css({ "width" : "20%"
 							})
-				}, 4000)
+				}, 5000)
 			})
-		    
-
-		    // $(".intro-container").hover(function() {
-		    // 	$(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		    // 	.next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		    // }, function() {
-		    // 	$(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		    // 	.next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		    // })
-
-
 			
 			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
@@ -190,56 +158,14 @@ $(document).ready(function(){
 			$(".intro-chapter-english").html(introTitlesEN)
 			$(".intro-chapter-chinese").html(introTitlesCN)
 
-			let introTitlesENArr = $(".intro-chapter-english > .intro-text").children().toArray()
-			let introTitlesCNArr = $(".intro-chapter-chinese > .intro-text").children().toArray()
-			let introVoidEN = $("<span class='intro-void-small'></span")
-			let introVoidCN = $("<span class='intro-void-large'></span")
+			let introTitlesENArr = $(".intro-chapter-english > .intro-text").children()
+			let introTitlesCNArr = $(".intro-chapter-chinese > .intro-text").children()
 
-			introTitlesENArr.splice(introTitlesENArr.length/6 + (Math.floor(Math.random() * introTitlesENArr.length/1.5)), 0, introVoidEN[0])
-			introTitlesCNArr.splice(introTitlesCNArr.length/6 + (Math.floor(Math.random() * introTitlesCNArr.length/1.5)), 0, introVoidCN[0])
-
-			let insertIntroVoidEN = $("<div />");
-			let insertIntroVoidCN = $("<div />");
-
-			$.each(introTitlesENArr, function(key, item) { insertIntroVoidEN.append(item);});
-			$.each(introTitlesCNArr, function(key, item) { insertIntroVoidCN.append(item);});
-
-			insertIntroVoidEN = insertIntroVoidEN.html()
-			insertIntroVoidCN = insertIntroVoidCN.html()
-
-			$(".intro-chapter-english > .intro-text").html(insertIntroVoidEN)
-			$(".intro-chapter-chinese > .intro-text").html(insertIntroVoidCN)
+			$(".intro-chapter-english > .intro-text").html(introTitlesENArr)
+			$(".intro-chapter-chinese > .intro-text").html(introTitlesCNArr)
 
 
-		    // intro blurb bit
-
-		 //    blurb = $("<div/>").append("<span class='intro-void-small'/>")
-   //  				.append($("<span />").html(essay[0].en.text))
-   //  				.append('<br>')
-   //  				.append("<span class='intro-void-large'/>")
-   //  				.append($("<span />").html(essay[0].cn.text))
-
-		 //    $(".intro-blurb").html(blurb)
-
-		 //    // change intro void sizes
-		 //    $(".intro-title").hover(function() {
-		 //    	$(this).find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		 //    }, function() {
-		 //    	$(this).find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		 //    })
-
-		 //    $(".intro-segment > *").hover(function() {
-		 //    	$(this).next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		 //    	.next().find( ".intro-void-small" ).removeClass("intro-void-small").addClass("intro-void-large")
-		 //    }, function() {
-		 //    	$(this).next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		 //    	.next().find( ".intro-void-large" ).removeClass("intro-void-large").addClass("intro-void-small")
-		 //    })
-
-			// setInterval(function() { 
-			// 	insertSpace($(".intro-text"))
-			// }, 1000)
-
+			buttons()
 
 		// populate essay pages
     	} else if (section > 0) {
@@ -313,14 +239,11 @@ $(document).ready(function(){
 
 		// total number of obstruct-left and obstruct-right objects.
 		const numObjects = 4;
-
 		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
 		const objArrEN = target[0][0].outerHTML.split(" ")
 		const objArrCN = target[1][0].outerHTML.split("•")
-		// console.log(objArrCN)
-
 
 		for (let i=1; i<numObjects + 1; i++) {
 			obstruct.push("<span class='obstruct-left tooltip' data-attr='" + i + "'></span>")
@@ -329,8 +252,6 @@ $(document).ready(function(){
 
 		var intervalEN = objArrEN.length/numObjects
 		var intervalCN = objArrCN.length/numObjects
-
-		console.log(obstruct)
 
 		for ( let j=0; j<obstruct.length; j++) {
 			objArrEN.splice((Math.floor((intervalEN * (j)) + (Math.random() * intervalEN))), 0, obstruct[j])
@@ -393,6 +314,7 @@ $(document).ready(function(){
 
 
 		$(".essay-english .obstruct-left[data-attr='1']").click( function() {
+			console.log("clicked image")
 			// $(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
 			// $(this).addClass("obstruct-large").addClass("image")
 			// $(".obstruct-right img").remove()
@@ -400,6 +322,7 @@ $(document).ready(function(){
 		})
 
 		$(".essay-chinese .obstruct-right[data-attr='1']").click( function() {
+			console.log("clicked image")
 			// $(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
 			// $(this).addClass("obstruct-large").addClass("image")
 			// $(".obstruct-left img").remove()
@@ -408,8 +331,9 @@ $(document).ready(function(){
 	}
 
 	// lightbox takes the clicked image and displays wide.
-	function lightboxListener() {
+	function lightboxListener( ) {
 		const path = $(this).children("img").attr("src")
+		console.log(path)
 
 		const obj = $(this)
 		$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
@@ -421,17 +345,27 @@ $(document).ready(function(){
 		}).bind(obj)
 	}
 
-	    // chapter links to pages
-    $(".chapter-link, .button").click( function() {
+    // chapter links to pages
+    function buttons() {
+   		$(".chapter-link, .button").click( function() {
     	section = $(this).data("attr")
 		sectionUpdate()
-    })
+    	})
 
-    function insertSpace( object ) {
+		$("#video-1, #video-2").click( function() {
+		let videoNum = $(this).attr("video-attr")
+		$(".video").html(essay.videos[videoNum].iframe)
+	})
 
-    			let space = $("<span>").append("&nbsp;")
-				// $(object).prepend(space)
-				// console.log(space)
-			}
+		$("#video-button").click( function() {
+		$(".video-space").addClass("flex")
+		$("#close-video").css({"display" : "block"})
+		$("#home, #close-video, .main").click(function() {
+			$(".video-space").removeClass("flex")
+			$("#close-video").css({"display" : "none"})
+			})
+	})
+
+    }
 
 });

@@ -248,7 +248,7 @@ html * {
 	align-content: center;
 	height: inherit;
 	width: 90vw;
-	padding-top: 10vh;
+	padding-top: 5vh;
     font-family: "NeueMachinaLight", "GnuFont";
     overflow: hidden;
 }
@@ -333,11 +333,12 @@ html * {
 
 	.landingCell {
 		width: 20%;
-		margin: 0 0vw 0 0vw;
-		height: 20%;
-		/*flex-shrink: 2;*/
+		margin: 1vh;
+		height: 30%;
+		flex-shrink: 2;
 		/*border: 1px red solid;*/
 		transition: 1s; 
+		hyphens: auto;
 	}
 
 	.landingRow {
@@ -396,7 +397,7 @@ html * {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
-	margin: 0 0vw 0 0vw;
+	margin: 2vh 0vw 0 0vw;
 	height: inherit;
 	width: 90vw;
 }
@@ -412,10 +413,9 @@ html * {
 	padding-right: 0.5em; 
 }
 
-	.essay-title > div {
+.essay-title > div {
 	margin-bottom: 0.5em;
 }
-
 
 .essay-english {
 	width: 50%;
@@ -481,7 +481,7 @@ html * {
 	width: 70%;
 	height: auto;
 	transition: 2s;
-	margin: 2vh;
+	margin: 1vh;
 	cursor: zoom-in;
 
 }
@@ -620,6 +620,10 @@ html * {
   .arrows {	
 	font-size: 2em;
 	justify-content: flex-start;
+  }
+
+  .bibliography {
+  	width: 100%;
   }
 
 }
