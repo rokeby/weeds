@@ -115,7 +115,7 @@ $(document).ready(function(){
 
 			// en and cn titles in an array titleArr (16)
 			for (j=1; j < essayLength - 3; j++) {
-				titleArr.push(essay[j].en.title, essay[j].cn.title)
+				titleArr.push(essay[j].en.title.toUpperCase(), essay[j].cn.title)
 				}
 
 			for (i=0; i<numCells; i++) {
@@ -149,7 +149,7 @@ $(document).ready(function(){
 			$.each(titleArr, function( key, item ) {
 				randCell = Math.floor(Math.random() * (cellArr.length))
 				cellArr[randCell].append(item).addClass("chapter-link")
-				console.log(cellArr[randCell], item)
+				// console.log(cellArr[randCell], item)
 
 				cellArr.splice(randCell, 1)
 			})
@@ -163,9 +163,14 @@ $(document).ready(function(){
 
 			$(".landingCell").hover( function() {
 				$(this).css({ "border" : "none", 
-								"width" : 20 + Math.floor(Math.random() * 20) + "%",
-								// "height" : Math.floor(Math.random() * 10) + "%"
+								"width" : Math.floor(Math.random() * 60) + "%",
 							})
+
+				setTimeout(function() {
+					console.log("returning!")
+					$(".landingCell").css({"width" : "20%", "border" : "red 1px solid"
+							})
+				}, 4000)
 			})
 		    
 
@@ -180,11 +185,6 @@ $(document).ready(function(){
 
 			//populate an array of the titles you want
 			// randomly choose from that array and remove when you do
-
-
-			for (j=1; j < essayLength - 3; j++) {
-					// $(".landingCell[cell-data='" + j + "']").html("*" + essay[j].en.title.toUpperCase()).addClass("chapter-link").attr("data-attr", j)
-				}
 
 			// $(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
