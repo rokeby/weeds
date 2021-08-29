@@ -3,6 +3,10 @@ $(document).ready(function(){
     const essay = essayObj
     const splash = $(".splash")
     const introElements = $(["<div class='intro-container'>",
+    							"<div class='intro-chapter-english'>",
+    							"</div>",
+    							"<div class='intro-chapter-chinese'>",
+    							"</div>",
 							"</div>"
 								].join("\n")
 					)
@@ -111,20 +115,22 @@ $(document).ready(function(){
 			numCols = 6
 			cellArr = []
 			titleArr = []
+			sectionArr = []
 			rowArr = []
 
 			// en and cn titles in an array titleArr (16)
 			for (j=1; j < essayLength - 3; j++) {
-				titleArr.push(essay[j].en.title.toUpperCase(), essay[j].cn.title)
+				titleArr.push([essay[j].en.title.toUpperCase(), j], [essay[j].cn.title, j])
+				
 				}
+
+				console.log(titleArr)
 
 			for (i=0; i<numCells; i++) {
 
 				let cell = $("<span>").append("").addClass("landingCell").attr("cell-data", i)
-				// $(".intro-container").append(cell)
 				cellArr.push(cell)
 
-				// .css({"width" : 20 + Math.floor(Math.random() * 10) + "%" })
 			}
 
 			console.log(cellArr)
@@ -138,37 +144,24 @@ $(document).ready(function(){
 			for (i=0; i<numRows; i++) {
 				for (k=0; k<numCols; k++) {
 					rowArr[i].append(cellArr[(i * numCols) + k])
-					// console.log(cellArr[(i * numCols) + k])
 				}
-
-				// console.log(cellArr)
 				$(".intro-container").append(rowArr[i])
 	
 			}
 
 			$.each(titleArr, function( key, item ) {
 				randCell = Math.floor(Math.random() * (cellArr.length))
-				cellArr[randCell].append(item).addClass("chapter-link")
-				// console.log(cellArr[randCell], item)
-
+				cellArr[randCell].append(titleArr[key][0]).addClass("chapter-link").attr("data-attr", titleArr[key][1])
 				cellArr.splice(randCell, 1)
 			})
 			
-
-			$.each(cellArr, function (key, item) {
-				randCell = Math.floor(Math.random() * (cellArr.length))
-				cellArr[randCell].addClass("intro-void-small")
-				cellArr.splice(randCell, 1)
-			})
-
 			$(".landingCell").hover( function() {
 				$(this).css({ "border" : "none", 
 								"width" : Math.floor(Math.random() * 60) + "%",
 							})
 
 				setTimeout(function() {
-					console.log("returning!")
-					$(".landingCell").css({"width" : "20%", "border" : "red 1px solid"
+					$(".landingCell").css({"width" : "20%", "transition" : "3s"
 							})
 				}, 4000)
 			})
@@ -183,41 +176,39 @@ $(document).ready(function(){
 		    // })
 
 
-			//populate an array of the titles you want
-			// randomly choose from that array and remove when you do
+			
+			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
-			// $(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
+			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
+			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
 
-			// let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
-			// let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
+			for(let i = 1; i < essayLength - 3; i++) {
+				introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
+				introTitlesCN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].cn.title + "</span><br><br>")
+			}
 
-			// for(let i = 1; i < essayLength - 3; i++) {
-			// 	introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
-			// 	introTitlesCN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].cn.title + "</span><br><br>")
-			// }
+			$(".intro-chapter-english").html(introTitlesEN)
+			$(".intro-chapter-chinese").html(introTitlesCN)
 
-			// $(".intro-chapter-english").html(introTitlesEN)
-			// $(".intro-chapter-chinese").html(introTitlesCN)
+			let introTitlesENArr = $(".intro-chapter-english > .intro-text").children().toArray()
+			let introTitlesCNArr = $(".intro-chapter-chinese > .intro-text").children().toArray()
+			let introVoidEN = $("<span class='intro-void-small'></span")
+			let introVoidCN = $("<span class='intro-void-large'></span")
 
-			// let introTitlesENArr = $(".intro-chapter-english > .intro-text").children().toArray()
-			// let introTitlesCNArr = $(".intro-chapter-chinese > .intro-text").children().toArray()
-			// let introVoidEN = $("<span class='intro-void-small'></span")
-			// let introVoidCN = $("<span class='intro-void-large'></span")
+			introTitlesENArr.splice(introTitlesENArr.length/6 + (Math.floor(Math.random() * introTitlesENArr.length/1.5)), 0, introVoidEN[0])
+			introTitlesCNArr.splice(introTitlesCNArr.length/6 + (Math.floor(Math.random() * introTitlesCNArr.length/1.5)), 0, introVoidCN[0])
 
-			// introTitlesENArr.splice(introTitlesENArr.length/6 + (Math.floor(Math.random() * introTitlesENArr.length/1.5)), 0, introVoidEN[0])
-			// introTitlesCNArr.splice(introTitlesCNArr.length/6 + (Math.floor(Math.random() * introTitlesCNArr.length/1.5)), 0, introVoidCN[0])
+			let insertIntroVoidEN = $("<div />");
+			let insertIntroVoidCN = $("<div />");
 
-			// let insertIntroVoidEN = $("<div />");
-			// let insertIntroVoidCN = $("<div />");
+			$.each(introTitlesENArr, function(key, item) { insertIntroVoidEN.append(item);});
+			$.each(introTitlesCNArr, function(key, item) { insertIntroVoidCN.append(item);});
 
-			// $.each(introTitlesENArr, function(key, item) { insertIntroVoidEN.append(item);});
-			// $.each(introTitlesCNArr, function(key, item) { insertIntroVoidCN.append(item);});
+			insertIntroVoidEN = insertIntroVoidEN.html()
+			insertIntroVoidCN = insertIntroVoidCN.html()
 
-			// insertIntroVoidEN = insertIntroVoidEN.html()
-			// insertIntroVoidCN = insertIntroVoidCN.html()
-
-			// $(".intro-chapter-english > .intro-text").html(insertIntroVoidEN)
-			// $(".intro-chapter-chinese > .intro-text").html(insertIntroVoidCN)
+			$(".intro-chapter-english > .intro-text").html(insertIntroVoidEN)
+			$(".intro-chapter-chinese > .intro-text").html(insertIntroVoidCN)
 
 
 		    // intro blurb bit

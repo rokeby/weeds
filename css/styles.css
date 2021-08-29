@@ -117,6 +117,7 @@ a {
 	.button:hover {
 		color: #6F68F6;
 		cursor: alias;
+		transition: 0.5s !important;
 	}
 
 	.video-space {
@@ -244,11 +245,12 @@ html * {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	/*align-items: flex-start;*/
-	align-content: flex-start;
+	align-content: center;
 	height: inherit;
 	width: 90vw;
 	padding-top: 10vh;
     font-family: "NeueMachinaLight", "GnuFont";
+    overflow: hidden;
 }
 
 .intro-segment *, .credits-container *, .bibliography-container * {
@@ -304,6 +306,7 @@ html * {
 	}
 
 	.intro-chapter-english {
+		display: none;
 		height: auto;
 		line-height: 1.2em;
 		width: 20vw;
@@ -318,6 +321,7 @@ html * {
 	}
 
 	.intro-chapter-chinese {
+		display: none;
 	    font-family: "GnuFont", Roboto;
 		font-size: 1.2em;
 		line-height: 1.2em;
@@ -365,7 +369,7 @@ html * {
 		}
 
 	.intro-text {
-		padding: 5vh 0 5vh 0;
+		padding: 2vh 0 2vh 0;
 	}
 
 	.colour-header {
@@ -420,10 +424,12 @@ html * {
 	margin: 0vh 0vw 0vh 0;
 	padding: 5vh 0 5vh 0;
 	font-size: 1.2em;
+	  -ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
 }
 
 .essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar, .credits-body::-webkit-scrollbar,
- .intro-chapter-english::-webkit-scrollbar, .intro-chapter-chinese::-webkit-scrollbar {
+ .intro-chapter-english::-webkit-scrollbar, .intro-chapter-chinese::-webkit-scrollbar, .intro-container::-webkit-scrollbar, .intro-container > *::-webkit-scrollbar {
   display: none;
 }
 
@@ -551,14 +557,25 @@ html * {
   .intro-void-small, 
   .intro-void-large,
   #root-button,
-  .essay-title
+  .essay-title,
+  .landingRow
   {
     display: none;
   }
 
   .intro-chapter-english, .intro-chapter-chinese {
+  	display: block;
   	width: 45vw;
+  	font-size: 1.2em;
+    	  -ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+  .intro-container {
+  	flex-flow: row nowrap;
+  	padding-top: 0;
   }
+
 
   .essay-segment {
   	flex-flow: row;
@@ -566,11 +583,13 @@ html * {
 
   .essay-english, .essay-chinese {
   	width: inherit;
-  	font-size: 1em;
+  	font-size: 1.2em;
 	word-wrap: break-word;
 	-webkit-overflow-scrolling: touch
   	hyphens: auto;
-  }
+  -ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
 
   #lang {
   	display: none;
