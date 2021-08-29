@@ -136,11 +136,11 @@ $(document).ready(function(){
 			
 			$(".landingCell").hover( function() {
 				$(this).css({ "border" : "none", 
-								"width" : 20 + Math.floor(Math.random() * 20) + "%",
+								"width" : 20 + Math.floor(Math.random() * 10) + "%",
 							})
 
 				setTimeout(function() {
-					$(".landingCell").css({ "width" : "20%"
+					$(".landingCell").css({ "width" : 20 + Math.floor(Math.random() * 10) + "%"
 							})
 				}, 5000)
 			})
@@ -318,22 +318,25 @@ $(document).ready(function(){
 			// $(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
 			// $(this).addClass("obstruct-large").addClass("image")
 			// $(".obstruct-right img").remove()
-			lightboxListener()
+			console.log($(this).find("img").attr("src"))
+			lightboxListener( $(this).find("img").attr("src") )
 		})
 
-		$(".essay-chinese .obstruct-right[data-attr='1']").click( function() {
+		$(".essay-chinese .obstruct-left[data-attr='1']").click( function() {
 			console.log("clicked image")
-			// $(".obstruct-right.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
-			// $(this).addClass("obstruct-large").addClass("image")
-			// $(".obstruct-left img").remove()
-			lightboxListener()
+
+			$(this).unbind("click", lightboxListener)
+
+			// console.log($(this).find("img").attr("src"))
+
+			lightboxListener( $(this).find("img").attr("src") )
 		})
 	}
 
 	// lightbox takes the clicked image and displays wide.
-	function lightboxListener( ) {
-		const path = $(this).children("img").attr("src")
-		console.log(path)
+	function lightboxListener( path ) {
+		// const path = $(this).children("img").attr("src")
+		// console.log(path)
 
 		const obj = $(this)
 		$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
@@ -341,7 +344,7 @@ $(document).ready(function(){
 
 		$(".lightbox").click( function() {
 			$(this).remove()
-			$(obj).bind("click", lightboxListener)
+			// $(obj).bind("click", lightboxListener)
 		}).bind(obj)
 	}
 

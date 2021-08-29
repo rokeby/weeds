@@ -243,12 +243,12 @@ html * {
 .intro-container {
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: flex-start;
+	justify-content: space-around;
 	/*align-items: flex-start;*/
 	align-content: center;
 	height: inherit;
 	width: 90vw;
-	padding-top: 5vh;
+	padding-top: 0vh;
     font-family: "NeueMachinaLight", "GnuFont";
     overflow: hidden;
 }
@@ -316,7 +316,7 @@ html * {
 	}
 
 	.intro-container > * {
-		font-size: 1.6em;
+		font-size: 1.4em;
 		padding-bottom: 2vh;
 	}
 
@@ -433,7 +433,7 @@ html * {
   display: none;
 }
 
-.essay-chinese, .essay-english {
+.essay-chinese, .essay-english, .credits-body {
   -ms-overflow-style: none;  /* IE and Edge */
   -webkit-overflow-scrolling: touch
   scrollbar-width: none;  /* Firefox */
@@ -552,8 +552,6 @@ html * {
   .intro-title, 
   .intro-blurb, 
   .intro-title-sm, 
-  /*.obstruct-left, */
-  /*.obstruct-right, */
   .intro-void-small, 
   .intro-void-large,
   #root-button,
@@ -563,19 +561,26 @@ html * {
     display: none;
   }
 
+  .obstruct-large {
+  	width: 90%;
+  }
+
   .intro-chapter-english, .intro-chapter-chinese {
   	display: block;
   	width: 45vw;
   	font-size: 1.2em;
-    	  -ms-overflow-style: none;  /* IE and Edge */
+    -ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
 }
+
+  .main {
+  }
 
   .intro-container {
   	flex-flow: row nowrap;
   	padding-top: 0;
+  	width: 100%;
   }
-
 
   .essay-segment {
   	flex-flow: row;
@@ -597,6 +602,7 @@ html * {
 
   .mobile-title {
 	top: 0;
+	font-size: 0.9em;
     font-family: "NeueMachinaLight", "GnuFont", serif;
     width: 90vw;
 	border-bottom: 1px black solid;
@@ -604,12 +610,17 @@ html * {
   }
 
   .mobile-title .nav-bar {
-  	height: 10vh;
+  	height: 12vh;
   	padding-left: 10vw;
+  	width: 80vw;
+  }
+
+  .bottom {
+  	height: 12vh;
   }
 
   .main {
-  	height: 84vh;
+  	height: 76vh;
   }
 
   .right-arrow {
@@ -624,6 +635,10 @@ html * {
 
   .bibliography {
   	width: 100%;
+  }
+
+  .video {
+  	height: 70%;
   }
 
 }
