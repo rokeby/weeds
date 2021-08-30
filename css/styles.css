@@ -19,8 +19,8 @@ body {
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../assets/fonts/Roboto-Regular.woff");
+  font-family: "Grotesk";
+  src: url("../assets/fonts/akzidenzgrotesk-light-webfont.woff");
 }
 
 @font-face {
@@ -192,7 +192,7 @@ a {
 	width: 100vw;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
-    font-family: "NotoSans", sans-serif;
+    font-family: "Grotesk", "NotoSans", sans-serif;
     overflow-y: hidden;
 }
 
@@ -243,7 +243,7 @@ html * {
 .intro-container {
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-around;
+	justify-content: center;
 	/*align-items: flex-start;*/
 	align-content: center;
 	height: inherit;
@@ -454,8 +454,8 @@ html * {
 .obstruct-left {
 	float: left;
 	shape-outside: inset();
-	width: 30%;
-	height: 20vh;
+	width: 40%;
+	height: 30vh;
 	visibility: visible;
 	transition: 1s;	
 	/*border: 1px black solid;*/
@@ -464,8 +464,8 @@ html * {
 .obstruct-right {
 	float: right;
 	shape-outside: inset();
-	width: 30%;
-	height: 20vh;
+	width: 40%;
+	height: 30vh;
 	visibility: visible;
 	transition: 1s;
 	/*border: 1px black solid;*/

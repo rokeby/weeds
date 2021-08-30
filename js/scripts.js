@@ -129,7 +129,6 @@ $(document).ready(function(){
 
 			$.each(titleArr, function( key, item ) {
 				randCell = Math.floor(Math.random() * (cellArr.length))
-				// console.log(cellArr[randCell])
 				cellArr[randCell].html(titleArr[key][0]).addClass("chapter-link").attr("data-attr", titleArr[key][1])
 				cellArr.splice(randCell, 1)
 			})
@@ -169,7 +168,6 @@ $(document).ready(function(){
 
 		// populate essay pages
     	} else if (section > 0) {
-    		// console.log(section)
 
 			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
@@ -200,9 +198,6 @@ $(document).ready(function(){
 
 				lang = Object.keys(essay.credits)[i]
 				headings = essay.credits[lang]
-
-				// console.log(headings)
-				// console.log(lang)
 
 				for ( let i=0; i<Object.keys(headings).length; i++) {
 
@@ -238,7 +233,7 @@ $(document).ready(function(){
 	function addImages() {
 
 		// total number of obstruct-left and obstruct-right objects.
-		const numObjects = 4;
+		const numObjects = 8;
 		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
@@ -254,8 +249,8 @@ $(document).ready(function(){
 		var intervalCN = objArrCN.length/numObjects
 
 		for ( let j=0; j<obstruct.length; j++) {
-			objArrEN.splice((Math.floor((intervalEN * (j)) + (Math.random() * intervalEN))), 0, obstruct[j])
-			objArrCN.splice((Math.floor((intervalCN * (j)) + (Math.random() * intervalCN))), 0, obstruct[j])
+			objArrEN.splice((Math.floor(Math.random() * (intervalEN * (j)) + (Math.random() * intervalEN))), 0, obstruct[j])
+			objArrCN.splice((Math.floor(Math.random() * (intervalCN * (j)) + (Math.random() * intervalCN))), 0, obstruct[j])
 		}
 
 		newTextEN = objArrEN.join(" ")
@@ -314,38 +309,22 @@ $(document).ready(function(){
 
 
 		$(".essay-english .obstruct-left[data-attr='1']").click( function() {
-			console.log("clicked image")
-			// $(".obstruct-left.image").empty().removeClass("obstruct-large").removeClass("image").unbind("click", lightboxListener)
-			// $(this).addClass("obstruct-large").addClass("image")
-			// $(".obstruct-right img").remove()
-			console.log($(this).find("img").attr("src"))
 			lightboxListener( $(this).find("img").attr("src") )
 		})
 
 		$(".essay-chinese .obstruct-left[data-attr='1']").click( function() {
-			console.log("clicked image")
-
-			$(this).unbind("click", lightboxListener)
-
-			// console.log($(this).find("img").attr("src"))
-
 			lightboxListener( $(this).find("img").attr("src") )
 		})
 	}
 
 	// lightbox takes the clicked image and displays wide.
 	function lightboxListener( path ) {
-		// const path = $(this).children("img").attr("src")
-		// console.log(path)
-
 		const obj = $(this)
 		$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
 		$(this).unbind("click", lightboxListener)
-
 		$(".lightbox").click( function() {
 			$(this).remove()
-			// $(obj).bind("click", lightboxListener)
-		}).bind(obj)
+		})
 	}
 
     // chapter links to pages
