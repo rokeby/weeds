@@ -28,10 +28,10 @@ body {
     src: url("../assets/fonts/NotoSansSC-Light.otf");
 }
 
-@font-face {
+/*@font-face {
 	font-family: "GnuFont";
     src: url("../assets/fonts/GnuUnifontFull-Pm9P.woff");
-}
+}*/
 
 @font-face {
 	font-family: "NeueMachinaLight";
@@ -99,7 +99,7 @@ html * {
 }
 
 	.button {
-		font-family: "NeueMachinaRegular", "GnuFont";
+		font-family: "NeueMachinaRegular", "NotoSans";
 	}
 
 	.button:hover {
@@ -193,7 +193,7 @@ html * {
 	height: 88vh;
 	font-size: 3em;
 	pointer-events: none;
-    font-family: "GnuFont", "NeueMachinaLight"; 
+    font-family: "NotoSans", "NeueMachinaLight"; 
     /* Make icon into SVG? */
     z-index: 10;
 
@@ -202,6 +202,7 @@ html * {
 .arrows img {
 	width: 5vh;
 	height: auto;
+	margin-top: 1vh;
 }
 
 .intro-container {
@@ -213,7 +214,7 @@ html * {
 	height: inherit;
 	width: 90vw;
 	padding-top: 0vh;
-    font-family: "NeueMachinaLight", "GnuFont";
+    font-family: "NeueMachinaLight", "NotoSans";
     overflow: hidden;
 }
 
@@ -228,7 +229,7 @@ html * {
 }
 
 	.intro-title {
-	    font-family: "GnuFont", "NeueMachinaLight";
+	    font-family: "NotoSans", "NeueMachinaLight";
 		text-align: right;
 		height: auto;
 		width: 20vw;
@@ -255,7 +256,7 @@ html * {
 
 	.intro-chapter-chinese {
 		display: none;
-	    font-family: "GnuFont", Roboto;
+	    font-family: "NotoSans", Roboto;
 		font-size: 1.2em;
 		line-height: 1.2em;
 		height: auto;
@@ -315,7 +316,7 @@ html * {
 }
 
 .essay-title {
-    font-family: "NeueMachinaLight", "GnuFont";
+    font-family: "NeueMachinaLight", "NotoSans";
 	width: 20%;
 	height: auto;
 	text-align: right;
@@ -428,7 +429,7 @@ html * {
 }
 
 	span#tooltip-span {
-    	font-family: "GnuFont", "W95FA";
+    	font-family: "NotoSans", "W95FA";
     	color: #6F68F6;
     	font-size: 0.8em;
     	background-color: #D1D4D8;
@@ -480,7 +481,7 @@ html * {
 }
 
 .credits-heading {
-    font-family: "GnuFont", "NeueMachinaLight";
+    font-family: "NotoSans", "NeueMachinaLight";
 }
 
 .credits-body {
@@ -546,7 +547,7 @@ html * {
   .mobile-title {
 	top: 0;
 	font-size: 0.9em;
-    font-family: "NeueMachinaLight", "GnuFont", serif;
+    font-family: "NeueMachinaLight", "NotoSans", serif;
     width: 90vw;
 	border-bottom: 1px black solid;
 	-webkit-overflow-scrolling: touch
