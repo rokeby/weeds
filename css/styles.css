@@ -200,7 +200,7 @@ html * {
 }
 
 .arrows img {
-	width: 5vh;
+	width: 3vh;
 	height: auto;
 	margin-top: 1vh;
 }
@@ -408,8 +408,8 @@ html * {
 
 #index {
 	font-family: "NeueMachinaRegular";
-	font-size: 0.7em;
-	padding-left: 8vh;
+	font-size: 0.5em;
+	padding-left: 5vh;
 	padding-top: 1vh;
 	transform: rotate(90deg);
 	z-index: 0;
@@ -584,6 +584,12 @@ html * {
   .video {
   	height: 70%;
   }
+
+  .arrows img {
+	width: 5vh;
+	height: auto;
+	margin-top: 1vh;
+}
 
 }
 
