@@ -99,25 +99,26 @@ $(document).ready(function(){
 			titleArr = []
 			sectionArr = []
 			rowArr = []
+			rows = $("<div>")
 
 			// en and cn titles in an array titleArr (16)
 			for (j=1; j < essayLength - 3; j++) {
 				titleArr.push([essay[j].en.title.toUpperCase(), j], [essay[j].cn.title, j])				
 				}
 
+			// populate cellArr with numbered cells
 			for (i=0; i<numCells; i++) {
-
 				let cell = $("<span>").append("").addClass("landingCell").attr("cell-data", i)
 				cellArr.push(cell)
 			}
 
+			// populate rowArr with numbered rows
 			for (i=0; i<numRows; i++) {
 				let row = $("<div>").append("").addClass("landingRow").attr("row-data", i)
 				rowArr.push(row)
 			}
 
-			let rows = $("<div>")
-
+			// populate each row with set number of cells in order
 			for (i=0; i<numRows; i++) {
 				for (k=0; k<numCols; k++) {
 					rowArr[i].append(cellArr[(i * numCols) + k])
@@ -125,14 +126,17 @@ $(document).ready(function(){
 				rows.append(rowArr[i])	
 			}
 
+			// place rows & cells
 			$(".intro-grid").html(rows)
 
+			// populate random cells with a chapter title each
 			$.each(titleArr, function( key, item ) {
 				randCell = Math.floor(Math.random() * (cellArr.length))
 				cellArr[randCell].html(titleArr[key][0]).addClass("chapter-link").attr("data-attr", titleArr[key][1])
 				cellArr.splice(randCell, 1)
 			})
 			
+			// change cell width when hovered, return after Timeout
 			$(".landingCell").hover( function() {
 				$(this).css({ "border" : "none", 
 								"width" : 20 + Math.floor(Math.random() * 10) + "%",
@@ -144,6 +148,8 @@ $(document).ready(function(){
 				}, 5000)
 			})
 			
+			// Mobile titles
+
 			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
 			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
@@ -162,7 +168,6 @@ $(document).ready(function(){
 
 			$(".intro-chapter-english > .intro-text").html(introTitlesENArr)
 			$(".intro-chapter-chinese > .intro-text").html(introTitlesCNArr)
-
 
 			buttons()
 
@@ -185,7 +190,7 @@ $(document).ready(function(){
 
 			$(".essay-english").html(sectionEN)
 			$(".essay-chinese").html(sectionCN)
-			$(".essay-title").html("<span class='intro-void-large'/></span>" + "<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
+			$(".essay-title").html("<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
 
 			addImages()
 			addFootnotes()
@@ -237,21 +242,26 @@ $(document).ready(function(){
 		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
+		// split text into words/fragments to randomly insert voids
 		const objArrEN = target[0][0].outerHTML.split(" ")
-		const objArrCN = target[1][0].outerHTML.split("•")
+		const objArrCN = target[1][0].outerHTML.split("•") // chinese text is split using "•" as text doesn't have spaces
 
+		// insert left and right voids
 		for (let i=1; i<numObjects + 1; i++) {
 			obstruct.push("<span class='obstruct-left tooltip' data-attr='" + i + "'></span>")
 			obstruct.push("<span class='obstruct-right tooltip' data-attr='" + i + "'></span>")
 		}
 
+		// get intervals between voids
 		var intervalEN = objArrEN.length/numObjects
 		var intervalCN = objArrCN.length/numObjects
 
+		// populate the voids in order with slightly random spacing
 		for ( let j=0; j<obstruct.length; j++) {
 			objArrEN.splice((Math.floor(Math.random() * (intervalEN * (j)) + (Math.random() * intervalEN))), 0, obstruct[j])
 			objArrCN.splice((Math.floor(Math.random() * (intervalCN * (j)) + (Math.random() * intervalCN))), 0, obstruct[j])
 		}
+
 
 		newTextEN = objArrEN.join(" ")
 		newTextCN = objArrCN.join("")
@@ -272,33 +282,31 @@ $(document).ready(function(){
 			$.each(footnotes, function(key, item) {
 				num = $(this).data("footnote")
 				sup = $("<sup>").append(num)
+				fn = $("<span>").attr("id", "tooltip-span").html(essay[section].footnotes[num])
+				
+				console.log(fn)
 				item.append(sup[0])
+				item.append(fn[0])
+
 			})
 	}
 
 	function addImageListeners() {
 
-		// $(".obstruct-left, .obstruct-right").append("<span id='tooltip-span'></span>")
+		// $(".footnote").append("<span id='tooltip-span'></span>")
 
-		// window.onmousemove = function (e) {
-		//     var x = e.clientX,
-		//         y = e.clientY;
+		window.onmousemove = function (e) {
+		    var x = e.clientX,
+		        y = e.clientY;
 
-		//         // console.log( section, x, y)
+	        if ( section > 0 ) {
 
-	 //        if ( section > 0 ) { 
-
-	 //        $(".obstruct-left").find("#tooltip-span").css({
-	 //        		"top" : (y + 10) + "px",
-	 //        		"left" : (x + 10) + "px",
-	 //        	}).html(essay[section].img[0].split("/").pop())
-
-	 //        $(".obstruct-right").find("#tooltip-span").css({
-	 //        		"top" : (y + 10) + "px",
-	 //        		"left" : (x + 10) + "px",
-	 //        	}).html(essay[section].img[1].split("/").pop())
-	 //    }
-		// };
+		        $(".footnote").find("#tooltip-span").css({
+		        		"top" : (y + 10) + "px",
+		        		"left" : (x + 10) + "px",
+		        	})
+		    }
+			};
 
 		// imageObstructs = [$(".obstruct-left")[0], $(".obstruct-right")[0]]
 

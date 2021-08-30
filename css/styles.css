@@ -69,15 +69,18 @@ a {
 	align-items: center;
 }
 
-.home {
+html * {
+    scroll-behavior: smooth;
+
 }
 
-/*.top {
-	top: 0;
-    font-family: "W95FA", Times, serif;
-    width: 90vw;
-	border-bottom: 1px black solid;
-}*/
+.scroll-container {
+	height: inherit;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;	
+    scroll-behavior: smooth;
+}
 
 .bottom {
 	bottom: 0;
@@ -94,21 +97,6 @@ a {
 	width: inherit;
 	height: 6vh;
 }
-
-	.nav-menu {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
-		position: absolute;
-		top: 5vh;
-		font-size: 1.8rem;
-		width: inherit;
-		background-color: #D1D4D8;
-		border-bottom: 1px black solid;
-		visibility: hidden;
-		transition: 0.5s; 
-		z-index: 1;
-	}
 
 	.button {
 		font-family: "NeueMachinaRegular", "GnuFont";
@@ -196,19 +184,6 @@ a {
     overflow-y: hidden;
 }
 
-html * {
-    scroll-behavior: smooth;
-
-}
-
-.scroll-container {
-	height: inherit;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;	
-    scroll-behavior: smooth;
-}
-
 .arrows {
 	position: fixed;
 	display: flex;
@@ -253,6 +228,11 @@ html * {
     overflow: hidden;
 }
 
+	.intro-container > * {
+		font-size: 1.4em;
+		padding-bottom: 2vh;
+	}
+
 .intro-segment *, .credits-container *, .bibliography-container * {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -273,38 +253,6 @@ html * {
 			flex: 1 0;
 		}
 
-		.intro-void-small {
-			float: right;
-			shape-outside: inset();
-			width: 100%;
-			height: 0vh;
-			/*margin: 2vh;*/
-			visibility: visible;
-			border: 1px #D1D4D8 solid;
-			transition: 1s;	
-		}
-
-		.intro-void-large {
-			float: right;
-			shape-outside: inset();
-			width: 100%;
-			height: 15vh;
-			/*margin: 2vh;*/
-			visibility: visible;
-			border: 1px #D1D4D8 solid;
-			transition: 1s;	
-		}
-
-	.intro-title-sm {
-		text-align: left;
-		height: auto;
-		width: 10vw;
-		/*border: 1px red solid;*/
-		font-size: 4em;
-		padding-right: 0.5em;
-		padding-top: 5vh;
-	}
-
 	.intro-chapter-english {
 		display: none;
 		height: auto;
@@ -315,10 +263,6 @@ html * {
 		padding-left: 0.5em;
 	}
 
-	.intro-container > * {
-		font-size: 1.4em;
-		padding-bottom: 2vh;
-	}
 
 	.intro-chapter-chinese {
 		display: none;
@@ -347,27 +291,10 @@ html * {
 		width: 100%;
 	}
 
-	.chapter-link {
-
+	.chapter-link:hover {
+		color: #6F68F6;
+		cursor: alias;
 	}
-
-		.chapter-link:hover {
-			color: #6F68F6;
-			cursor: alias;
-		}
-
-	.intro-blurb {
-		height: auto;
-		width: 20vw;
-		font-size: 1.2em;
-		line-height: 1.2em;
-		/*border: 1px red solid;*/
-		padding-top: 30vh;
-	}
-
-		.intro-blurb > * {
-			margin-bottom: 0.5em;
-		}
 
 	.intro-text {
 		padding: 2vh 0 2vh 0;
@@ -388,10 +315,6 @@ html * {
 	overflow: hidden;
 	height: inherit;
 }
-
-.essay-container, .essay-container * {
-}
-
 
 .essay-segment, .credits-container, .bibliography-container {
 	display: flex;
@@ -471,7 +394,17 @@ html * {
 	/*border: 1px black solid;*/
 }
 
-.obstruct-left:hover, .obstruct-right:hover, .obstruct-left:hover #tooltip-span, .obstruct-right:hover #tooltip-span {
+.footnote {
+	color: #6F68F6;
+}
+
+#intermission {
+	text-align: center;
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+.image:hover {
     display:block;
 	cursor: zoom-in;
 }
@@ -483,8 +416,8 @@ html * {
 	transition: 2s;
 	margin: 1vh;
 	cursor: zoom-in;
-
 }
+
 	span#tooltip-span {
     	font-family: "GnuFont", "W95FA";
     	color: #6F68F6;
@@ -492,6 +425,10 @@ html * {
     	background-color: #D1D4D8;
 	    display:none;
 	    position: absolute;
+	}
+
+	.footnote:hover #tooltip-span {
+		display: block;
 	}
 
 .image img {
@@ -530,12 +467,10 @@ html * {
 
 .credits-heading {
     font-family: "GnuFont", "NeueMachinaLight";
-
 }
 
 .credits-body {
 	word-wrap: break-word;
-	/*hyphens: auto; */
 }
 
 /* MOBILE */
@@ -573,9 +508,6 @@ html * {
 	scrollbar-width: none;  /* Firefox */
 }
 
-  .main {
-  }
-
   .intro-container {
   	flex-flow: row nowrap;
   	padding-top: 0;
@@ -595,10 +527,6 @@ html * {
   -ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
 }
-
-  #lang {
-  	display: none;
-  }
 
   .mobile-title {
 	top: 0;
@@ -620,7 +548,7 @@ html * {
   }
 
   .main {
-  	height: 76vh;
+  	height: calc(76vh - 44px);
   }
 
   .right-arrow {
