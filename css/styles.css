@@ -199,17 +199,6 @@ html * {
 
 }
 
-.right-arrow {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	height: inherit;
-	width: 5vw;
-	color: #6F68F6;
-	pointer-events: auto;
-}
-
 .arrows img {
 	width: 5vh;
 	height: auto;
@@ -320,7 +309,7 @@ html * {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
-	margin: 2vh 0vw 0 0vw;
+	margin: 0vh 0vw 0 0vw;
 	height: inherit;
 	width: 90vw;
 }
@@ -330,6 +319,7 @@ html * {
 	width: 20%;
 	height: auto;
 	text-align: right;
+	align-self: center;
 	height: auto;
 	width: 20vw;
 	font-size: 2em;
@@ -404,13 +394,32 @@ html * {
 	text-transform: uppercase;
 }
 
+.right-arrow {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	height: inherit;
+	width: 5vw;
+	color: #6F68F6;
+	pointer-events: auto;
+}
+
+#index {
+	font-family: "NeueMachinaRegular";
+	font-size: 0.7em;
+	padding-left: 8vh;
+	padding-top: 1vh;
+	transform: rotate(90deg);
+	z-index: 0;
+}
+
 .image:hover {
     display:block;
 	cursor: zoom-in;
 }
 
 .obstruct-large {
-	/*border: 1px black solid;*/
 	width: 70%;
 	height: auto;
 	transition: 2s;
@@ -460,9 +469,14 @@ html * {
 .credits-english, .credits-chinese, .bibliography {
 	height: inherit;
 	width: 50%;
+	padding-top: 2vh;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch
 	/*border: 1px red solid;*/
+}
+
+.biblink {
+	color: #6F68F6;
 }
 
 .credits-heading {
@@ -491,7 +505,8 @@ html * {
   .intro-void-large,
   #root-button,
   .essay-title,
-  .landingRow
+  .landingRow,
+  #index
   {
     display: none;
   }

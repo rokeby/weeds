@@ -238,7 +238,7 @@ $(document).ready(function(){
 	function addImages() {
 
 		// total number of obstruct-left and obstruct-right objects.
-		const numObjects = 8;
+		const numObjects = 6;
 		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
@@ -289,13 +289,8 @@ $(document).ready(function(){
 				item.append(fn[0])
 
 			})
-	}
 
-	function addImageListeners() {
-
-		// $(".footnote").append("<span id='tooltip-span'></span>")
-
-		window.onmousemove = function (e) {
+			window.onmousemove = function (e) {
 		    var x = e.clientX,
 		        y = e.clientY;
 
@@ -307,14 +302,9 @@ $(document).ready(function(){
 		        	})
 		    }
 			};
+	}
 
-		// imageObstructs = [$(".obstruct-left")[0], $(".obstruct-right")[0]]
-
-		// $.each(imageObstructs, function(key, item) {
-		// 	console.log(item)
-		// 	item.html("<img src='" + essay[section].img[0] + "'/>")
-		// })
-
+	function addImageListeners() {
 
 		$(".essay-english .obstruct-left[data-attr='1']").click( function() {
 			lightboxListener( $(this).find("img").attr("src") )
