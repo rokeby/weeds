@@ -272,8 +272,8 @@ $(document).ready(function(){
 		target[0].html(newTextEN)
 		target[1].html(newTextCN)
 
-		$(".essay-english .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[0] + "'/>")
-		$(".essay-chinese .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[1] + "'/>")
+		$(".essay-english .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[0] + "' alt='" + essay[section].img[0].split("/").pop() + "'/>")
+		$(".essay-chinese .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[1] + "' alt='" + essay[section].img[0].split("/").pop() + "'/>")
 		
 		let blanks = $(".obstruct-left[data-attr!='1'], .obstruct-right[data-attr!='1']")
 		
@@ -364,7 +364,7 @@ $(document).ready(function(){
 
 		$("#video-button").click( function() {
 		$(".video-space").addClass("flex")
-		$("#close-video").css({"display" : "block"})
+		// $("#close-video").css({"display" : "block"})
 		$("#home, #close-video, .main").click(function() {
 			$(".video-space").removeClass("flex")
 			$("#close-video").css({"display" : "none"})

@@ -201,14 +201,13 @@ html * {
 	font-size: 3em;
 	pointer-events: none;
     font-family: "NotoSans", "NeueMachinaLight"; 
-    /* Make icon into SVG? */
     z-index: 10;
 
 }
 
 .arrows img {
-	width: 5vh;
-	height: auto;
+	min-width: 3vw;
+	min-height: 7vh;
 	margin-top: 1vh;
 }
 
@@ -226,7 +225,7 @@ html * {
 }
 
 	.intro-container > * {
-		font-size: 1.4em;
+		font-size: 2.4rem;
 		padding-bottom: 2vh;
 	}
 
@@ -278,7 +277,7 @@ html * {
 		height: 13vh;
 		flex-shrink: 2;
 		/*border: 1px red solid;*/
-		transition: 1s; 
+		transition: 1s;
 		hyphens: auto;
 	}
 
@@ -515,11 +514,14 @@ html * {
 }
 
 .credits-heading {
-    font-family: "NotoSans", "NeueMachinaLight";
+    font-family: "NeueMachinaLight", sans-serif;
+ 	text-transform: uppercase;
+   
 }
 
 .credits-body {
 	word-wrap: break-word;
+	margin-bottom: 5vh;
 }
 
 
@@ -658,11 +660,6 @@ html * {
   	padding: 2vh 2vh 2vh 4vh;
   }
 
-/*  .arrows {	
-	font-size: 2em;
-	justify-content: flex-start;
-  }*/
-
   .bibliography {
   	width: 100%;
   }
@@ -694,6 +691,10 @@ html * {
 		width: 100%;
 	}
 
+	/*.chapter-link {
+		text-transform: uppercase;
+	}
+*/
 }
 
 
