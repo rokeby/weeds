@@ -348,8 +348,7 @@ $(document).ready(function(){
 
 		$(".obstruct-small").hover( function() {
 			$(this).removeClass("obstruct-small").addClass("obstruct-large")
-		})
-		
+		})	
 	}
 
 	// lightbox takes the clicked image and displays wide.
@@ -362,15 +361,12 @@ $(document).ready(function(){
 		})
 	}
 
-
-
-	    // chapter links to pages
+    // chapter links to pages
     function buttons() {
 
    		$(".chapter-link, .button").click( function() {
 	    	section = $(this).data("attr")
-			// $(".video-wrapper").css({ "display" : "none"})
-			// $("#video-button").unbind()
+	    	$(this).unbind("click")
 			sectionUpdate()
     	})
 
@@ -379,39 +375,5 @@ $(document).ready(function(){
 			$(".video").html(essay.videos[videoNum].iframe)
 		})
 
-		// $("#video-button").click( function() {
-
-		// 	let display = $(".video-wrapper").css("display")
-		// 	console.log("video button clicked")
-		// 	console.log(display)
-
-		// 	if (display === "block") {
-
-		// 		$(".video-wrapper").hide()
-
-		// 	} else {
-		// 		$(".video-wrapper").show()
-
-		// 	}
-
-		// 	// console.log("videoclick")
-		// 	// $(".video-wrapper").show()
-		// })
-
 	}
-
-
-	// 	$("#video-button").click( function() {
-	// 	$(".video-space").addClass("flex")
-	// 	// $("#close-video").css({"display" : "block"})
-	// 	$("#home, #close-video, .main").click(function() {
-	// 		$(".video-space").removeClass("flex")
-	// 		$("#close-video").css({"display" : "none"})
-	// 		})
-	// })
-
-
-
-    
-
 });

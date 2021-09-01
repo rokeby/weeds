@@ -29,12 +29,15 @@
 <!--         <div class="button" id="close-video">X</div> -->
         <div class="arrows">
           <div id="home" class="right-arrow">
-            <div data-attr="0" id="home-button" class="button"><img src='assets/index.svg' /></div>
+            <div data-attr="0" id="home-button" class="button">
+              <img src='assets/index.svg' onclick="$('.video-wrapper').css({ 'display' : 'none'})"/>
+              </div>
             <div data-attr="0" id='index' class="button">INDEX</div>
           </div>      
         </div>
     <div class="mobile-title">
-      <div data-attr="0" class="button" id="mobile-home-button"><img src='assets/index.svg' /></div>
+      <div data-attr="0" class="button" id="mobile-home-button">
+        <img src='assets/index.svg' onclick="$('.video-wrapper').css({ 'display' : 'none'})"/></div>
       <div class="nav-bar">
         TITLE
       </div>
