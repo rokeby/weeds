@@ -192,6 +192,8 @@ $(document).ready(function(){
 			$(".essay-chinese").html(sectionCN)
 			$(".essay-title").html("<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
 
+
+
 			addImages().then( () =>  addFootnotes())
 
 
@@ -242,11 +244,8 @@ $(document).ready(function(){
 		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
-		const re = /(?:<[^>]*>)+/g
-
-
 		// split text into words/fragments to randomly insert voids
-		const objArrEN = target[0][0].outerHTML.split(re)
+		const objArrEN = target[0][0].outerHTML.split(" ")
 		const objArrCN = target[1][0].outerHTML.split("•") // chinese text is split using "•" as text doesn't have spaces
 
 		// insert left and right voids
@@ -256,13 +255,15 @@ $(document).ready(function(){
 		}
 
 		// get intervals between voids
-		var intervalEN = objArrEN.length/numObjects
-		var intervalCN = objArrCN.length/numObjects
+		var intervalEN = Math.floor(objArrEN.length/(numObjects*2))
+		var intervalCN = Math.floor(objArrCN.length/(numObjects*2))
+
+		console.log(objArrEN.length, intervalEN, obstruct.length)
 
 		// populate the voids in order with slightly random spacing
 		for ( let j=0; j<obstruct.length; j++) {
-			objArrEN.splice((intervalEN * (j)) + (Math.random() * intervalEN), 0, obstruct[j])
-			objArrCN.splice((intervalCN * (j)) + (Math.random() * intervalCN), 0, obstruct[j])
+			objArrEN.splice((intervalEN * (j-1)) + (Math.random() * intervalEN), 0, obstruct[j])
+			objArrCN.splice((intervalCN * (j-1)) + (Math.random() * intervalCN), 0, obstruct[j])
 		}
 
 
@@ -289,6 +290,19 @@ $(document).ready(function(){
 	}
 
 	async function addFootnotes() {
+
+		const target = [$(".essay-english p"), $(".essay-chinese p")]
+
+		$.each(target, function(key, item) {
+			text = item[0].outerHTML
+			// console.log(text)
+			const regex = /footnotehere(\d+)/gm;
+			const subst = `<span class='footnote' data-footnote='$1'><\/span>`;
+
+			// The substituted value will be contained in the result variable
+			const result = text.replace(regex, subst);
+			item.html(result)
+		})
 
 		footnotes = $(".footnote")
 
