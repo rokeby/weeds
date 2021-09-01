@@ -86,7 +86,7 @@ $(document).ready(function(){
 
 		$(".chapter-link, .button").unbind()
 
-		console.log("section = " + section)
+		// console.log("section = " + section)
 
 		// populate intro
 		if(section === 0) {
@@ -267,7 +267,7 @@ $(document).ready(function(){
 		var intervalEN = Math.floor(objArrEN.length/(numObjects*2))
 		var intervalCN = Math.floor(objArrCN.length/(numObjects*2))
 
-		console.log(objArrEN.length, intervalEN, obstruct.length)
+		// console.log(objArrEN.length, intervalEN, obstruct.length)
 
 		// populate the voids in order with slightly random spacing
 		for ( let j=0; j<obstruct.length; j++) {
