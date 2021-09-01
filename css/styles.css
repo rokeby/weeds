@@ -71,6 +71,7 @@ a {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	background-color: #D1D4D8;
 }
 
 html * {
@@ -88,6 +89,8 @@ html * {
 
 .bottom {
 	bottom: 0;
+	background-color: #D1D4D8;
+	height: 6vh;
     font-family: "NeueMachinaRegular", Times, serif;
     width: 90vw;
 	border-top: 1px black solid;
@@ -180,6 +183,7 @@ html * {
 	flex-flow: row nowrap;
 	justify-content: center;
 	height: calc(94vh - 1px);
+	background-color: #D1D4D8;
 	width: 100vw;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
@@ -473,9 +477,24 @@ html * {
 	background: rgba(76, 76, 76, 0.7);
 }
 
-.lightbox img {
+.lightbox-contents {
+	display: flex;
+	flex-flow: column nowrap;
+	width: inherit;
+	height: inherit;
+	justify-content: center;
+	align-items: center;
+}
+
+.lightbox-contents img {
 	max-width: 80%;
 	max-height: 80%;
+}
+
+.lightbox-description {
+	padding: 5vh;
+	font-family: "Grotesk", sans-serif;
+	color: #D1D4D8;
 }
 
 .lightbox:hover {

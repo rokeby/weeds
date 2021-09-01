@@ -331,7 +331,7 @@ $(document).ready(function(){
 	// lightbox takes the clicked image and displays wide.
 	function lightboxListener( path ) {
 		const obj = $(this)
-		$(".container").append("<div class='lightbox'><img src='" + path + "'></div>" )
+		$(".container").append("<div class='lightbox'><div class='lightbox-contents'><img src='" + path + "'><div class='lightbox-description'>" + path.split("/").pop() + "</div></div></div>" )
 		$(this).unbind("click", lightboxListener)
 		$(".lightbox").click( function() {
 			$(this).remove()
