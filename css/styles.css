@@ -370,8 +370,8 @@ html * {
 .obstruct-left {
 	float: left;
 	shape-outside: inset();
-	width: 40%;
-	height: 30vh;
+	width: 60%;
+	/*height: 30vh;*/
 	visibility: visible;
 	transition: 1s;	
 	/*border: 1px black solid;*/
@@ -428,10 +428,10 @@ html * {
 }
 
 .obstruct-large {
-	width: 70%;
+	width: 95%;
 	height: auto;
 	transition: 2s;
-	margin: 1vh;
+	margin: 1vh 0 1vh 0;
 	cursor: zoom-in;
 }
 

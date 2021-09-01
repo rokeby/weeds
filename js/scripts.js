@@ -248,8 +248,8 @@ $(document).ready(function(){
 
 		// insert left and right voids
 		for (let i=1; i<numObjects + 1; i++) {
-			obstruct.push("<span class='obstruct-left tooltip' data-attr='" + i + "'></span>")
-			obstruct.push("<span class='obstruct-right tooltip' data-attr='" + i + "'></span>")
+			obstruct.push("<span class='obstruct-left  tooltip' data-attr='" + i + "'></span>")
+			obstruct.push("<span class='obstruct-right tooltip '  data-attr='" + i + "'></span>")
 		}
 
 		// get intervals between voids
@@ -269,8 +269,8 @@ $(document).ready(function(){
 		target[0].html(newTextEN)
 		target[1].html(newTextCN)
 
-		$(".essay-english .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-large").append("<img src='" + essay[section].img[0] + "'/>")
-		$(".essay-chinese .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-large").append("<img src='" + essay[section].img[1] + "'/>")
+		$(".essay-english .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[0] + "'/>")
+		$(".essay-chinese .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[1] + "'/>")
 
 		addImageListeners()
 	}
@@ -321,6 +321,11 @@ $(document).ready(function(){
 		$(".essay-chinese .obstruct-left[data-attr='1']").click( function() {
 			lightboxListener( $(this).find("img").attr("src") )
 		})
+
+		$(".obstruct-small").hover( function() {
+			$(this).removeClass("obstruct-small").addClass("obstruct-large")
+		})
+		
 	}
 
 	// lightbox takes the clicked image and displays wide.
