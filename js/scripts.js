@@ -283,12 +283,20 @@ $(document).ready(function(){
 				num = $(this).data("footnote")
 				sup = $("<sup>").append(num)
 				fn = $("<span>").attr("id", "tooltip-span").html(essay[section].footnotes[num])
+				fnInline = $("<span>").attr("id", "fn-span").html(" <em>" + essay[section].footnotes[num] + "</em>")
 				
 				console.log(fn)
 				item.append(sup[0])
 				item.append(fn[0])
+				item.append(fnInline[0])
 
 			})
+
+			if (viewportWidth < 800) {
+				$(".footnote").click( function() {
+					$(this).find("#fn-span").toggle()
+				})
+			}
 
 			window.onmousemove = function (e) {
 		    var x = e.clientX,
