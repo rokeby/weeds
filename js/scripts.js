@@ -139,7 +139,7 @@ $(document).ready(function(){
 			// change cell width when hovered, return after Timeout
 			$(".landingCell").hover( function() {
 				$(this).css({ "border" : "none", 
-								"width" : 20 + Math.floor(Math.random() * 10) + "%",
+								"width" : 20 + Math.floor(Math.random() * 30) + "%",
 							})
 
 				setTimeout(function() {

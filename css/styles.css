@@ -223,7 +223,7 @@ html * {
 		padding-bottom: 2vh;
 	}
 
-.intro-segment *, .credits-container *, .bibliography-container * {
+.intro-segment *, .credits-english, .credits-chinese, .bibliography-container * {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -268,7 +268,7 @@ html * {
 	.landingCell {
 		width: 20%;
 		margin: 1vh;
-		height: 30%;
+		height: 10vh;
 		flex-shrink: 2;
 		/*border: 1px red solid;*/
 		transition: 1s; 
@@ -342,7 +342,7 @@ html * {
 	scrollbar-width: none;  /* Firefox */
 }
 
-.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar, .credits-body::-webkit-scrollbar,
+.essay-english::-webkit-scrollbar, .essay-chinese::-webkit-scrollbar, .credits-body::-webkit-scrollbar, .credits-english::-webkit-scrollbar, .credits-chinese::-webkit-scrollbar,
  .intro-chapter-english::-webkit-scrollbar, .intro-chapter-chinese::-webkit-scrollbar, .intro-container::-webkit-scrollbar, .intro-container > *::-webkit-scrollbar {
   display: none;
 }
@@ -407,6 +407,7 @@ html * {
 }
 
 #index {
+	display: none;
 	font-family: "NeueMachinaRegular";
 	font-size: 0.5em;
 	padding-left: 5vh;
