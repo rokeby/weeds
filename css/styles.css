@@ -271,7 +271,7 @@ html * {
 	.landingCell {
 		width: 20%;
 		margin: 1vh;
-		height: 10vh;
+		height: 13vh;
 		flex-shrink: 2;
 		/*border: 1px red solid;*/
 		transition: 1s; 
@@ -502,6 +502,48 @@ html * {
 .credits-body {
 	word-wrap: break-word;
 }
+
+
+/*---------------------------animation---------------------------*/
+
+.landingCell, 
+.essay-english, 
+.essay-chinese, 
+.bibliography-container, 
+.credits-english, 
+.credits-chinese {
+	-webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 0.5s; /* Firefox < 16 */
+	-ms-animation: fadein 0.5s; /* Internet Explorer */
+	-o-animation: fadein 0.5s; /* Opera < 12.1 */
+	animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
 
 /* MOBILE */
 
