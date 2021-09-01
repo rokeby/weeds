@@ -370,8 +370,9 @@ html * {
 .obstruct-left {
 	float: left;
 	shape-outside: inset();
+	padding-right: 1vh;
 	width: 60%;
-	/*height: 30vh;*/
+	min-height: 15vh;
 	visibility: visible;
 	transition: 1s;	
 	/*border: 1px black solid;*/
@@ -380,6 +381,7 @@ html * {
 .obstruct-right {
 	float: right;
 	shape-outside: inset();
+	padding-left: 1vh;
 	width: 40%;
 	height: 30vh;
 	visibility: visible;

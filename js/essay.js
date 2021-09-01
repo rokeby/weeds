@@ -258,7 +258,7 @@ const essayObj = {
 
 		"1" : {
 
-			"title" : "Nature, Data, Weeds, 2021",
+			"title" : "1) Nature, Data, Weeds, 2021",
 
 			"description" : "9-minute single-channel video with sound, Super8 footage and photogrammetry",
 
@@ -267,7 +267,7 @@ const essayObj = {
 		
 		"2" : {
 
-			"title" : "The Nature of Data, 2021",
+			"title" : "2) The Nature of Data, 2021",
 
 			"description" : "10-minute artists' presentation, Deep City Symposium",
 
