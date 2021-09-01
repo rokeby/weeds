@@ -115,17 +115,24 @@ html * {
 		transition: 0.5s !important;
 	}
 
+	.video-wrapper {
+	display: none;
+	width: inherit;
+	height: 95vh;
+	bottom: 5vh;
+	position: absolute;
+}	
+
 	.video-space {
-		display: none;
+		display: flex;
 		flex-flow: column nowrap;
 		justify-content: space-around;
 		position: absolute;
 		bottom: 5vh;
 		font-size: 1.8rem;
 		/*width: inherit;*/
-		height: 95vh;
+		height: inherit;
 		background-color: #D1D4D8;
-		border-top: 1px black solid;
 		/*visibility: hidden;*/
 		z-index: 1;
 	}
@@ -647,8 +654,17 @@ html * {
   	height: 20vh;
   }
 
+	.video-wrapper {
+	display: none;
+	width: inherit;
+	height: 68vh;
+	bottom: 20vh;
+	position: absolute;
+}	
+
   .video-space {
   	bottom: 0vh;
+  	border-bottom: 1px black solid;
   }
 
   .main {
@@ -666,11 +682,6 @@ html * {
 
   .video {
   	height: 70%;
-  }
-
-  .video-space {
-	height: 95vh;
-
   }
 
   .arrows img {

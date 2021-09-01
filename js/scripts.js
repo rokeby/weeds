@@ -87,7 +87,7 @@ $(document).ready(function(){
 		console.log("section = " + section)
 
 		// populate intro
-		if(section == 0) {
+		if(section === 0) {
 
 			$(".scroll-container").empty()
 			$(".scroll-container").html(introElements)
@@ -169,6 +169,8 @@ $(document).ready(function(){
 			$(".intro-chapter-english > .intro-text").html(introTitlesENArr)
 			$(".intro-chapter-chinese > .intro-text").html(introTitlesCNArr)
 
+			// $(".video-wrapper").css({ "display" : "block"})
+
 			buttons()
 
 		// populate essay pages
@@ -192,11 +194,7 @@ $(document).ready(function(){
 			$(".essay-chinese").html(sectionCN)
 			$(".essay-title").html("<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
 
-
-
 			addImages().then( () =>  addFootnotes()).then( () => addImageListeners() )
-
-
 
 
 		} else if (section == "credits") {
@@ -237,6 +235,7 @@ $(document).ready(function(){
 				$("#" + bibObj).html(bibText)
 			}
 		}
+
 	}
 
 	async function addImages() {
@@ -363,27 +362,56 @@ $(document).ready(function(){
 		})
 	}
 
-    // chapter links to pages
+
+
+	    // chapter links to pages
     function buttons() {
+
    		$(".chapter-link, .button").click( function() {
-    	section = $(this).data("attr")
-		sectionUpdate()
+	    	section = $(this).data("attr")
+			// $(".video-wrapper").css({ "display" : "none"})
+			// $("#video-button").unbind()
+			sectionUpdate()
     	})
 
 		$("#video-1, #video-2").click( function() {
-		let videoNum = $(this).attr("video-attr")
-		$(".video").html(essay.videos[videoNum].iframe)
-	})
+			let videoNum = $(this).attr("video-attr")
+			$(".video").html(essay.videos[videoNum].iframe)
+		})
 
-		$("#video-button").click( function() {
-		$(".video-space").addClass("flex")
-		// $("#close-video").css({"display" : "block"})
-		$("#home, #close-video, .main").click(function() {
-			$(".video-space").removeClass("flex")
-			$("#close-video").css({"display" : "none"})
-			})
-	})
+		// $("#video-button").click( function() {
 
-    }
+		// 	let display = $(".video-wrapper").css("display")
+		// 	console.log("video button clicked")
+		// 	console.log(display)
+
+		// 	if (display === "block") {
+
+		// 		$(".video-wrapper").hide()
+
+		// 	} else {
+		// 		$(".video-wrapper").show()
+
+		// 	}
+
+		// 	// console.log("videoclick")
+		// 	// $(".video-wrapper").show()
+		// })
+
+	}
+
+
+	// 	$("#video-button").click( function() {
+	// 	$(".video-space").addClass("flex")
+	// 	// $("#close-video").css({"display" : "block"})
+	// 	$("#home, #close-video, .main").click(function() {
+	// 		$(".video-space").removeClass("flex")
+	// 		$("#close-video").css({"display" : "none"})
+	// 		})
+	// })
+
+
+
+    
 
 });
