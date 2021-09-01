@@ -194,7 +194,9 @@ $(document).ready(function(){
 
 
 
-			addImages().then( () =>  addFootnotes())
+			addImages().then( () =>  addFootnotes()).then( () => addImageListeners() )
+
+
 
 
 		} else if (section == "credits") {
@@ -262,8 +264,8 @@ $(document).ready(function(){
 
 		// populate the voids in order with slightly random spacing
 		for ( let j=0; j<obstruct.length; j++) {
-			objArrEN.splice((intervalEN * (j-1)) + (Math.random() * intervalEN), 0, obstruct[j])
-			objArrCN.splice((intervalCN * (j-1)) + (Math.random() * intervalCN), 0, obstruct[j])
+			objArrEN.splice((intervalEN * (j)) + (Math.random() * intervalEN), 0, obstruct[j])
+			objArrCN.splice((intervalCN * (j)) + (Math.random() * intervalCN), 0, obstruct[j])
 		}
 
 
@@ -283,10 +285,6 @@ $(document).ready(function(){
 						"height" : 5 + Math.floor(Math.random() * 30) + "vh"
 					})
 		})
-
-
-
-		addImageListeners()
 	}
 
 	async function addFootnotes() {
@@ -336,6 +334,7 @@ $(document).ready(function(){
 		        	})
 		    }
 			};
+
 	}
 
 	function addImageListeners() {
