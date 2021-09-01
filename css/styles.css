@@ -127,11 +127,11 @@ html * {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: space-around;
-		position: absolute;
+		/*position: absolute;*/
 		bottom: 5vh;
 		font-size: 1.8rem;
 		/*width: inherit;*/
-		height: inherit;
+		height: 100%;
 		background-color: #D1D4D8;
 		/*visibility: hidden;*/
 		z-index: 1;
@@ -658,12 +658,11 @@ html * {
 	display: none;
 	width: inherit;
 	height: 68vh;
-	bottom: 20vh;
+	top: calc(12vh + 1px);
 	position: absolute;
 }	
 
   .video-space {
-  	bottom: 0vh;
   	border-bottom: 1px black solid;
   }
 
