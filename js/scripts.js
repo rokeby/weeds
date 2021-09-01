@@ -84,6 +84,8 @@ $(document).ready(function(){
 // sectionUpdate() repopulates the view according to current section.
 	function sectionUpdate () {
 
+		$(".chapter-link, .button").unbind()
+
 		console.log("section = " + section)
 
 		// populate intro
@@ -169,8 +171,6 @@ $(document).ready(function(){
 			$(".intro-chapter-english > .intro-text").html(introTitlesENArr)
 			$(".intro-chapter-chinese > .intro-text").html(introTitlesCNArr)
 
-			// $(".video-wrapper").css({ "display" : "block"})
-
 			buttons()
 
 		// populate essay pages
@@ -196,6 +196,7 @@ $(document).ready(function(){
 
 			addImages().then( () =>  addFootnotes()).then( () => addImageListeners() )
 
+			buttons()
 
 		} else if (section == "credits") {
 			$(".scroll-container").html(creditsElements)
@@ -219,6 +220,9 @@ $(document).ready(function(){
 				}
 			}
 
+			buttons()
+
+
 		} else if (section == "bib") {
 			$(".scroll-container").html(bibliographyElements)
 			$(".mobile-title .nav-bar").html("BIBLIOGRAPHY")
@@ -233,7 +237,11 @@ $(document).ready(function(){
 				});
 
 				$("#" + bibObj).html(bibText)
-			}
+				
+				}
+
+				buttons()
+
 		}
 
 	}
@@ -266,7 +274,6 @@ $(document).ready(function(){
 			objArrEN.splice((intervalEN * (j)) + (Math.random() * intervalEN), 0, obstruct[j])
 			objArrCN.splice((intervalCN * (j)) + (Math.random() * intervalCN), 0, obstruct[j])
 		}
-
 
 		newTextEN = objArrEN.join(" ")
 		newTextCN = objArrCN.join("")
@@ -366,7 +373,7 @@ $(document).ready(function(){
 
    		$(".chapter-link, .button").click( function() {
 	    	section = $(this).data("attr")
-	    	$(this).unbind("click")
+	    	$('.video-wrapper').css({ 'display' : 'none'})
 			sectionUpdate()
     	})
 
