@@ -292,7 +292,7 @@ $(document).ready(function(){
 
 			})
 
-			if (viewportWidth < 800) {
+			if (section > 0 && viewportWidth < 800) {
 				$(".footnote").click( function() {
 					$(this).find("#fn-span").toggle()
 				})
@@ -302,7 +302,7 @@ $(document).ready(function(){
 		    var x = e.clientX,
 		        y = e.clientY;
 
-	        if ( section > 0 ) {
+	        if ( section > 0 && viewportWidth > 800 ) {
 
 		        $(".footnote").find("#tooltip-span").css({
 		        		"top" : (y + 10) + "px",

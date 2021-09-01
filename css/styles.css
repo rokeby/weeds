@@ -2,6 +2,7 @@ html {
 	font-size: 62.5%;
     scroll-behavior: smooth;
 	height: -webkit-fill-available;
+	background-color: #D1D4D8;
 }
 
 body {
@@ -526,7 +527,7 @@ html * {
   .arrows,
   #tooltip-span
   {
-    display: none;
+    display: none !important;
   }
 
   .obstruct-large {
