@@ -153,7 +153,7 @@ $(document).ready(function(){
 			$(".mobile-title .nav-bar").html(essay[section].en.title.toUpperCase() + "<br>" + essay[section].cn.title.toUpperCase())
 
 			let introTitlesEN = $("<div class='intro-text'>").append("<div class='colour-header'>EPISODES</div>")
-			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情节</div>")
+			let introTitlesCN = $("<div class='intro-text'>").append("<div class='colour-header'>情節</div>")
 
 			for(let i = 1; i < essayLength - 3; i++) {
 				introTitlesEN.append("<span " + "class='chapter-link' data-attr='" + i + "'>" + "*" + essay[i].en.title + "</span><br><br>")
@@ -192,8 +192,8 @@ $(document).ready(function(){
 			$(".essay-chinese").html(sectionCN)
 			$(".essay-title").html("<span id='en'>" + essay[section].en.title.toUpperCase() + "</span>" + "<br><br>" + "<span id='cn'>" + essay[section].cn.title + "</span>")
 
-			addImages()
-			addFootnotes()
+			addImages().then( () =>  addFootnotes())
+
 
 		} else if (section == "credits") {
 			$(".scroll-container").html(creditsElements)
@@ -235,7 +235,7 @@ $(document).ready(function(){
 		}
 	}
 
-	function addImages() {
+	async function addImages() {
 
 		// total number of obstruct-left and obstruct-right objects.
 		const numObjects = 6;
@@ -275,7 +275,7 @@ $(document).ready(function(){
 		addImageListeners()
 	}
 
-	function addFootnotes() {
+	async function addFootnotes() {
 
 		footnotes = $(".footnote")
 
