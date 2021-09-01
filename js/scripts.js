@@ -242,8 +242,11 @@ $(document).ready(function(){
 		const obstruct = []
 		const target = [$(".essay-english p"), $(".essay-chinese p")]
 
+		const re = /(?:<[^>]*>)+/g
+
+
 		// split text into words/fragments to randomly insert voids
-		const objArrEN = target[0][0].outerHTML.split(" ")
+		const objArrEN = target[0][0].outerHTML.split(re)
 		const objArrCN = target[1][0].outerHTML.split("•") // chinese text is split using "•" as text doesn't have spaces
 
 		// insert left and right voids
@@ -258,8 +261,8 @@ $(document).ready(function(){
 
 		// populate the voids in order with slightly random spacing
 		for ( let j=0; j<obstruct.length; j++) {
-			objArrEN.splice((Math.floor(Math.random() * (intervalEN * (j)) + (Math.random() * intervalEN))), 0, obstruct[j])
-			objArrCN.splice((Math.floor(Math.random() * (intervalCN * (j)) + (Math.random() * intervalCN))), 0, obstruct[j])
+			objArrEN.splice((intervalEN * (j)) + (Math.random() * intervalEN), 0, obstruct[j])
+			objArrCN.splice((intervalCN * (j)) + (Math.random() * intervalCN), 0, obstruct[j])
 		}
 
 
@@ -271,6 +274,16 @@ $(document).ready(function(){
 
 		$(".essay-english .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[0] + "'/>")
 		$(".essay-chinese .obstruct-left[data-attr='1']").addClass("image").addClass("obstruct-small").append("<img src='" + essay[section].img[1] + "'/>")
+		
+		let blanks = $(".obstruct-left[data-attr!='1'], .obstruct-right[data-attr!='1']")
+		
+		$.each( blanks, function(item, key) {
+			$(this).css({ "width" : 10 + Math.floor(Math.random() * 80) + "%",
+						"height" : 5 + Math.floor(Math.random() * 30) + "vh"
+					})
+		})
+
+
 
 		addImageListeners()
 	}
@@ -285,7 +298,6 @@ $(document).ready(function(){
 				fn = $("<span>").attr("id", "tooltip-span").html(essay[section].footnotes[num])
 				fnInline = $("<span>").attr("id", "fn-span").html(" <em>" + essay[section].footnotes[num] + "</em>")
 				
-				console.log(fn)
 				item.append(sup[0])
 				item.append(fn[0])
 				item.append(fnInline[0])
