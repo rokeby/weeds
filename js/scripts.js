@@ -380,6 +380,7 @@ $(document).ready(function(){
 		$("#video-1, #video-2").click( function() {
 			let videoNum = $(this).attr("video-attr")
 			$(".video").html(essay.videos[videoNum].iframe)
+			// console.log(essay.videos[videoNum].iframe)
 		})
 
 	}

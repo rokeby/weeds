@@ -115,6 +115,12 @@ html * {
 		transition: 0.5s !important;
 	}
 
+	.vidlink:hover {
+		color: #6F68F6;
+		cursor: alias;
+		transition: 0.5s !important;
+	}
+
 	.video-wrapper {
 	display: none;
 	width: inherit;
@@ -508,6 +514,8 @@ html * {
 }
 
 .credits-english, .credits-chinese, .bibliography {
+	word-wrap: break-word;
+	hyphens: auto;
 	height: inherit;
 	width: 50%;
 	padding-top: 2vh;
