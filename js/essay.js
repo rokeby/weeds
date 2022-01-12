@@ -267,11 +267,11 @@ const essayObj = {
 		
 		"2" : {
 
-			"title" : "2) The Nature of Data, 2021",
+			"title" : "2) Project Conversation, 2022",
 
-			"description" : "10-minute artists' presentation, Deep City Symposium",
+			"description" : "20-minute presentation followed by guest sharing",
 
-			"iframe" : '<iframe src="https://player.vimeo.com/video/564744663" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
+			"iframe" : '<iframe src="https://player.vimeo.com/video/664853606?h=b883ef3334" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
 
 		},
 
